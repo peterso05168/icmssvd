@@ -1,0 +1,49 @@
+<functions>
+	<function functionId="SVD-SVD-00010">
+		<screen mxml="EnquireSvdReqFormPanelDC" screenId="SVD-SVD-00011"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00020">
+		<screen mxml="EnquireSvdReqFormPanelMC" screenId="SVD-SVD-00021"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00030">
+		<screen mxml="InputSvdReqMainDC" screenId="SVD-SVD-00031"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00040">
+		<screen mxml="InputSvdReqMainMC" screenId="SVD-SVD-00041"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00050">
+		<screen mxml="EnquireReServiceFormPanel" screenId="SVD-SVD-00051"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00110">
+		<screen mxml="EnquireProofOfSvdPanelDC" screenId="SVD-SVD-00111"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00120">
+		<screen mxml="EnquireProofOfSvdPanelMC" screenId="SVD-SVD-00121"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00130">
+		<screen mxml="InputProofMainDC" screenId="SVD-SVD-00131"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00140">
+		<screen mxml="InputProofMainMC" screenId="SVD-SVD-00141"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00150">
+		<screen mxml="EnquireProofOfSvdBatchFormPanel" screenId="SVD-SVD-00151"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00210">
+		<screen mxml="EnquireExeReqFormPanel" screenId="SVD-SVD-00211"/>
+	</function>	
+	
+	<function functionId="SVD-SVD-00220">
+		<screen mxml="InputExeReqMain" screenId="SVD-SVD-00221"/>
+	</function>	
+</functions>

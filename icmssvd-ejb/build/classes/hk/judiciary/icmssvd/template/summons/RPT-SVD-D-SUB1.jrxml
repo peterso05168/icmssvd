@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-03-27T10:46:53 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Driving Offence Points Summons-SUB1" pageWidth="495" pageHeight="842" columnWidth="495" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="58547458-3b59-483f-b826-22e46b7de35d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<queryString language="xPath">
+		<![CDATA[/Report/Content/Data/drivingOffence1]]>
+	</queryString>
+	<field name="offenceId" class="java.lang.String">
+		<fieldDescription><![CDATA[offenceId]]></fieldDescription>
+	</field>
+	<field name="offenceDate" class="java.lang.String">
+		<fieldDescription><![CDATA[offenceDate]]></fieldDescription>
+	</field>
+	<field name="punishmentEffDate" class="java.lang.String">
+		<fieldDescription><![CDATA[punishmentEffDate]]></fieldDescription>
+	</field>
+	<field name="pointDeduction" class="java.lang.String">
+		<fieldDescription><![CDATA[pointDeduction]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="50" height="17" uuid="764a4c0a-b8b3-491d-8614-ae2c58c9fee1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{offenceId}!=null ? $F{offenceId} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="50" height="17" uuid="be2aa913-ba55-41ec-9ea6-266bf91cb597">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{offenceDate}!=null ? $F{offenceDate} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="70" height="17" uuid="5850eb78-1e4e-434c-b184-73228a768b2a">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{punishmentEffDate}!=null ? $F{punishmentEffDate} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="90" height="17" uuid="0962ee52-2eb9-436c-b828-d0513b0eca80">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{pointDeduction}!=null ? $F{pointDeduction} : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="495" height="17" uuid="84b90e77-845d-4eb2-ace7-07ea4848d77c"/>
+				<box>
+					<pen lineStyle="Double"/>
+					<bottomPen lineWidth="0.1" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

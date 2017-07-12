@@ -1,0 +1,52 @@
+package hk.judiciary.icmssvd.model.common.dao;
+
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.icms.model.dao.entity.ServModeType;
+import hk.judiciary.icmssvd.model.BaseDAO;
+import hk.judiciary.icmssvd.model.common.CommonConstant;
+import hk.judiciary.icmssvd.model.common.util.DbCommonUtil;
+
+/**
+ * 
+ * @version $Revision: 6956 $ $Date: 2017-05-12 19:10:05 +0800 (週五, 12 五月 2017) $
+ * @author $Author: vicki.huang $
+ */
+public class ServiceModeTypeDAO extends BaseDAO<ServModeType> {
+    public static final String SERV_MODEL_TYPE_DAO = "serviceModeTypeDAO";
+
+    private static final String QUERY_LIST = "ServModeType.findServiceModeList";
+    private static final String QUERY_BY_CODE = "ServModeType.findByServiceModeTypeCode";
+
+    private static final String PARAM_SERVMODE_TYPECD = "servModeTypeCd";
+
+    public List<ServModeType> findServiceModeList() {
+        info("findServiceModeList() start ");
+        TypedQuery<ServModeType> query = getEntityManager().createNamedQuery(QUERY_LIST,
+                ServModeType.class);
+        query.setParameter(PARAM_EFFV_START_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_EFFV_END_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_ACTIVE_FLAG, CommonConstant.COMMON_FLAG_TRUE);
+        List<ServModeType> list = getResultList(query);
+        return list;
+    }
+
+    public ServModeType findByServiceModeTypeCode(String servModeCode) {
+        info("findServiceModeList() start ");
+        TypedQuery<ServModeType> query = getEntityManager().createNamedQuery(QUERY_BY_CODE,
+                ServModeType.class);
+        query.setParameter(PARAM_EFFV_START_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_EFFV_END_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_ACTIVE_FLAG, CommonConstant.COMMON_FLAG_TRUE);
+        query.setParameter(PARAM_SERVMODE_TYPECD, servModeCode);
+        List<ServModeType> list = getResultList(query);
+        ServModeType servModeType = null;
+        if (!CommonUtil.isNullOrEmpty(list)) {
+            servModeType = list.get(0);
+        }
+        return servModeType;
+    }
+}

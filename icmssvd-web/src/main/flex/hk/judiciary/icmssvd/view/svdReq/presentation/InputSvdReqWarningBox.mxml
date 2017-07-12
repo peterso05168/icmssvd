@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:MessageDialog xmlns:fx="http://ns.adobe.com/mxml/2009"
+				  xmlns:j="hk.judiciary.fmk.view.component.*"
+				  responseBtnHandler="{model.resultHandler}"
+				  width="100%"
+				  >
+					  
+	<fx:Declarations>
+		<j:Configure />
+	</fx:Declarations>
+
+	<fx:Script>
+		<![CDATA[
+			[Inject]
+			[Bindable]
+			public var model:InputSvdReqPanelPM;
+		]]>
+		
+	</fx:Script>
+	
+</j:MessageDialog>

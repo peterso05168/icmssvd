@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                           http://www.springframework.org/schema/aop  
+ 						   http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+                           http://www.springframework.org/schema/jee
+                           http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+	<!-- Spring AOP (start) -->
+	<aop:config>
+		<aop:aspect id="defaultWebAOP" ref="defaultWebInterceptor">
+			<aop:pointcut id="defaultWebAOP"
+				expression="execution(*  hk.judiciary.icmssvd.view.*.*.*(..)) " />
+			<aop:around pointcut-ref="defaultWebAOP" method="logAround" />
+		</aop:aspect>
+	</aop:config>
+	<!--Spring AOP (End) -->
+
+	<bean id="report"
+		class="hk.judiciary.icmssvd.view.report.ReportController" />
+	<bean id="svdReq"
+		class="hk.judiciary.icmssvd.view.svdReq.SvdReqController" />
+	<bean id="exeReq"
+		class="hk.judiciary.icmssvd.view.exeReq.ExeReqController" />
+
+
+	<!--EJB facade (start) -->
+	<jee:local-slsb id="reportFacade" jndi-name="ejb/reportFacade"
+		business-interface="hk.judiciary.icmssvd.model.report.facade.ReportFacade" />
+	<jee:local-slsb id="commonFacade" jndi-name="ejb/commonFacade"
+		business-interface="hk.judiciary.icmssvd.model.common.facade.CommonFacade" />
+	<jee:local-slsb id="svdReqFacade" jndi-name="ejb/svdReqFacade"
+		business-interface="hk.judiciary.icmssvd.model.svdReq.facade.SvdReqFacade" />
+	<jee:local-slsb id="exeReqFacade" jndi-name="ejb/exeReqFacade"
+		business-interface="hk.judiciary.icmssvd.model.exeReq.facade.ExeReqFacade" />
+	<!--EJB facade (end) -->
+</beans>
+                      
+		
+
+                      

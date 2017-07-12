@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-01T12:45:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DeptSummon" pageWidth="595" pageHeight="842" columnWidth="493" leftMargin="56" rightMargin="46" topMargin="17" bottomMargin="17" uuid="80dd3d9c-9b39-4956-afcb-cda2249f1fa9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="xPath">
+		<![CDATA[/Report/Content/Data]]>
+	</queryString>
+	<field name="caseNo" class="java.lang.String">
+		<fieldDescription><![CDATA[caseNo]]></fieldDescription>
+	</field>
+	<field name="langType" class="java.lang.String">
+		<fieldDescription><![CDATA[langType]]></fieldDescription>
+	</field>
+	<field name="courtOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[courtOfHearing]]></fieldDescription>
+	</field>
+	<field name="copyType" class="java.lang.String">
+		<fieldDescription><![CDATA[copyType]]></fieldDescription>
+	</field>
+	<field name="omrData" class="java.lang.String">
+		<fieldDescription><![CDATA[omrData]]></fieldDescription>
+	</field>
+	<field name="addressOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[addressOfHearing]]></fieldDescription>
+	</field>
+	<field name="venueOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[venueOfHearing]]></fieldDescription>
+	</field>
+	<field name="enquiryPhoneNo" class="java.lang.String">
+		<fieldDescription><![CDATA[enquiryPhoneNo]]></fieldDescription>
+	</field>
+	<field name="enquiryDate" class="java.lang.String">
+		<fieldDescription><![CDATA[enquiryDate]]></fieldDescription>
+	</field>
+	<field name="dateOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[dateOfHearing]]></fieldDescription>
+	</field>
+	<field name="jobCnt" class="java.lang.String">
+		<fieldDescription><![CDATA[jobCnt]]></fieldDescription>
+	</field>
+	<field name="pageCnt" class="java.lang.String">
+		<fieldDescription><![CDATA[pageCnt]]></fieldDescription>
+	</field>
+	<field name="caseCnt" class="java.lang.String">
+		<fieldDescription><![CDATA[caseCnt]]></fieldDescription>
+	</field>
+	<field name="miscCnt" class="java.lang.String">
+		<fieldDescription><![CDATA[miscCnt]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</title>
+	<detail>
+		<band height="780" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="0" y="257" width="24" height="13" uuid="fb5d7378-c9ed-4b02-84ea-e46cd54b80b4">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="27" y="257" width="322" height="13" uuid="bd55c143-19f9-4d50-ae21-f1acecc2d8d5">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtOfHearing}!=null?$F{courtOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="257" width="24" height="13" uuid="e00283d7-6327-4034-9e62-7137566db57d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="AR PL UMing HK" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[致：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="27" y="257" width="322" height="13" uuid="d832b20d-401b-441e-8d6d-c0f4487576ff">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UMing HK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtOfHearing}!=null?$F{courtOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement isPrintRepeatedValues="false" x="-56" y="90" width="56" height="352" uuid="bd3c5226-8074-4f2b-b56d-d01ad813ca8f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{copyType}.equals("D")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="omrData">
+					<subreportParameterExpression><![CDATA[$F{omrData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["RPT-SVD-SUB-OMR.jrxml"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="0" width="490" height="17" uuid="86f24ffc-3af7-4dc1-96ca-1d571217fecc">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="13" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Notice to Defendant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="490" height="17" uuid="b84c75bb-aa3c-46b0-acef-bdeb3dd42cc6">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="AR PL UMing HK" size="13" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[致被告人通知書]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="0" width="140" height="17" uuid="c756b489-c27a-4cbf-8f25-773d623b262e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["("+($F{caseNo}!=null?$F{caseNo}:"")+")"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="490" height="180" uuid="2115fc93-bc04-4b85-93e8-0ee1d33c939e">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["By virtue of Section 18E of the Magistrates Ordinance Cap. 227, a magistrate may accept your plea of guilty by letter addressed to him and may thereupon impose such penalty as the law provides for the offence but shall not impose any fine exceeding $2,000 or any term of imprisonment.<br/><br/>If you have decided to plead guilty to the offence by letter, you may complete the following form and mention any mitigating factors.<style isBold=\"true\">Please send the completed form to the relevant Magistrates’ Courts prior to the date of hearing, and you are not required to attend court on the date shown below. </style><br/><br/>If the magistrate accepts your plea and disposes of the case in your absence, you will be notified of the result in writing within 10 days after the date of hearing. <style isBold=\"true\" isUnderline=\"true\">For enquiries on hearing result, please contact the Magistrates’ Courts at "+$F{enquiryPhoneNo}+" on or after "+$F{enquiryDate}+". </style> If the magistrate decides not to accept your plea, the hearing will be adjourned and you will be informed of the time and the place of the adjourned hearing at which you must attend."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="490" height="180" uuid="22007ff5-7721-49ba-b0ec-ca65ed5363fd">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="AR PL UMing HK" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["根據裁判官條例(第227章)第18E條的規定，裁判官可接受你以書函認罪，同時可根據有關法例加以處罰;但不得判處監禁或超過$2,000的罰款。<br/><br/>如你決定以書函承認控罪，請填妥下列表格並可提出要求輕判的理由，及<style isBold=\"true\">於聆訊日期前將填妥的表格寄回有關裁判法院，你便不用在下列日期到庭應訊。</style><br/><br/>如裁判官接受你的書函認罪，並在你缺席下處理該案，法庭將會於聆訊日期後之十天內以書面通知你有關結果。<style isBold=\"true\" isUnderline=\"true\">如欲查詢聆訊結果，請於 "+$F{enquiryDate}+"  或之後致電 "+$F{enquiryPhoneNo}+" 與裁判法院聯絡。</style>若裁判官不接受你的書函認罪，聆訊將會延期；法庭會通知你新的聆訊時間及地點，屆時你必須出庭應訊。"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="203" width="490" height="12" uuid="88f83cbc-ae02-43bd-b164-b29a896d6aa9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="AR PL UMing HK" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["請保留以上部分方便日後查詢"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="203" width="490" height="12" uuid="adca8c53-2806-496c-9b8f-0ed643859a8a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Please keep the above portion for future enquiry"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="215" width="490" height="6" uuid="dc401015-7c1c-442d-8808-e51b2626894a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="230" width="490" height="17" uuid="5720bb99-c8eb-4902-98a8-b9df9f735456">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="13" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[PLEA OF GUILTY BY LETTER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="230" width="490" height="17" uuid="acfa6660-cb5b-41b6-9157-1310ef2c7ad0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="AR PL UMing HK" size="13" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[認  罪  書  函]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="27" y="270" width="322" height="13" uuid="36404ae3-cecc-471c-a389-8094c3f77c78">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{addressOfHearing}!=null?$F{addressOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="270" width="322" height="13" uuid="02f9bf0d-74b2-4f94-8f44-a3fb3641f25e">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UMing HK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{addressOfHearing}!=null?$F{addressOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="283" width="322" height="13" uuid="0b63e55b-8d67-4127-9f1c-97403a8797b2">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{venueOfHearing}!=null?$F{venueOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="283" width="322" height="13" uuid="59d89910-1cdc-4fc7-82d2-f7a6c94eae76">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UMing HK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{venueOfHearing}!=null?$F{venueOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="309" width="90" height="13" uuid="070edcf6-ec73-4382-87f2-94c52cbbf2b0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Summons No.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="309" width="90" height="13" uuid="474c4909-89e1-4a61-833a-dea48c29e449">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[傳票編號：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="309" width="140" height="13" uuid="65ba0259-4532-4aa8-a143-a38ac8c58e18"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{caseNo}!=null?$F{caseNo}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="309" width="90" height="13" uuid="3b696b51-d8ba-4be1-a293-5a87e49ff79a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hearing Date: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="309" width="90" height="13" uuid="69907c42-1423-4d90-95f6-9dcfd11e18b9">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[聆訊日期：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="309" width="136" height="13" uuid="83deacae-f453-43f7-8a51-a91fa0527d1a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{dateOfHearing}!=null?$F{dateOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="309" width="136" height="13" uuid="7ec16195-dd8e-4c51-9c3a-ca896ba4a65e">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{dateOfHearing}!=null?$F{dateOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="331" width="490" height="40" uuid="9a9f6b50-77da-4ef0-ad23-64d285452781">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["I plead guilty to the offence set out in the above Summons and ask the Court to dispose of the case in my absence. I wish to bring to the attention of the court the mitigating circumstances set out below:-"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="331" width="490" height="40" uuid="c3a9bda3-c4b1-429d-8d84-a744261a7248">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UMing HK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["　　　我承認上述傳票中所指的控罪，並要求法庭在我缺席下處理該案件。我將有關要求輕判的理由列述於下："]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="368" y="739" width="120" height="41" uuid="52928f7e-446e-48ad-a5bf-f9bfe31e6da7">
+					<property name="com.jaspersoft.studio.unit.moduleWidth" value="pixel"/>
+				</reportElement>
+				<jr:PDF417 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="50.0" textPosition="top" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA["<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"><judiciaryBarcode><c>"+($F{caseNo}!=null?$F{caseNo}:"")+"</c></judiciaryBarcode>"]]></jr:codeExpression>
+				</jr:PDF417>
+			</componentElement>
+			<staticText>
+				<reportElement x="0" y="720" width="80" height="12" uuid="97420830-426d-4ee6-9f49-c678934ab962">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Telephone No.: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="720" width="40" height="12" uuid="98b6a4ea-3bc4-43fd-9f31-978b689fa37b">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[電  話:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="720" width="38" height="12" uuid="005f401c-f4c0-42a7-bde3-7d242603c675">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="720" width="38" height="12" uuid="0790a503-2f60-401b-a63b-bc44bd21adea">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[日  期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="720" width="130" height="12" uuid="f94fea4e-2360-469a-88d2-2a6b8c725d0b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="720" width="138" height="12" uuid="20a0da11-efc2-45bf-a11a-481346325445">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="681" width="488" height="12" uuid="92c520e8-ad09-4187-874d-74043157f0b3">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Address (in block letters): (To be completed only if address <style isBold=\"true\" isUnderline=\"true\">different</style> from that given on the Summons)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="681" width="40" height="12" uuid="9546faf1-a386-4ba0-96b0-51a60b449637">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="AR PL UMing HK" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["地  址:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="681" width="308" height="12" uuid="3ec612f0-e8e0-4bc3-9f73-a999c4e55c62">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(地址如與傳票上所示<style isBold=\"true\" isUnderline=\"true\">不同</style>)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="693" width="50" height="11" uuid="e458d78a-2f51-4bb9-b76c-51a255f4b2b0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(請用正楷)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="700" width="489" height="12" uuid="1e4ddbe9-8ba2-4901-bf11-550ccd7d5a16">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="700" width="449" height="12" uuid="844bd9ed-f5bf-47a4-bec6-e2ef6b9f5275">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="720" width="170" height="12" uuid="44adf82d-4411-44a5-8981-e473270541da">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="590" width="208" height="86" uuid="e78816cd-db28-4d34-80dc-8bc09400007b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ Seal of Corporation/Company, etc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="590" width="208" height="86" uuid="460868bc-ff65-4bf4-a406-9109e96ee16e">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ 法團/公司等印鑑:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="635" width="270" height="12" uuid="63f021ee-0a5a-4b02-8f57-3bdb0b759fb3">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name of Director/ Secretary/Authorised Person:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="635" width="270" height="12" uuid="c57d9318-1e8a-4249-a72d-98d92402c31d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[董事/秘書/授權人姓名:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="620" width="270" height="12" uuid="8209fe75-cca9-4d4e-a515-a162a36e8000">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="590" width="270" height="12" uuid="07b2abed-1b55-4cf4-a107-916c7dbf4f49">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Signature of Director/ Secretary/Authorised Person ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="590" width="270" height="12" uuid="0c97e4e3-d3c5-43eb-9904-9f3b6402ec2e">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[董事/秘書/授權人簽名:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="570" width="40" height="12" uuid="41101e08-6a12-47ad-8dc7-77bd2f879853">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">Part B</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="570" width="26" height="12" uuid="3e04d7bb-b0a8-443a-a8b1-54ed9e39720d">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">乙部</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="555" width="490" height="6" uuid="eacdc797-c79f-4629-8e81-5971b75aaff2">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="453" width="126" height="12" uuid="c0a662a4-dc2f-4390-9ae9-57f19a2c6150">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Signature of  Defendant:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="453" width="70" height="12" uuid="b266b514-bbc4-4180-b120-de7e32eac78e">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[被告人簽名:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="469" width="126" height="12" uuid="b15e4ae1-05bb-49ea-9c07-8b63c21ebc06">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name of Defendant:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="469" width="70" height="12" uuid="82308fd5-f9f0-47aa-b9e5-9aa799bf6806">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[被告人姓名:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="126" y="453" width="144" height="12" uuid="db8a41b8-a93a-4303-9564-9b81deb27487">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="453" width="200" height="12" uuid="68c3bfe5-0840-44df-9d47-cc2aec761d4b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="754" width="150" height="11" uuid="5a4c6f06-ff75-40a1-b7d3-66325ebe4acb">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*Please delete as appropriate.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="754" width="150" height="11" uuid="43226180-faa0-4a54-bd84-2d242976598b">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*請刪除不適用者。]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="480" width="200" height="12" uuid="7d36784f-6013-403d-a9de-20459c25d7b1">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="126" y="480" width="144" height="12" uuid="f6f1d0c0-e4d9-4868-9590-367dc146fe4e">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="414" width="490" height="6" uuid="e1ea44e6-3b5d-4ffa-835b-d37299ed1cf6">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="664" width="270" height="12" uuid="2cbfb32a-dabc-4f9a-aae3-54b08b169e05">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="570" width="252" height="12" uuid="20113e60-c545-4a00-972d-8c7609a433c3">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["[只供法團(例如公司)使用]"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="540" width="80" height="12" uuid="f13119df-4755-4c97-b506-8c80dc8dd0ba">
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Telephone No.: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="540" width="40" height="12" uuid="c289c9d8-066c-4fe0-a817-60388324e045">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[電  話:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="540" width="38" height="12" uuid="746a8ac8-050c-4362-9866-3101c02c0ddc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="540" width="38" height="12" uuid="bec5cc00-4281-4c76-a676-a41e5cd92dcd">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AR PL UMing HK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[日  期:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="540" width="130" height="12" uuid="fa2df86b-31ed-4173-bab9-5cd5bdbc6b1c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="540" width="138" height="12" uuid="71694ae9-bde4-4237-b781-6aaf72c37e85">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="501" width="488" height="12" uuid="c7ebd82a-7506-413a-977c-7624900f8396">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Address (in block letters): (To be completed only if address <style isBold=\"true\" isUnderline=\"true\">different</style> from that given on the Summons)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="501" width="40" height="12" uuid="3d8c5178-6f34-461a-b7d1-6256471a0f0e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="AR PL UMing HK" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["地  址:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="501" width="308" height="12" uuid="f6ad9aa0-aae1-4bd7-b998-18899a4848d8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(地址如與傳票上所示<style isBold=\"true\" isUnderline=\"true\">不同</style>)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="513" width="50" height="11" uuid="e6595b03-cec8-433c-b7de-0d575081b04a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(請用正楷)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="520" width="489" height="12" uuid="9c16fff5-fb2e-4234-8fe9-0acbb2fa728d">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="520" width="449" height="12" uuid="07f0866e-0084-4619-a751-0613d9d980ed">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="540" width="170" height="12" uuid="43eb7de2-6545-45bb-9f67-e58522519392">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="481" width="50" height="11" uuid="5dec1033-ea4a-432d-ac22-f4e09e63bab4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(請用正楷)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="481" width="70" height="11" uuid="4c86c969-3fdc-4472-978a-330f4111f2c7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["(in block letters)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="427" width="40" height="12" uuid="cfb767fa-d63b-4323-a7a6-d553ec21557c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="DejaVu Sans" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">Part A</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="427" width="26" height="12" uuid="8714b093-b367-4498-9e30-6ccc3c6a0a9b">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold=\"true\" isUnderline=\"true\">甲部</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="427" width="252" height="12" uuid="4a04e46e-a8a0-445a-b977-339372453139">
+					<printWhenExpression><![CDATA[$F{langType}.equals("C")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="AR PL UMing HK" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["[被告為法團者(例如公司)，請填寫乙部]"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="428" width="452" height="12" uuid="efc0865e-946a-44aa-a52c-9b9efc02fe5b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["[Please complete Part B if defendant is a corporation (e.g. a company)]"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="570" width="452" height="12" uuid="69d94065-d5c9-47fc-b848-2f31a642c8f8">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equals("E")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom" markup="styled">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["[For corporation (e.g. a company) only]"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="310" y="7" width="180" height="10" uuid="5af6f15c-1c3f-4555-be40-943c72151df6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["iCMS "+($F{jobCnt}!=null?$F{jobCnt}:"")+"-"+($F{caseCnt}!=null?$F{caseCnt}:"")+"-"+($F{pageCnt}!=null?$F{pageCnt}:"")+"-"+($F{miscCnt}!=null?$F{miscCnt}:"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

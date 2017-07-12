@@ -1,0 +1,14 @@
+package hk.judiciary.icmssvd.model.svdReq.dao;
+
+import hk.judiciary.icms.model.dao.entity.BlfTask;
+import hk.judiciary.icmssvd.model.BaseDAO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class BailiffTaskDAO extends BaseDAO<BlfTask> {
+    public static final String BAILIFF_TASK_DAO = "bailiffTaskDAO";
+
+}

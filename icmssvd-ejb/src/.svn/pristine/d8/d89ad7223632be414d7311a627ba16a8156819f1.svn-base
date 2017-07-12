@@ -1,0 +1,208 @@
+package hk.judiciary.icmssvd.model.svdReq.facade.internal;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.interceptor.Interceptors;
+import javax.persistence.PersistenceContext;
+
+import hk.judiciary.fmk.common.security.user.JudiciaryUser;
+import hk.judiciary.fmk.ejb.facade.DefaultFacadeInterceptor;
+import hk.judiciary.fmk.model.cfs.biz.dto.FileDTO;
+import hk.judiciary.icmssvd.model.BaseFacade;
+import hk.judiciary.icmssvd.model.common.biz.dto.DrnDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.IdDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.IntegerFieldDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.SvdReqBO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.BatchSearchDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.CertifcateBulkPostingDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.DocumentDraftDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.MaintainRequestDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.NextHearingDateGenerationDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.NextHearingDetailDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.PosRequestDetailDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.PosRequestSearchDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.PosRequestSearchResultDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.ReserviceBatchSearchResultDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.ReserviceRequestDetailDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.ServiceRequestDetailDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.ServiceRequestSearchDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.ServiceRequestSearchResultDTO;
+import hk.judiciary.icmssvd.model.svdReq.facade.SvdReqFacade;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+@Stateless(mappedName = "ejb/svdReqFacade")
+@Interceptors(DefaultFacadeInterceptor.class)
+@PersistenceContext(name = "icmssvdEJBPU", unitName = "icmssvdEJBPU")
+public class SvdReqFacadeBean extends BaseFacade implements SvdReqFacade {
+    public static final String name = "svdReqFacade";
+
+    private SvdReqBO getSvdReqBO() {
+        return getBO(SvdReqBO.NAME, SvdReqBO.class);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IntegerFieldDTO completeServiceRequestList(JudiciaryUser user, List<IdDTO> requestIds) {
+        return getSvdReqBO().completeServiceRequestList(requestIds);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public List<ServiceRequestSearchResultDTO> searchServiceRequestList(JudiciaryUser user,
+            ServiceRequestSearchDTO searchDTO) {
+        return getSvdReqBO().searchServiceRequestList(searchDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO completeServiceRequest(JudiciaryUser user,
+            ServiceRequestDetailDTO serviceRequestDetail) {
+        return getSvdReqBO().completeServiceRequest(serviceRequestDetail);
+
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public ServiceRequestDetailDTO enquireServiceRequest(JudiciaryUser user, IdDTO idDTO) {
+        return getSvdReqBO().enquireServiceRequest(idDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public ServiceRequestDetailDTO maintainRequest(JudiciaryUser user,
+            MaintainRequestDTO maintainRequest) {
+        return getSvdReqBO().maintainRequest(maintainRequest);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO saveDraftServiceRequest(JudiciaryUser user,
+            ServiceRequestDetailDTO serviceRequestDetail) throws Exception {
+        return getSvdReqBO().saveDraftServiceRequest(serviceRequestDetail);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO saveServiceRequestResult(JudiciaryUser user, ServiceRequestDetailDTO detailDTO)
+            throws Exception {
+        return getSvdReqBO().saveServiceRequestResult(detailDTO);
+
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO submitServiceRequest(JudiciaryUser user,
+            ServiceRequestDetailDTO serviceRequestDetail) throws Exception {
+        return getSvdReqBO().submitServiceRequest(serviceRequestDetail);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO withdrawServiceRequest(JudiciaryUser user,
+            ServiceRequestDetailDTO serviceRequestDetail) {
+        return getSvdReqBO().withdrawServiceRequest(serviceRequestDetail);
+
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public List<PosRequestSearchResultDTO> searchPosRequestList(JudiciaryUser user,
+            PosRequestSearchDTO searchDTO) {
+        return getSvdReqBO().searchPosRequestList(searchDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public PosRequestDetailDTO maintainPosRequest(JudiciaryUser user,
+            MaintainRequestDTO maintainRequestDTO) {
+        return getSvdReqBO().maintainPosRequest(maintainRequestDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO submitPosRequest(JudiciaryUser user, PosRequestDetailDTO posRequestDetailDTO) {
+        return getSvdReqBO().submitPosRequest(posRequestDetailDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public List<DocumentDraftDTO> generateDocuments(JudiciaryUser user,
+            ServiceRequestDetailDTO serviceRequestDetailDTO) throws Exception {
+        return getSvdReqBO().generateDocuments(serviceRequestDetailDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public List<ReserviceBatchSearchResultDTO> searchReserviceBatchList(JudiciaryUser user,
+            BatchSearchDTO searchDTO) {
+        return getSvdReqBO().searchReserviceBatchList(searchDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public NextHearingDetailDTO generateNextHearingDate(JudiciaryUser user,
+            NextHearingDateGenerationDTO generationDTO) {
+        return getSvdReqBO().generateNextHearingDate(generationDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public ReserviceBatchSearchResultDTO confirmHearingSchedule(JudiciaryUser user,
+            ReserviceBatchSearchResultDTO resultDTO) throws Exception {
+        return getSvdReqBO().confirmHearingSchedule(resultDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public FileDTO generateCertificateBulkPosting(JudiciaryUser user,
+            CertifcateBulkPostingDTO postingDTO) throws Exception {
+        return getSvdReqBO().generateCertificateBulkPosting(postingDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO saveDraftReserviceRequestAndGenerateDocuments(JudiciaryUser user,
+            ReserviceBatchSearchResultDTO resultDTO) throws Exception {
+        return getSvdReqBO().saveDraftReserviceRequestAndGenerateDocuments(resultDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO saveDraftReserviceRequest(JudiciaryUser user,
+            ReserviceBatchSearchResultDTO resultDTO) throws Exception {
+        return getSvdReqBO().saveDraftReserviceRequest(resultDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    @Override
+    public IdDTO submitReserviceRequest(JudiciaryUser user, ReserviceBatchSearchResultDTO resultDTO)
+            throws Exception {
+        return getSvdReqBO().submitReserviceRequest(resultDTO);
+    }
+
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @Override
+    public ReserviceRequestDetailDTO maintainReserviceRequest(JudiciaryUser user,
+            MaintainRequestDTO maintainRequestDTO) {
+        return getSvdReqBO().maintainReserviceRequest(maintainRequestDTO);
+    }
+
+    @Override
+    public DrnDTO assignDrn(JudiciaryUser user) throws Exception {
+        return getSvdReqBO().assignDrn();
+    }
+
+    @Override
+    public List<PosRequestDetailDTO> searchPosRequestBatchList(JudiciaryUser user,
+            BatchSearchDTO searchDTO) {
+        return getSvdReqBO().searchPosRequestBatchList(searchDTO);
+    }
+
+}

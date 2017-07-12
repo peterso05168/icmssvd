@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           				   http://www.springframework.org/schema/context 
+           				   http://www.springframework.org/schema/context/spring-context-3.2.xsd                            
+                           http://www.springframework.org/schema/aop  
+ 						   http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<!-- There are application objects , please do not update and remove this 
+		section -->
+	<!-- Application Config (start) -->
+
+	<context:annotation-config />
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<bean id="applicationEJBContextProvder"
+		class="hk.judiciary.fmk.common.springcontext.ApplicationEJBContextProvider" />
+	<bean id="defaultBizInterceptor" class="hk.judiciary.fmk.ejb.biz.DefaultBizInterceptor" />
+	<bean id="defaultDaoInterceptor" class="hk.judiciary.fmk.ejb.dao.DefaultDaoInterceptor" />
+
+	<!-- Application Config (end) -->
+	
+	<!-- Spring AOP config (start) -->
+	<aop:config>
+		<aop:aspect id="defaultBizAOP" ref="defaultBizInterceptor">
+			<aop:pointcut id="defaultBizAOP"
+				expression="execution(*   hk.judiciary.icmssvd.model.*.biz.*.*(..))" />
+			<aop:around pointcut-ref="defaultBizAOP" method="logAround" />
+		</aop:aspect>
+
+		<aop:aspect id="defaultDaoAOP" ref="defaultDaoInterceptor">
+			<aop:pointcut id="defaultDaoAOP"
+				expression="target(hk.judiciary.fmk.ejb.dao.AbstractJpaDAO)" />
+			<aop:around pointcut-ref="defaultDaoAOP" method="logAround" />
+		</aop:aspect>
+	</aop:config>
+	<!-- Spring AOP config (end) -->
+
+	<!-- BO and DAO classes define under in this section, [please mark the scope="prototype"] -->
+	<bean id="commonCodeBO" class="hk.judiciary.fmk.ejb.cct.biz.CommonCodeBO" scope="prototype"/>
+	<bean id="commonCodeDAO" class="hk.judiciary.fmk.ejb.cct.dao.CommonCodeDAO" scope="prototype"/>
+	
+	<!-- courtCase -->
+	<bean id="chrgAppDAO" class="hk.judiciary.icmssvd.model.courtCase.dao.ChrgAppDAO" scope="prototype"/>
+	<bean id="chrgNatDAO" class="hk.judiciary.icmssvd.model.courtCase.dao.ChrgNatDAO" scope="prototype"/>
+	<bean id="caseDAO" class="hk.judiciary.icmssvd.model.courtCase.dao.CaseDAO" scope="prototype"/>	
+	<bean id="hrnSchdDAO" class="hk.judiciary.icmssvd.model.courtCase.dao.HrnSchdDAO" scope="prototype"/>
+	<bean id="partcpRoleDAO" class="hk.judiciary.icmssvd.model.courtCase.dao.PartcpRoleDAO" scope="prototype"/>
+	<bean id="summonNotiDAO" class="hk.judiciary.icmssvd.model.courtCase.dao.SummonNotiDAO" scope="prototype"/>
+
+
+	<!-- common -->
+	<bean id="commonBO" class="hk.judiciary.icmssvd.model.common.biz.CommonBO"
+		scope="prototype" />
+		
+	<bean id="bailiffAssignedDAO" class="hk.judiciary.icmssvd.model.common.dao.BailiffAssignedDAO"
+		scope="prototype" />	
+	<bean id="bailiffDocumentStatusTypeDAO" class="hk.judiciary.icmssvd.model.common.dao.BailiffDocumentStatusTypeDAO"
+		scope="prototype" />
+	<bean id="bailiffOfficeDAO" class="hk.judiciary.icmssvd.model.common.dao.BailiffOfficeDAO"
+		scope="prototype" />
+	<bean id="bailiffSequenceDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.BailiffSequenceDAO"
+		scope="prototype" />
+	<bean id="bailiffTaskStatusTypeDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.BailiffTaskStatusTypeDAO"
+		scope="prototype" />
+	<bean id="caseTypeDAO" class="hk.judiciary.icmssvd.model.common.dao.CaseTypeDAO"
+		scope="prototype" />
+	<bean id="comprisingCourtDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.ComprisingCourtDAO"
+		scope="prototype" />
+	<bean id="courtLevelTypeDAO" class="hk.judiciary.icmssvd.model.common.dao.CourtLevelTypeDAO"
+		scope="prototype" />
+	<bean id="courtRmChmbrDAO" class="hk.judiciary.icmssvd.model.common.dao.CourtRmChmbrDAO"
+		scope="prototype" />
+	<bean id="documentTypeDAO" class="hk.judiciary.icmssvd.model.common.dao.DocumentTypeDAO"
+		scope="prototype" />
+	<bean id="fpApplicationNatureTypeDAO" class="hk.judiciary.icmssvd.model.common.dao.FpApplicationNatureTypeDAO"
+		scope="prototype" />
+	<bean id="handlingAgentDAO" class="hk.judiciary.icmssvd.model.common.dao.HandlingAgentDAO"
+		scope="prototype" />
+	<bean id="hkDistrictDAO" class="hk.judiciary.icmssvd.model.common.dao.HkDistrictDAO"
+		scope="prototype" />
+	<bean id="hkRegionDAO" class="hk.judiciary.icmssvd.model.common.dao.HkRegionDAO"
+		scope="prototype" />
+	<bean id="intlUserAcDAO" class="hk.judiciary.icmssvd.model.common.dao.IntlUserAcDAO"
+		scope="prototype" />
+	<bean id="participantDAO" class="hk.judiciary.icmssvd.model.common.dao.ParticipantDAO"
+		scope="prototype" />
+	<bean id="participantRoleCategoryDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.ParticipantRoleCategoryDAO"
+		scope="prototype" />
+	<bean id="participantRoleDAO" class="hk.judiciary.icmssvd.model.common.dao.ParticipantRoleDAO"
+		scope="prototype" />
+	<bean id="participantRoleTypeDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.ParticipantRoleTypeDAO"
+		scope="prototype" />
+	<bean id="posDocumentTypeDAO" class="hk.judiciary.icmssvd.model.common.dao.PosDocumentTypeDAO"
+		scope="prototype" />
+	<bean id="postOfficeDAO" class="hk.judiciary.icmssvd.model.common.dao.PostOfficeDAO"
+		scope="prototype" />
+	<bean id="prosecutionDepartmentDAO" class="hk.judiciary.icmssvd.model.common.dao.ProsecutionDepartmentDAO"
+		scope="prototype" />
+	<bean id="requestParticipantRoleDAO" class="hk.judiciary.icmssvd.model.common.dao.RequestParticipantRoleDAO"
+		scope="prototype" />
+	<bean id="requestStatusTypeDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.RequestStatusTypeDAO"
+		scope="prototype" />
+	<bean id="requestTypeDAO" class="hk.judiciary.icmssvd.model.common.dao.RequestTypeDAO"
+		scope="prototype" />
+	<bean id="bailiffTaskResultReasonDAO" class="hk.judiciary.icmssvd.model.common.dao.BailiffTaskResultReasonDAO"
+		scope="prototype" />
+	<bean id="bailiffTaskResultStatusDAO" class="hk.judiciary.icmssvd.model.common.dao.BailiffTaskResultStatusDAO"
+		scope="prototype" />
+	<bean id="serviceModeTypeDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.ServiceModeTypeDAO"
+		scope="prototype" />
+	<bean id="specialRequestTypeDAO"
+		class="hk.judiciary.icmssvd.model.common.dao.SpecialRequestTypeDAO"
+		scope="prototype" />
+
+	<!-- svdReq -->
+	<bean id="svdReqBO" class="hk.judiciary.icmssvd.model.svdReq.biz.SvdReqBO"
+		scope="prototype" />
+	<bean id="bailiffTaskDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.BailiffTaskDAO"
+		scope="prototype" />
+	<bean id="courtRoomToListDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.CourtRoomToListDAO"
+		scope="prototype" />
+	<bean id="docDAO" class="hk.judiciary.icmssvd.model.svdReq.dao.DocDAO"
+		scope="prototype" />
+	<bean id="hearingDetailDAO" class="hk.judiciary.icmssvd.model.svdReq.dao.HearingDetailDAO"
+		scope="prototype" />
+	<bean id="hearingScheduleDAO" class="hk.judiciary.icmssvd.model.svdReq.dao.HearingScheduleDAO"
+		scope="prototype" />
+	<bean id="listScheduleDAO" class="hk.judiciary.icmssvd.model.svdReq.dao.ListScheduleDAO"
+		scope="prototype" />
+	<bean id="posRequestDAO" class="hk.judiciary.icmssvd.model.svdReq.dao.PosRequestDAO"
+		scope="prototype" />
+	<bean id="reqsRsltDAO" class="hk.judiciary.icmssvd.model.svdReq.dao.ReqsRsltDAO"
+		scope="prototype" />
+	<bean id="requestAddressDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.RequestAddressDAO"
+		scope="prototype" />
+	<bean id="requestDAO" class="hk.judiciary.icmssvd.model.svdReq.dao.RequestDAO"
+		scope="prototype" />
+	<bean id="requestDocumentDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.RequestDocumentDAO"
+		scope="prototype" />
+	<bean id="sentenceOrderToDocumentDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.SentenceOrderToDocumentDAO"
+		scope="prototype" />
+	<bean id="serviceRequestDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.ServiceRequestDAO"
+		scope="prototype" />
+	<bean id="specialRequestDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.SpecialRequestDAO"
+		scope="prototype" />
+	<bean id="summonsNoticeDAO"
+		class="hk.judiciary.icmssvd.model.svdReq.dao.SummonsNoticeDAO"
+		scope="prototype" />
+
+	<!-- exeReq -->
+	<bean id="exeReqBO" class="hk.judiciary.icmssvd.model.exeReq.biz.ExeReqBO"
+		scope="prototype" />
+	<bean id="executionRequestDAO"
+		class="hk.judiciary.icmssvd.model.exeReq.dao.ExecutionRequestDAO"
+		scope="prototype" />
+		
+	<!-- Report -->
+	<bean id="reportBO"
+		class="hk.judiciary.icmssvd.model.report.biz.ReportBO"
+		scope="prototype" />
+</beans> 

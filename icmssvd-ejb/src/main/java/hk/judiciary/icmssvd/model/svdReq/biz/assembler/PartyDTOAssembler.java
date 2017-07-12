@@ -1,0 +1,136 @@
+package hk.judiciary.icmssvd.model.svdReq.biz.assembler;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.icms.model.dao.entity.AddrRole;
+import hk.judiciary.icms.model.dao.entity.Org;
+import hk.judiciary.icms.model.dao.entity.Partcp;
+import hk.judiciary.icms.model.dao.entity.PartcpRole;
+import hk.judiciary.icms.model.dao.entity.Person;
+import hk.judiciary.icms.model.dao.entity.ReqsPartcpRole;
+import hk.judiciary.icms.model.dao.entity.ServReqs;
+import hk.judiciary.icmssvd.model.common.biz.assembler.ParticipantRoleTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.util.DbCommonUtil;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.PartyDTO;
+
+/**
+ * 
+ * @version $Revision: 7357 $ $Date: 2017-06-06 18:35:03 +0800 (週二, 06 六月 2017) $
+ * @author $Author: vicki.huang $
+ */
+public class PartyDTOAssembler {
+    public static PartyDTO toDto(PartcpRole partcpRole) {
+        PartyDTO dto = new PartyDTO();
+        if (partcpRole != null && partcpRole.getPartcpRoleId() != null
+                && partcpRole.getPartcpRoleId() != 0) {
+            dto.setParticipantRoleId(partcpRole.getPartcpRoleId());
+            if (partcpRole.getPtyCat() != null) {
+                dto.setPartyCategoryId(partcpRole.getPtyCat().getPtyCatId());
+            }
+            dto.setParticipantRoleType(ParticipantRoleTypeDTOAssembler.toDto(partcpRole
+                    .getPartcpRoleType()));
+            dto.setRespondentSeqNo(partcpRole.getRespondentSeqNo());
+            dto.setRespondentSubSeqNo(partcpRole.getRespondentSubseqNo());
+            Partcp partcp = partcpRole.getPartcp();
+            if (partcp != null) {
+                dto.setParticipantId(partcp.getPartcpId());
+                Person person = partcp.getPerson();
+                Org org = partcp.getOrg();
+                if (person != null) {
+                    dto.setEnglishSurname(DbCommonUtil.getDbValueOrEmpty(person.getSurname()));
+                    dto.setEnglishGivenName(DbCommonUtil.getDbValueOrEmpty(person.getGivenName()));
+                    dto.setChineseSurname(DbCommonUtil.getDbValueOrEmpty(person.getSurnameChin()));
+                    dto.setChineseGivenName(DbCommonUtil.getDbValueOrEmpty(person
+                            .getGivenNameChin()));
+                } else if (org != null) {
+                    dto.setEnglishSurname(DbCommonUtil.getDbValueOrEmpty(org.getOrgName()));
+                    dto.setChineseSurname(DbCommonUtil.getDbValueOrEmpty(org.getOrgNameChin()));
+                }
+
+                List<AddrRole> addrRoles = partcp.getAddrRole();
+                if (!CommonUtil.isNullOrEmpty(addrRoles)) {
+                    dto.setAddressRoles(AddressRoleDTOAssembler.toDtoList(addrRoles));
+                }
+            }
+            dto.setVersionAndNanos(partcpRole.getVersion());
+        }
+        return dto;
+    }
+
+    public static PartyDTO toDto(ReqsPartcpRole reqsPartcpRole) {
+        PartyDTO dto = new PartyDTO();
+        dto = toDto(reqsPartcpRole.getOrigPartcpRole());
+        if (reqsPartcpRole.getOrigPartcpRole() != null) {
+            dto.setParticipantRoleId(reqsPartcpRole.getOrigPartcpRole().getPartcpRoleId());
+        }
+        if (reqsPartcpRole.getPartcp() != null) {
+            dto.setParticipantId(reqsPartcpRole.getPartcp().getPartcpId());
+        }
+        if (reqsPartcpRole.getPtyCat() != null) {
+            dto.setPartyCategoryId(reqsPartcpRole.getPtyCat().getPtyCatId());
+        }
+        dto.setParticipantRoleType(ParticipantRoleTypeDTOAssembler.toDto(reqsPartcpRole
+                .getPartcpRoleType()));
+        dto.setRespondentSeqNo(reqsPartcpRole.getRespondentSeqNo());
+        dto.setRespondentSubSeqNo(reqsPartcpRole.getRespondentSubseqNo());
+        Partcp partcp = reqsPartcpRole.getPartcp();
+        if (partcp != null) {
+            dto.setParticipantId(partcp.getPartcpId());
+            Person person = partcp.getPerson();
+            Org org = partcp.getOrg();
+            if (person != null) {
+                dto.setEnglishSurname(DbCommonUtil.getDbValueOrEmpty(person.getSurname()));
+                dto.setEnglishGivenName(DbCommonUtil.getDbValueOrEmpty(person.getGivenName()));
+                dto.setChineseSurname(DbCommonUtil.getDbValueOrEmpty(person.getSurnameChin()));
+                dto.setChineseGivenName(DbCommonUtil.getDbValueOrEmpty(person.getGivenNameChin()));
+            } else if (org != null) {
+                dto.setEnglishSurname(DbCommonUtil.getDbValueOrEmpty(org.getOrgName()));
+                dto.setChineseSurname(DbCommonUtil.getDbValueOrEmpty(org.getOrgNameChin()));
+            }
+
+            List<AddrRole> addrRoles = partcp.getAddrRole();
+            if (!CommonUtil.isNullOrEmpty(addrRoles)) {
+                dto.setAddressRoles(AddressRoleDTOAssembler.toDtoList(addrRoles));
+            }
+        }
+        dto.setVersionAndNanos(reqsPartcpRole.getVersion());
+        return dto;
+    }
+
+    public static PartyDTO toDto(ServReqs servReqs) {
+        PartyDTO dto = new PartyDTO();
+        if (servReqs != null && servReqs.getServReqsId() != null && servReqs.getServReqsId() != 0) {
+            dto.setParticipantRoleType(ParticipantRoleTypeDTOAssembler.toDto(servReqs
+                    .getRecipPartcpRoleType()));
+            dto.setRespondentSeqNo(0);
+            dto.setEnglishSurname(DbCommonUtil.getDbValueOrEmpty(servReqs.getRecipSurname()));
+            dto.setEnglishGivenName(DbCommonUtil.getDbValueOrEmpty(servReqs.getRecipGivenName()));
+            dto.setChineseSurname(DbCommonUtil.getDbValueOrEmpty(servReqs.getRecipSurnameChin()));
+            dto.setChineseGivenName(DbCommonUtil.getDbValueOrEmpty(servReqs.getRecipGivenNameChin()));
+            dto.setVersionAndNanos(servReqs.getVersion());
+        }
+        return dto;
+    }
+
+    public static List<PartyDTO> toDtoList(List<PartcpRole> partcpRoles) {
+        return toDtoList(partcpRoles, null);
+    }
+
+    public static List<PartyDTO> toDtoList(List<PartcpRole> partcpRoles, String type) {
+        List<PartyDTO> list = new ArrayList<PartyDTO>();
+        if (!CommonUtil.isNullOrEmpty(partcpRoles)) {
+            for (PartcpRole partcpRole : partcpRoles) {
+                String typeCode = "";
+                if (partcpRole.getPartcpRoleType() != null) {
+                    typeCode = partcpRole.getPartcpRoleType().getPartcpRoleTypeCd();
+                }
+                if ((type == null || "".equals(type)) || (type != null && typeCode.equals(type))) {
+                    list.add(toDto(partcpRole));
+                }
+            }
+        }
+        return list;
+    }
+}

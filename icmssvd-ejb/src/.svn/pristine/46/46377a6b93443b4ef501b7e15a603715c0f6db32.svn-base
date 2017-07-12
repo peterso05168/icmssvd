@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+                        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<named-query name="Reqs.findRequest">
+		<query>
+        	<![CDATA[
+	            SELECT r FROM Reqs r 
+	            LEFT JOIN FETCH r.reqsAddr a
+	            LEFT JOIN FETCH r.reqsDoc d
+	            LEFT JOIN FETCH r.servReqs s
+	            LEFT JOIN FETCH r.reqsPartcpRole p
+	            LEFT JOIN FETCH r.specialReqs c
+	            WHERE r.reqsId = :reqsId
+	            ORDER BY r.reqsId
+        	]]>
+        </query>
+	</named-query>
+	
+	<named-query name="Reqs.findReserviceRequest">
+		<query>
+        	<![CDATA[
+	            SELECT r FROM Reqs r 
+	            LEFT JOIN FETCH r.reqsType t
+	            LEFT JOIN FETCH r.vcase c
+	            WHERE t.reqsTypeId = :reqsTypeId
+	            AND c.caseId = :caseId
+	            AND r.seqNoForCase > :seqNoForCase
+	            ORDER BY r.reqsId DESC
+        	]]>
+        </query>
+	</named-query>
+
+</entity-mappings>

@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-01T12:43:51 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RPT-SVD-N-CONT" pageWidth="595" pageHeight="842" columnWidth="493" leftMargin="56" rightMargin="46" topMargin="20" bottomMargin="20" uuid="80dd3d9c-9b39-4956-afcb-cda2249f1fa9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="xPath">
+		<![CDATA[/Report/Content/Data]]>
+	</queryString>
+	<field name="caseNo" class="java.lang.String">
+		<fieldDescription><![CDATA[caseNo]]></fieldDescription>
+	</field>
+	<field name="drnNo" class="java.lang.String">
+		<fieldDescription><![CDATA[drnNo]]></fieldDescription>
+	</field>
+	<field name="issueDate" class="java.lang.String">
+		<fieldDescription><![CDATA[issueDate]]></fieldDescription>
+	</field>
+	<field name="defendantDocNo" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantDocNo]]></fieldDescription>
+	</field>
+	<field name="prosecutionDept" class="java.lang.String">
+		<fieldDescription><![CDATA[prosecutionDept]]></fieldDescription>
+	</field>
+	<field name="inputUserID" class="java.lang.String">
+		<fieldDescription><![CDATA[inputUserID]]></fieldDescription>
+	</field>
+	<field name="pdRefNo" class="java.lang.String">
+		<fieldDescription><![CDATA[pdRefNo]]></fieldDescription>
+	</field>
+	<field name="inputDate" class="java.lang.String">
+		<fieldDescription><![CDATA[inputDate]]></fieldDescription>
+	</field>
+	<field name="noticeIssueDate" class="java.lang.String">
+		<fieldDescription><![CDATA[noticeIssueDate]]></fieldDescription>
+	</field>
+	<field name="servingOfficer" class="java.lang.String">
+		<fieldDescription><![CDATA[servingOfficer]]></fieldDescription>
+	</field>
+	<field name="defendantName" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantName]]></fieldDescription>
+	</field>
+	<field name="defendantType" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantType]]></fieldDescription>
+	</field>
+	<field name="defendantCcc" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantCcc]]></fieldDescription>
+	</field>
+	<field name="defendantAge" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAge]]></fieldDescription>
+	</field>
+	<field name="defendantTelNo" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantTelNo]]></fieldDescription>
+	</field>
+	<field name="defendantGender" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantGender]]></fieldDescription>
+	</field>
+	<field name="defendantIdType" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantIdType]]></fieldDescription>
+	</field>
+	<field name="defendantIdNo" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantIdNo]]></fieldDescription>
+	</field>
+	<field name="defendantAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAddress1]]></fieldDescription>
+	</field>
+	<field name="defendantAddress2" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAddress2]]></fieldDescription>
+	</field>
+	<field name="defendantAddress3" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAddress3]]></fieldDescription>
+	</field>
+	<field name="defendantAddressTerritory" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAddressTerritory]]></fieldDescription>
+	</field>
+	<field name="offenceDescFormat" class="java.lang.String">
+		<fieldDescription><![CDATA[offenceDescFormat]]></fieldDescription>
+	</field>
+	<field name="offenceDate" class="java.lang.String">
+		<fieldDescription><![CDATA[offenceDate]]></fieldDescription>
+	</field>
+	<field name="offenceTime" class="java.lang.String">
+		<fieldDescription><![CDATA[offenceTime]]></fieldDescription>
+	</field>
+	<field name="offenceLocation" class="java.lang.String">
+		<fieldDescription><![CDATA[offenceLocation]]></fieldDescription>
+	</field>
+	<field name="contraryToLaw" class="java.lang.String">
+		<fieldDescription><![CDATA[contraryToLaw]]></fieldDescription>
+	</field>
+	<field name="chargeParticular" class="java.lang.String">
+		<fieldDescription><![CDATA[chargeParticular]]></fieldDescription>
+	</field>
+	<field name="courtOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[courtOfHearing]]></fieldDescription>
+	</field>
+	<field name="courtRoomOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[courtRoomOfHearing]]></fieldDescription>
+	</field>
+	<field name="dateOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[dateOfHearing]]></fieldDescription>
+	</field>
+	<field name="timeOfHearing" class="java.lang.String">
+		<fieldDescription><![CDATA[timeOfHearing]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</title>
+	<detail>
+		<band height="745" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="0" y="50" width="493" height="20" uuid="3331d494-a6af-4eff-b713-9e29c2f9b7a5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="FreeSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Integrated Court Case Management System ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="70" height="17" uuid="62120895-2d41-4af8-a9e1-994afeeccc92">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[PDNR01]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="0" width="203" height="17" uuid="dbd38aaa-5b7a-49ea-9e2d-654ee59c3a80">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{caseNo}!=null?$F{caseNo}:"") + ($F{drnNo}!=null?$F{drnNo}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="14" width="203" height="17" uuid="d3b782b8-d730-4507-b98e-e70965e7ee88">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{caseNo}!=null?$F{caseNo}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="65" width="493" height="20" uuid="15f76bd4-5db5-49b8-aa74-a98a090e9eb1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="FreeSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Departmental Notice Details Input Report ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="50" width="103" height="17" uuid="9cca6cc6-dca3-4e4a-9e67-8bf1e0a935a4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Page: 1/1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="390" y="65" width="103" height="17" uuid="e79f4085-905e-4bbd-8b7d-ef5459b88847">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date: " + ($F{issueDate}!=null?$F{issueDate}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="105" width="50" height="17" uuid="77e48b74-24be-4f2e-9352-32dbbd944844">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Case No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="390" y="80" width="103" height="17" uuid="44ee58b7-2234-4d1f-9786-32d37c3f31d8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DRN: " + ($F{drnNo}!=null?$F{drnNo}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="105" width="120" height="17" uuid="108e64c6-9768-49b7-be0e-d3c11cf49fac">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{caseNo}!=null?$F{caseNo}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="122" width="100" height="17" uuid="ebdcbad3-edd0-4c83-95ff-6932c97e7078">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Prosecution Dept: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="122" width="150" height="17" uuid="33102468-76cb-4207-a52b-5f81c72ce7e8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{prosecutionDept}!=null?$F{prosecutionDept}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="263" y="122" width="80" height="17" uuid="8f7e6906-e9d2-4f06-a5ad-24e20053029f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Input User ID: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="343" y="122" width="136" height="17" uuid="7e65b1c6-d597-4c9a-8aae-67300735a037">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{inputUserID}!=null?$F{inputUserID}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="141" width="90" height="17" uuid="c1eeb5a7-e31c-4f91-b9c9-6b58a2d328f0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Dept Ref. No.: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="141" width="160" height="17" uuid="f2ee1516-d176-4514-b933-919480e663ea">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{pdRefNo}!=null?$F{pdRefNo}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="263" y="141" width="70" height="17" uuid="7ff4393a-8627-47cc-9de6-469474fcad4d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Input Date: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="333" y="141" width="146" height="17" uuid="e4cb13fb-49e9-4fcc-abf5-912fac49ef6f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{inputDate}!=null?$F{inputDate}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="158" width="100" height="17" uuid="8a9c504c-e11a-4400-a2ac-fcfcd53ad943">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Notice Issue Date: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="158" width="150" height="17" uuid="4f7f0fd8-d10a-49ff-be9d-8ed5cdb172d8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{noticeIssueDate}!=null?$F{noticeIssueDate}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="175" width="90" height="17" uuid="2c408715-82a5-4f64-b79c-221710704ae4">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Serving Officer: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="175" width="160" height="17" uuid="71fa86f2-5a5b-460f-a697-671015ede71a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{servingOfficer}!=null?$F{servingOfficer}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="217" width="100" height="17" uuid="09ef59f0-adc3-4c09-b673-001b3e62d6c1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Defendant Details ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="234" width="70" height="17" uuid="116c085e-2a99-4fd3-9c24-225405b5c21e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Defendant: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="251" width="70" height="17" uuid="5f58dec3-985e-411b-9a34-3e7a1ea47504">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CCC Code: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="268" width="60" height="17" uuid="cc29abcb-0567-4704-97c9-45483b0e8bbd">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tel. No: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="285" width="60" height="17" uuid="d8d98682-5d8b-4c5d-9482-6183f58e25cb">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID Type: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="234" width="180" height="17" uuid="9dcd6b18-9bc3-4190-b256-c103031f2256">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantName}!=null?$F{defendantName}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="251" width="180" height="17" uuid="6a768dd1-0347-4e63-9deb-0f5d103b35ca">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantCcc}!=null?$F{defendantCcc}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="268" width="190" height="17" uuid="47b48cd6-5cbd-4d4d-abef-df96621ae3a7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantTelNo}!=null?$F{defendantTelNo}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="285" width="190" height="17" uuid="7e7742cc-072e-4f56-ab70-b614cb1cba0a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantType}!=null?$F{defendantType}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="263" y="234" width="36" height="17" uuid="95d5d69f-e19e-4f46-8c25-b7d228c28509">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Type: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="285" width="36" height="17" uuid="53df9c7c-df66-4561-a99f-2a9660e4dbef">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID No.: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="251" width="36" height="17" uuid="94c71d1a-e218-432f-9523-bc6ecb486ce3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Age: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="268" width="36" height="17" uuid="2fef7194-6334-499d-9f93-ba1d5856554e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sex: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="234" width="178" height="17" uuid="175d08b8-9775-4c72-b498-ee3dec2e6abb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantType}!=null?$F{defendantType}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="251" width="178" height="17" uuid="4b8bbd58-f15f-4c89-bec6-25bf97a6b469">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAge}!=null?$F{defendantAge}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="268" width="178" height="17" uuid="e8d52ebf-4408-42a5-8ade-a3f028b7ff56">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantGender}!=null?$F{defendantGender}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="285" width="178" height="17" uuid="ea6a5ccb-f8a1-473e-96a1-388bae6ded9c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantIdNo}!=null?$F{defendantIdNo}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="302" width="60" height="17" uuid="0e9e872e-3003-4fdf-99b2-e53364ba4d2e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Address: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="302" width="418" height="17" uuid="917da465-81f5-4443-9325-3bd626f4a72b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress1}!=null?$F{defendantAddress1}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="316" width="418" height="17" uuid="2d314572-188a-41aa-af03-b8dda2e8c252">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress2}!=null?$F{defendantAddress2}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="330" width="418" height="17" uuid="080eb6ef-3de7-4b51-aedf-12e0fca19b78">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress3}!=null?$F{defendantAddress3}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="348" width="60" height="17" uuid="b7bfff23-ece4-4bda-8e91-39a3513c711e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Territory: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="348" width="418" height="17" uuid="003586d8-c057-460f-a647-86b585a52b01">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddressTerritory}!=null?$F{defendantAddressTerritory}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="395" width="100" height="17" uuid="41f85d37-459c-42da-8ec0-5f3ee3ff00e8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Offence Details ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="412" width="130" height="17" uuid="3860e19a-b8e5-432a-8c1b-ea97f91a08f6">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Offence Description Format: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="130" y="412" width="348" height="17" uuid="6a1edc82-4bcb-4689-ad5c-f9b6877bf924">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{offenceDescFormat}!=null?$F{offenceDescFormat}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="429" width="79" height="17" uuid="e1483be9-ae4c-4b1d-b58c-03104383fae2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Offence Date: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="429" width="110" height="17" uuid="7df8283e-7e66-435e-b63d-6c4b832365b2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{offenceDate}!=null?$F{offenceDate}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="429" width="40" height="17" uuid="7ac93d1f-f3b7-4557-9aa5-0baffa0aa95c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Time: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="429" width="110" height="17" uuid="eca6c41f-a953-41bf-a85b-c5d401f34846">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{offenceTime}!=null?$F{offenceTime}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="446" width="70" height="17" uuid="3ca52f1d-53ad-4622-b087-de840b79d598">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Location: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="446" width="408" height="34" uuid="c0b62117-a7d8-4976-8dff-2056b99d48fb"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{offenceLocation}!=null?$F{offenceLocation}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="478" width="79" height="17" uuid="68f40861-9c5c-4300-89a2-f24b6dd3f967">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Contrary to Law: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="478" width="398" height="49" uuid="9bf4b9fa-3adf-4c7c-b5b6-19a9d72c4b77">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{contraryToLaw}!=null?$F{contraryToLaw}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="527" width="79" height="17" uuid="4a470b73-df8d-48d9-80fd-f5969a63201b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Description: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="527" width="398" height="43" uuid="9fea631a-fb31-4170-b2b7-cdd7579ccaf9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{chargeParticular}!=null?$F{chargeParticular}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="590" width="120" height="17" uuid="82f848a5-e1df-4350-9950-9ba71ba15c1b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[First Hearing Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="607" width="110" height="17" uuid="f6237ba1-8299-4d1a-befd-eb82f5b49a7b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Magistrates’ Courts: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="607" width="367" height="17" uuid="1675f15d-8e7b-4c27-9992-3f3fba19032f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtOfHearing}!=null?$F{courtOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="624" width="50" height="17" uuid="d74e4fe7-7f34-43c6-b0ca-fa4da005c2b0">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Court No.: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="624" width="426" height="17" uuid="b5a90076-6f80-4ca1-817d-7e85b1925be7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtRoomOfHearing}!=null?$F{courtRoomOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="641" width="80" height="17" uuid="adf20e1b-003a-4350-8523-8d8e88a22ca1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hearing Date: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="642" width="171" height="17" uuid="a2dc9197-a166-4758-8adc-9c1e74445ec2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{dateOfHearing}!=null?$F{dateOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="263" y="642" width="97" height="17" uuid="809dbd4f-1ced-4c32-84c4-f2e56ece35f8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hearing Time: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="642" width="127" height="17" uuid="4197e0c7-00e4-4be2-a8a1-b1c102c259be">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="FreeSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{timeOfHearing}!=null?$F{timeOfHearing}:"")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="705" width="490" height="17" uuid="49beb2c6-e3b9-4e64-8f4c-b404607cc1a2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="FreeSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*** End of Report ***]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+</jasperReport>

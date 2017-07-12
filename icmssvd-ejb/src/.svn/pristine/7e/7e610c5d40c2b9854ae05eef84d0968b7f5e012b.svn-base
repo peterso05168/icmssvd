@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report>
+	<Parameter>
+		<omrData>100001000000000000010</omrData>
+	</Parameter>
+	<Content>
+	<!-- 
+		<Data>
+			<copyType>C</copyType>
+			<langType>E</langType>
+			<formName1>Magistrates Ordinance, Cap.277</formName1>
+			<formName2>ss. 8 &amp; 72, Form 1</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>CASEMAN 00008179-00258-1557-001</regNo>
+			<courtName>Kowloon City MAGISTRATES' COURTS</courtName>
+			<courtAddress>Kowloon City Law Courts Building, 147M Argyle Street, Kowloon</courtAddress>
+			<defendantName>KWOK, CHUNG TING</defendantName>
+			<defendantAddress1>Flat 1, Floor 2, Block 3,</defendantAddress1>
+			<defendantAddress2>Yan Ching House, Kai Ching,</defendantAddress2>
+			<defendantAddress3>Kwai Tsing, New Territories</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>HKID No.</defendantDocType>
+			<defendantDocNo>A123456(3)</defendantDocNo>
+			<defendantGender>Female</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>DE0003662014</pdRefNo>
+			<chargeParticular>Information have been laid THAT YOU KWOK, CHUNG TING on 6 September 2016 at 08:30 PM at KWUN TONG ROAD NEAR AMOY GARDENS did drive a Private Car displaying registration mark MN8333- on a road carelessly. , when the said vehicle was not equipped with a braking system so designed and constructed that its means of operation, whether being a multi-pull means of operation or not, was indpendent of means of operation of any braking system required by Regulation 19(1)(a) of the Road Traffic (Construction and Maintenance of Vehicles) Regulations to have a total braking efficiency of not less than 50% and so that its braking force, when the said vehicle was not being driven or was left unattended, could at all times be maintained in operation by direct mechanical action without the intervention of any hydraulic, electric, or pneumatic device, and when so maintained in operation by direct mechanical action, was capable of holding the said vehicle stationary on a gradient of at least 1 in 6.25 without the assistance of stored energy</chargeParticular>
+			<contraryToLaw>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </contraryToLaw>
+			<informant>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx of xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </informant>
+			<caseInitiateDate>22 September 2016</caseInitiateDate>
+			<dateOfHearing>22 September 2016</dateOfHearing>
+			<timeOfHearing>9:30 a.m.</timeOfHearing>
+			<courtOfHearing>Kowloon City Magistrates' Courts</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>Kowloon City Law Courts Building</venueOfHearing>
+			<addressOfHearing>147M, Argyle Street, Kowloon</addressOfHearing>
+			<remarks>Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty.  Personal appearance is required, even if you intend to plead guilty.</remarks>
+			<issueDate>28 September 2016</issueDate>
+			<templateNo>S405A2-C</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<additionalPage>N</additionalPage>
+		</Data> -->
+	<!--<Data>
+			<copyType>C</copyType>
+			<langType>E</langType>
+			<formName1>Magistrates Ordinance, Cap.277</formName1>
+			<formName2>ss. 8 &amp; 72, Form 1</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>CASEMAN 00008179-00258-1557-001</regNo>
+			<courtName>Kowloon City MAGISTRATES' COURTS</courtName>
+			<courtAddress>Kowloon City Law Courts Building, 147M Argyle Street, Kowloon</courtAddress>
+			<defendantName>KWOK, CHUNG TING</defendantName>
+			<defendantAddress1>Flat 1, Floor 2, Block 3,</defendantAddress1>
+			<defendantAddress2>Yan Ching House, Kai Ching,</defendantAddress2>
+			<defendantAddress3>Kwai Tsing, New Territories</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>HKID No.</defendantDocType>
+			<defendantDocNo>A123456(3)</defendantDocNo>
+			<defendantGender>Female</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>DE0003662014</pdRefNo>
+			<chargeParticular>Information have been laid THAT YOU KWOK, CHUNG TING on 6 September 2016 at 08:30 PM at KWUN TONG ROAD NEAR AMOY GARDENS did drive a Private Car displaying registration mark MN8333- on a road carelessly. , when the said vehicle was not equipped with a braking system so designed and constructed that its means of operation, whether being a multi-pull means of operation or not, was indpendent of means of operation of any braking system required by Regulation 19(1)(a) of the Road Traffic (Construction and Maintenance of Vehicles) Regulations to have a total braking efficiency of not less than 50% and so that its braking force, when the said vehicle was not being driven or was left unattended, could at all times be maintained in operation by direct mechanical action without the intervention of any hydraulic, electric, or pneumatic device, and when so maintained in operation by direct mechanical action, was capable of holding the said vehicle stationary on a gradient of at least 1 in 6.25 without the assistance of stored energy</chargeParticular>
+			<contraryToLaw>Section 38(1) Road Traffic Ordinance, Cap.374</contraryToLaw>
+			<informant>Ms. LEONG SAU FONG, STATION SERGEANT of Central Traffic Prosecutions Division</informant>
+			<caseInitiateDate>22 September 2016</caseInitiateDate>
+			<dateOfHearing>22 September 2016</dateOfHearing>
+			<timeOfHearing>9:30 a.m.</timeOfHearing>
+			<courtOfHearing>Kowloon City Magistrates' Courts</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>Kowloon City Law Courts Building</venueOfHearing>
+			<addressOfHearing>147M, Argyle Street, Kowloon</addressOfHearing>
+			<remarks>Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty.</remarks>
+			<issueDate>28 September 2016</issueDate>
+			<templateNo>S405A2-C</templateNo>
+			<omrData>100001000000000000010</omrData>
+		</Data>-->	
+		<!-- 
+		<Data>
+			<copyType>C</copyType>
+			<langType>C</langType>
+			<formName1>裁判官條例(第227章)第8及72條</formName1>
+			<formName2>表格一</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>CASEMAN 00008179-00258-1557-001</regNo>
+			<courtName>九龍城裁判法院</courtName>
+			<courtAddress>九龍亞皆老街147M號 九龍城法院大樓</courtAddress>
+			<defendantName>郭頌婷</defendantName>
+			<defendantAddress1>新界葵青區</defendantAddress1>
+			<defendantAddress2>赫德道4號啟晴邨欣晴樓</defendantAddress2>
+			<defendantAddress3>3座2樓1室</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>香港身份証號碼</defendantDocType>
+			<defendantDocNo>A123456(3)</defendantDocNo>
+			<defendantGender>女</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>DE0003662014</pdRefNo>
+			<chargeParticular>有人提出告發, 指稱你郭頌婷在2016年9月6日下午8時30分於觀塘道鄰淘大花園, 在道路上不小心駕駛展示登記號碼MN8333的私家車。</chargeParticular>
+			<contraryToLaw>第374章道路交通條第38（1）條</contraryToLaw>
+			<informant>中央交通違例檢控組的警署警長梁秀芳</informant>
+			<caseInitiateDate>2016年9月22日</caseInitiateDate>
+			<dateOfHearing>2016 年 10 月 22 日</dateOfHearing>
+			<timeOfHearing>上午 9 時 30 分</timeOfHearing>
+			<courtOfHearing>九 龍 城 裁 判 法 院</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing></venueOfHearing>
+			<addressOfHearing></addressOfHearing>
+			<remarks>縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。</remarks>
+			<issueDate>2016年9月5日</issueDate>
+			<templateNo>S405A1</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<additionalPage>N</additionalPage>
+		</Data>
+		<Data>
+			<copyType>C</copyType>
+			<langType>E</langType>
+			<formName1>Magistrates Ordinance, Cap.277</formName1>
+			<formName2>ss. 8 &amp; 72, Form 1</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>CASEMAN 00008179-00258-1557-001</regNo>
+			<courtName>Kowloon City MAGISTRATES' COURTS</courtName>
+			<courtAddress>Kowloon City Law Courts Building, 147M Argyle Street, Kowloon</courtAddress>
+			<defendantName>KWOK, CHUNG TING</defendantName>
+			<defendantAddress1>Flat 1, Floor 2, Block 3,</defendantAddress1>
+			<defendantAddress2>Yan Ching House, Kai Ching,</defendantAddress2>
+			<defendantAddress3>Kwai Tsing, New Territories</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>HKID No.</defendantDocType>
+			<defendantDocNo>A123456(3)</defendantDocNo>
+			<defendantGender>Female</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>DE0003662014</pdRefNo>
+			<chargeParticular>capable of holding the said vehicle stationary on a gradient of at least 1 in 6.25 without the assistance of stored energy</chargeParticular>
+			<contraryToLaw>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </contraryToLaw>
+			<informant>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx of xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </informant>
+			<caseInitiateDate>22 September 2016</caseInitiateDate>
+			<dateOfHearing>22 September 2016</dateOfHearing>
+			<timeOfHearing>9:30 a.m.</timeOfHearing>
+			<courtOfHearing>Kowloon City Magistrates' Courts</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>Kowloon City Law Courts Building</venueOfHearing>
+			<addressOfHearing>147M, Argyle Street, Kowloon</addressOfHearing>
+			<remarks>Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty.  Personal appearance is required, even if you intend to plead guilty.</remarks>
+			<issueDate>28 September 2016</issueDate>
+			<templateNo>S405A2-C</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<additionalPage>Y</additionalPage>
+		</Data>
+		<Data>
+			<copyType>C</copyType>
+			<langType>C</langType>
+			<formName1>裁判官條例(第227章)第8及72條</formName1>
+			<formName2>表格一</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>CASEMAN 00008179-00258-1557-001</regNo>
+			<courtName>九龍城裁判法院</courtName>
+			<courtAddress>九龍亞皆老街147M號 九龍城法院大樓</courtAddress>
+			<defendantName>郭頌婷</defendantName>
+			<defendantAddress1>新界葵青區</defendantAddress1>
+			<defendantAddress2>赫德道4號啟晴邨欣晴樓</defendantAddress2>
+			<defendantAddress3>3座2樓1室</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>香港身份証號碼</defendantDocType>
+			<defendantDocNo>A123456(3)</defendantDocNo>
+			<defendantGender>女</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>DE0003662014</pdRefNo>
+			<chargeParticular>有人提出告發, 指稱你郭頌婷在2016年9月6日下午8時30分於觀塘道鄰淘大花園, 在道路上不小心駕駛展示登記號碼MN8333的私家車。</chargeParticular>
+			<contraryToLaw>第374章道路交通條第38（1）條</contraryToLaw>
+			<informant>中央交通違例檢控組的警署警長梁秀芳</informant>
+			<caseInitiateDate>2016年9月22日</caseInitiateDate>
+			<dateOfHearing>2016 年 10 月 22 日</dateOfHearing>
+			<timeOfHearing>上午 9 時 30 分</timeOfHearing>
+			<courtOfHearing>九 龍 城 裁 判 法 院</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing></venueOfHearing>
+			<addressOfHearing></addressOfHearing>
+			<remarks>縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。</remarks>
+			<issueDate>2016年9月5日</issueDate>
+			<templateNo>S405A1</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<additionalPage>Y</additionalPage>
+		</Data>
+		-->
+		<!-- Max Size Text -->
+		<!-- <Data>
+			<copyType>C</copyType>
+			<langType>E</langType>
+			<formName1>Magistrates Ordinance, Cap.277</formName1>
+			<formName2>ss. 8 &amp; 72, Form 1</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>XXXXXXXXX XXXXXXXXXZ</regNo>
+			<courtName>Kowloon City MAGISTRATES' COURTS</courtName>
+			<courtAddress>Kowloon City Law Courts Building, 147M Argyle Street, Kowloon</courtAddress>
+			<defendantName>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ, XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantName>
+			<defendantNameImage></defendantNameImage>
+			<defendantAddress1>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantAddress1>
+			<defendantAddress2>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantAddress2>
+			<defendantAddress3>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>Business Registration NumberX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantDocType>
+			<defendantDocNo>XXXXXXXXX XXXXXXXXXZ</defendantDocNo>
+			<defendantGender>Female</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>XXXXXXXXX XXXXXXXXX ZZZZZ</pdRefNo>
+			<chargeParticular>Information have been laid THAT YOU KWOK, CHUNG TING on 6 September 2016 at 08:30 PM at KWUN TONG ROAD NEAR AMOY GARDENS did drive a Private Car displaying registration mark MN8333- on a road carelessly. , when the said vehicle was not equipped with a braking system so designed and constructed that its means of operation, whether being a multi-pull means of operation or not, was indpendent of means of operation of any braking system required by Regulation 19(1)(a) of the Road Traffic (Construction and Maintenance of Vehicles) Regulations to have a total braking efficiency of not less than 50% and so that its braking force, when the said vehicle was not being driven or was left unattended, could at all times be maintained in operation by direct mechanical action without the intervention of any hydraulic, electric, or pneumatic device, and when so maintained in operation by direct mechanical action, was capable of holding the said vehicle stationary on a gradient of at least 1 in 6.25 without the assistance of stored energy</chargeParticular>
+			<contraryToLaw>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </contraryToLaw>
+			<informant>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx of xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </informant>
+			<caseInitiateDate>22 September 2016</caseInitiateDate>
+			<dateOfHearing>22 September 2016</dateOfHearing>
+			<timeOfHearing>9:30 a.m.</timeOfHearing>
+			<courtOfHearing>Kowloon City Magistrates' Courts</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>Kowloon City Law Courts Building</venueOfHearing>
+			<addressOfHearing>147M, Argyle Street, Kowloon</addressOfHearing>
+			<remarks>Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty.  Personal appearance is required, even if you intend to plead guilty.</remarks>
+			<issueDate>28 September 2016</issueDate>
+			<templateNo>S405A2-C</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<jobNo>CASEMAN 00008179-00258-1557-001</jobNo>
+			<additionalPage>N</additionalPage>
+		</Data>
+		<Data>
+			<copyType>C</copyType>
+			<langType>C</langType>
+			<formName1>裁判官條例(第227章)第8及72條</formName1>
+			<formName2>表格一</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>XXXXXXXXX XXXXXXXXXZ</regNo>
+			<courtName>九龍城裁判法院</courtName>
+			<courtAddress>九龍亞皆老街147M號 九龍城法院大樓</courtAddress>
+			<defendantName>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantName>
+			<defendantNameImage></defendantNameImage>
+			<defendantAddress1>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantAddress1>
+			<defendantAddress2>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantAddress2>
+			<defendantAddress3>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantDocType>
+			<defendantDocNo>XXXXXXXXX XXXXXXXXXZ</defendantDocNo>
+			<defendantGender>女</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>XXXXXXXXX XXXXXXXXX ZZZZZ</pdRefNo>
+			<chargeParticular>有人提出告發, 指稱你郭頌婷在2016年9月6日下午8時30分於觀塘道鄰淘大花園, 在道路上不小心駕駛展示登記號碼MN8333的私家車。區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。</chargeParticular>
+			<contraryToLaw>第374章道路交通條第38（1）條郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　</contraryToLaw>
+			<informant>中央交通違例檢控組的警署警長梁秀芳 郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</informant>
+			<caseInitiateDate>2016年9月22日</caseInitiateDate>
+			<dateOfHearing>2016 年 10 月 22 日</dateOfHearing>
+			<timeOfHearing>上午 9 時 30 分</timeOfHearing>
+			<courtOfHearing>九 龍 城 裁 判 法 院</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>九龍城法院大樓</venueOfHearing>
+			<addressOfHearing>香港九龍亞皆老街147M號</addressOfHearing>
+			<remarks>縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。</remarks>
+			<issueDate>2016年9月5日</issueDate>
+			<templateNo>S405A1</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<jobNo>CASEMAN 00008179-00258-1557-001</jobNo>
+			<additionalPage>N</additionalPage>
+		</Data>-->
+		<Data>
+			<copyType>D</copyType>
+			<langType>E</langType>
+			<formName1>Magistrates Ordinance, Cap.277</formName1>
+			<formName2>ss. 8 &amp; 72, Form 1</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>XXXXXXXXX XXXXXXXXXZ</regNo>
+			<courtName>Kowloon City MAGISTRATES' COURTS</courtName>
+			<courtAddress>Kowloon City Law Courts Building, 147M Argyle Street, Kowloon</courtAddress>
+			<defendantName>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ, XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantName>
+			<defendantNameImage></defendantNameImage>
+			<defendantAddress1>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantAddress1>
+			<defendantAddress2>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantAddress2>
+			<defendantAddress3>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXX XXXXXXXXXZ</defendantDocType>
+			<defendantDocNo>XXXXXXXXX XXXXXXXXXZ</defendantDocNo>
+			<defendantGender>Female</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>XXXXXXXXX XXXXXXXXX ZZZZZ</pdRefNo>
+			<chargeParticular>Magistrates exercise criminal jurisdiction over a wide range of offences. Although there is a general limit of two years imprisonment or a fine of $100,000, certain statutory provisions give Magistrates the power to sentence up to three years imprisonment and to impose a fine up to $5,000,000. Prosecution of all indictable offences commences in the Magistrates' Courts, the Secretary for Justice may apply to have a case transferred to the District Court or committed to the Court of First Instance of the High Court depending on the seriousness of a case. There are approximately 70 Magistrates, sitting in various Tribunals and seven Magistrates' Courts: Eastern, Kowloon City, Kwun Tong, Tsuen Wan, Sha Tin, Fanling and Tuen Mun. A Principal Magistrate is in charge of each magistracy. The Chief Magistrate, whose chamber is at the Kowloon City Law Courts Building, oversees the work of all magistracies. The most junior judicial role is that of Special Magistrate, typically dealing only with minor offences such as hawking contraventions, traffic offences and other departmental summonses. Appeals against Magistrates’ decisions are heard by a Judge of the Court of First Instance.
+The Juvenile Court has jurisdiction to hear charges against children (aged under 14) and young persons (aged between 14 and 16) for any offence other than homicide. Children under 10 are exempted from criminal responsibility. The Juvenile Court also has power to deal with care and protection cases involving young people aged up to 18. A juvenile magistrate will explain the alleged offence to the child or young person in simple language and assist him/her if need arises. Before passing sentence, the magistrate may consider pre-sentencing reports. Press coverage of the proceedings in a juvenile court is restricted to avoid disclosure of the identity of a defendant. The Juvenile Court sits in the Eastern, Kowloon City, Tsuen Wan, Fanling and Tuen Mun Magistrates’ Courts.
+Coroners are empowered to investigate unnatural or suspicious deaths occurring in Hong Kong (and deaths occurring outside Hong Kong if the body is found within Hong Kong). Except when death occurs while the individual is in custody, or the Secretary for Justice directs, the Coroner decides whether or not to hold an inquest with or without a jury. The inquest is mandatory with a jury where the death occurs in custody. The main purpose of an inquest is to ascertain the cause of and the circumstances connected with the death. If appropriate, a Coroner or a jury may make recommendations designed to prevent the recurrence of the fatality under investigation.
+The Labour Tribunal was set up in 1973 to provide a quick, inexpensive and informal procedure for adjudicating disputes between employees and employers. It deals with claims arising out of a breach of a contract of employment. Claims may include wages in lieu of notice, arrears of wages, statutory holiday pay, annual leave pay, sickness allowance, maternity leave pay, bonus/double pay, severance pay, and long service payments. Claimants can also seek orders for reinstatement or re-engagement; for awards of compensation or terminal payments. Proceedings are mostly conducted in Cantonese before a Presiding Officer. Legal representation is not allowed. Any party aggrieved may appeal on a point of law to the Court of First Instance. There are approximately 8 Presiding Officers, including one Principal Presiding Officer. The tribunal is located at the South Kowloon Law Courts Building in Gascoigne Road. No statistics are provided by the Judiciary on actual waiting times from filing of a claim to first day of trial or ultimate resolution.
+The Small Claims Tribunal was established in 1976. It deals with monetary claims arising from contract or tort, involving amounts not exceeding $50,000. Hearings are informal and usually conducted in Cantonese. Legal representation is not allowed. Parties may authorise a representative (other than a lawyer) to appear in court.
+</chargeParticular>
+			<chargeParticularFontSize>S</chargeParticularFontSize>
+			<contraryToLaw>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </contraryToLaw>
+			<informant>xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx of xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx </informant>
+			<caseInitiateDate>22 September 2016</caseInitiateDate>
+			<dateOfHearing>22 September 2016</dateOfHearing>
+			<timeOfHearing>9:30 a.m.</timeOfHearing>
+			<courtOfHearing>Kowloon City Magistrates' Courts</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>Kowloon City Law Courts Building</venueOfHearing>
+			<addressOfHearing>147M, Argyle Street, Kowloon</addressOfHearing>
+			<remarks>Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty. Personal appearance is required, even if you intend to plead guilty.  Personal appearance is required, even if you intend to plead guilty.</remarks>
+			<issueDate>28 September 2016</issueDate>
+			<templateNo>S405A2-C</templateNo>
+			<omrData>000000000110100001000</omrData>
+			<jobNo>CASEMAN 00008179-00258-1557-001</jobNo>
+			<additionalPage>Y</additionalPage>
+		</Data>
+		<Data>
+			<copyType>D</copyType>
+			<langType>C</langType>
+			<formName1>裁判官條例(第227章)第8及72條</formName1>
+			<formName2>表格一</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>XXXXXXXXX XXXXXXXXXZ</regNo>
+			<courtName>九龍城裁判法院</courtName>
+			<courtAddress>九龍亞皆老街147M號 九龍城法院大樓</courtAddress>
+			<defendantName>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantName>
+			<defendantNameImage></defendantNameImage>
+			<defendantAddress1>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantAddress1>
+			<defendantAddress2>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantAddress2>
+			<defendantAddress3>郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷　郭郭郭郭郭郭郭頌婷婷</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>香港身份証號碼</defendantDocType>
+			<defendantDocNo>XXXXXXXXX XXXXXXXXXZ</defendantDocNo>
+			<defendantGender>女</defendantGender>
+			<defendantAge>19</defendantAge>
+			<pdRefNo>XXXXXXXXX XXXXXXXXX ZZZZZ</pdRefNo>
+			<chargeParticular>區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+最初級的刑事法院。香港共有7所裁判法院，裁判法院的刑事司法審轄權非常廣泛，負責審理多種可公訴罪行及簡易程序罪行，判刑上限一般為監禁兩年和罰款10萬港元。不過，愈來愈多的條例都賦予裁判官權力，判處高達3年的監禁和更高的罰款（有些罪行甚至可高達500萬港元）。裁判官可因應不同案件或犯人的特殊情況，運用酌情權動用司法機構轄下的濟貧箱，以支取適當金錢給犯人作應急之用。司法機構於2007/08財政年度為濟貧箱撥備8000萬元，直至2008年1月14日已動用1800萬元。
+若犯案者為16歲以下的少年或兒童，案件將交由少年法庭審理，只有兇殺案除外。少年法庭亦有權對18歲或以下青少年發出看管及保護令。該法庭分別設於東區、九龍城、荃灣、粉嶺及屯門裁判法院內。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+區域法院處理涉及款項5萬港元以上、100萬港元以下的民事訴訟，而刑事案件中，區域法院法官的判刑上限是7年監禁。
+</chargeParticular>
+			<chargeParticularFontSize>S</chargeParticularFontSize>
+			<contraryToLaw>第374章道路交通條第38（1）條</contraryToLaw>
+			<informant>中央交通違例檢控組的警署警長梁秀芳</informant>
+			<caseInitiateDate>2016年9月22日</caseInitiateDate>
+			<dateOfHearing>2016 年 10 月 22 日</dateOfHearing>
+			<timeOfHearing>上午 9 時 30 分</timeOfHearing>
+			<courtOfHearing>九 龍 城 裁 判 法 院</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing></venueOfHearing>
+			<addressOfHearing></addressOfHearing>
+			<remarks>縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。|縱使你有意認罪，仍須親自到庭。</remarks>
+			<issueDate>2016年9月5日</issueDate>
+			<templateNo>S405A1</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<jobNo>CASEMAN 00008179-00258-1557-001</jobNo>
+			<additionalPage>Y</additionalPage>
+		</Data>
+		<!--<Data>
+			<copyType>D</copyType>
+			<langType>E</langType>
+			<formName1>Magistrates Ordinance, Cap.277</formName1>
+			<formName2>ss. 8 &amp; 72, Form 1</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>A1234567</regNo>
+			<courtName>Kowloon City MAGISTRATES' COURTS</courtName>
+			<courtAddress>Kowloon City Law Courts Building, 147M Argyle Street, Kowloon</courtAddress>
+			<defendantName>KWOK, CHUNG TING</defendantName>
+			<defendantNameImage></defendantNameImage>
+			<defendantAddress1>Flat 1, Floor 2, Block 3,</defendantAddress1>
+			<defendantAddress2>Lok Ching House, Kai Ching Estate, 4 Hereford Road,</defendantAddress2>
+			<defendantAddress3>Kwun Tong, Kowloon</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>HK Identity Card</defendantDocType>
+			<defendantDocNo>A123456(3)</defendantDocNo>
+			<defendantGender>Female</defendantGender>
+			<defendantAge>29</defendantAge>
+			<pdRefNo>DE0003662014</pdRefNo>
+			<chargeParticular>Information have been laid THAT YOU KWOK, CHUNG TING about 08:30 AM on 5
+October 2016 at KWUN TONG ROAD NEAR AMOY GARDENS did drive a Private
+Car displaying registration mark MN8333-1 on a road carelessly</chargeParticular>
+			<contraryToLaw>Section 38(1) Road Traffic Ordinance, Cap.374</contraryToLaw>
+			<informant>Ms. LEONG SAU FONG, STATION SERGEANT</informant>
+			<caseInitiateDate>24 October, 2016</caseInitiateDate>
+			<dateOfHearing>26 October, 2016</dateOfHearing>
+			<timeOfHearing>09:30 AM</timeOfHearing>
+			<courtOfHearing>Kowloon City Magistrates' Courts</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>Kowloon City Law Courts Building</venueOfHearing>
+			<addressOfHearing>147M, Argyle Street, Kowloon</addressOfHearing>
+			<remarks>Personal appearance is required, even if you intend to plead guilty.</remarks>
+			<issueDate>28 September 2016</issueDate>
+			<templateNo>S405A2-C</templateNo>
+			<omrData>100001000000000000010</omrData>
+			<jobNo>CASEMAN 00008179-00258-1557-001</jobNo>
+			<additionalPage>N</additionalPage>
+		</Data>
+		<Data>
+			<copyType>D</copyType>
+			<langType>C</langType>
+			<formName1>裁判官條例(第227章)第8及72條</formName1>
+			<formName2>表格一</formName2>
+			<caseNo>ESS 14/2016</caseNo>
+			<regNo>A1234567</regNo>
+			<courtName>九龍城裁判法院</courtName>
+			<courtAddress>九龍亞皆老街147M號 九龍城法院大樓</courtAddress>
+			<defendantName>郭頌婷</defendantName>
+			<defendantNameImage></defendantNameImage>
+			<defendantAddress1>九龍觀塘區</defendantAddress1>
+			<defendantAddress2>禧福道4號啟晴邨樂晴樓</defendantAddress2>
+			<defendantAddress3>3座2樓1室</defendantAddress3>
+			<drnNo>DRN123456</drnNo>
+			<defendantDocType>香港身份證</defendantDocType>
+			<defendantDocNo>A123456(3)</defendantDocNo>
+			<defendantGender>女</defendantGender>
+			<defendantAge>29</defendantAge>
+			<pdRefNo>DE0003662014</pdRefNo>
+			<chargeParticular>有人提出告發, 指稱你郭頌婷在2016年10月5日大約（時間）上午8時30分於觀塘道鄰淘大花
+園, 在道路上不小心駕駛展示登記號碼MN8333-1的私家車</chargeParticular>
+			<contraryToLaw>第374章道路交通條第38（1）條</contraryToLaw>
+			<informant>中央交通違例檢控組的警署警長梁秀芳</informant>
+			<caseInitiateDate>2016年10月24日</caseInitiateDate>
+			<dateOfHearing>2016年10月26日</dateOfHearing>
+			<timeOfHearing>上午 9 時 30 分</timeOfHearing>
+			<courtOfHearing>九龍城裁判法院</courtOfHearing>
+			<courtRoomOfHearing>3</courtRoomOfHearing>
+			<venueOfHearing>九龍城法院大樓</venueOfHearing>
+			<addressOfHearing>香港九龍亞皆老街147M號</addressOfHearing>
+			<remarks>縱使你有意認罪，仍須親自到庭。</remarks>
+			<issueDate>2016年9月5日</issueDate>
+			<templateNo>S405A1</templateNo>
+			<omrData></omrData>
+			<jobNo>CASEMAN 00008179-00258-1557-001</jobNo>
+			<additionalPage>N</additionalPage>
+		</Data>-->
+	</Content>
+</Report>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30">
+	<Appenders>
+		<RollingFile name="file" fileName="C:/icms/log/icmssvd.log"
+			filePattern="C:/icms/log/icmssvd-%d{yyyy-MM-dd}.log">
+			<PatternLayout pattern="%d %-5p [%c] (%t) %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingFile>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %-5p [%C] %t (%F:%L) - %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="hk.judiciary" level="debug" additivity="false">
+			<AppenderRef ref="file" />
+			<AppenderRef ref="STDOUT"></AppenderRef>
+		</Logger>
+		<Root level="debug">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>

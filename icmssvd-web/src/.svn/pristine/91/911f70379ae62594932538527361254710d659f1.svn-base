@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fx:Object xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:model="hk.judiciary.icmssvd.view.svdReq.presentation.*">
+	<fx:Declarations>
+		<model:EnquireProofOfSvdPanelMC id="mainView" />
+		
+		<model:EnquireProofOfSvdPanelPM />
+		
+		<model:InputProofPanelPM />
+		
+		<model:EnquireProofOfSvdBatchFormPanelPM />
+		
+		<model:ProofPresenter />
+	</fx:Declarations>
+</fx:Object>

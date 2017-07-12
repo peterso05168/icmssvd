@@ -1,0 +1,83 @@
+package hk.judiciary.icmssvd.model.svdReq;
+
+/**
+ * 
+ * @version $Revision: 7744 $ $Date: 2017-06-27 16:19:30 +0800 (週二, 27 六月 2017) $
+ * @author $Author: mtse $
+ */
+public class RequestConstant {
+    public static final String HANDLING_AGENT_BAILIFF = "BAI";
+    public static final String HANDLING_AGENT_HKPF = "HKPF";
+    public static final String HANDLING_AGENT_POST_OFFICE = "PSO";
+
+    public static final String REQUEST_STATUS_DRAFT = "DF";
+    public static final String REQUEST_STATUS_PENDING_SUBMIT = "PS";
+    public static final String REQUEST_STATUS_SUBMITTED = "SM";
+    public static final String REQUEST_STATUS_REGISTERED = "RG";
+    public static final String REQUEST_STATUS_ACCEPTED = "AC";
+    public static final String REQUEST_STATUS_ASSIGNED = "AS";
+    public static final String REQUEST_STATUS_WITHHELD = "WH";
+    public static final String REQUEST_STATUS_COMPLETED = "CP";
+    public static final String REQUEST_STATUS_WITHDRAWN = "WD";
+
+    public static final Integer REQUEST_SERVICE_TYPE_FRIST = 1;// 1st Service
+    public static final Integer REQUEST_SERVICE_TYPE_RESERVICE = 2;// Re-Service
+
+    public static final String REQUEST_SERVICE_TYPE_NAME_FRIST = "1st Service";
+    public static final String REQUEST_SERVICE_TYPE_NAME_RESERVICE = "Re-Service";
+
+    public static final Integer REQUEST_RECIPIENT = 1;
+    public static final Integer REQUEST_REQUESTER = 2;
+
+    public static final String SPECIAL_REQUEST_TYPE_URGENT = "U";
+
+    public static final String COURT_LEVEL_TYPE_DISTRICT = "DC";
+    public static final String COURT_LEVEL_TYPE_MAGISTRATES = "MC";
+
+    public static final String ADDRESS_ROLE_TYPE_MAILING = "MA";
+    public static final String ADDRESS_ROLE_TYPE_SERVICE = "SA";
+
+    public static final String SERVICE_MODE_TYPE_ORD_POST = "OP";// Ordinary Post
+    public static final String SERVICE_MODE_TYPE_REG_POST = "RP";// Registered Post
+    public static final String SERVICE_MODE_TYPE_PERSONAL = "PS";// Personal Service    
+
+    //public static final String PARTICIPANT_ROLE_TYPE_PROSECUTION = "PRO";// Prosecution
+    public static final String PARTICIPANT_ROLE_TYPE_PROSECUTION = "OCC";// Temp. use. should be revised after JUD information
+    public static final String PARTICIPANT_ROLE_TYPE_DEFENDANT = "D";// Defendant
+    
+    public static final String BAILIFF_DOC_STATUS_RECEIVED = "RCV";// Received
+    public static final String BAILIFF_DOC_STATUS_GENERATED = "GEN";// Generated
+    
+    public static final String HRN_NAT_CD_RESERVICE = "PLE";// Plea
+
+    public static final String CASE_NO_PATTERN = "%s%s %s/%s";
+    public static final String REGISTRATION_NO_PATTERN = "%s %s/%s";
+
+    public static final Integer HANDLING_AGENT_ID_BAILIFF = 1;
+    public static final Integer HANDLING_AGENT_ID_HKPF = 2;
+    public static final Integer HANDLING_AGENT_ID_POST_OFFICE = 3;
+
+    public static final Integer REQUEST_TYPE_ID_SER = 1;
+    public static final Integer REQUEST_TYPE_ID_EXE = 2;
+    public static final Integer REQUEST_TYPE_ID_POS = 4;
+
+    public static final String REQUEST_TYPE_CODE_SER = "SER";
+    public static final String REQUEST_TYPE_CODE_EXE = "EXE";
+
+    public static final Integer REQUEST_STATUS_ID_REGISTERED = 1;
+    public static final Integer REQUEST_STATUS_ID_SUBMITTED = 2;
+    public static final Integer REQUEST_STATUS_ID_ACCEPTED = 3;
+    public static final Integer REQUEST_STATUS_ID_ASSIGNED = 4;
+    public static final Integer REQUEST_STATUS_ID_WITHHELD = 5;
+    public static final Integer REQUEST_STATUS_ID_COMPLETED = 6;
+    public static final Integer REQUEST_STATUS_ID_WITHDRAWN = 7;
+    public static final Integer REQUEST_STATUS_ID_DRAFT = 8;
+    public static final Integer REQUEST_STATUS_ID_PENDING_SUBMIT = 9;
+
+    public static final Integer SPECIAL_REQUEST_TYPE_ID_URGENT = 1;// Urgent
+
+    public static final Integer BAILIFF_TASK_RESULT_STATUS_ID_SUCCESS = 1;// Successful
+    
+    public static final Integer BALIFF_DOCUMENT_STATUS_GENERATED = 3;// Generated
+
+}

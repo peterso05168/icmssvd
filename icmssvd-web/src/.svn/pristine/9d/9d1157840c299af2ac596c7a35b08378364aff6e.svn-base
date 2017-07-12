@@ -1,0 +1,338 @@
+
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace j "hk.judiciary.fmk.view.component.*";
+
+global
+{
+	font-family:Arial, Helvetica,sans-serif !important;
+	font-weight:bold;
+	fontSize: 12;
+}
+j|Label, s|label, mx|Label
+{
+	font-family:Arial, Helvetica,sans-serif !important;
+}
+
+s|Application
+{
+	background-color:#FFFFFF;
+	modalTransparencyBlur: 0;
+	modalTransparency: 0.1;
+}
+
+s|TextInput, j|TextInput
+{
+	borderColor: #A9A9A9;
+}
+
+mx|ToolTip{
+	font-size:16;
+}
+
+mx|DataGrid
+{
+	alternating-item-colors:#FFFFFF, #F3F4F9;
+	header-colors:#445188, #445188;
+	letter-spacing:0;
+	/*
+	horizontal-grid-lines:true;
+	horizontal-grid-line-color:#FFFFFF;
+	vertical-grid-lines:true;
+	vertical-grid-line-color:#FFFFFF;
+	*/
+	use-roll-over:true;
+	roll-over-color:#C9C9C9;
+	text-roll-over-color:#000000;
+	border-weight:0;
+	border-color:#D5D7D8;
+	color:#20454D;
+	text-indent:0;
+	text-selected-color:#F9F9F9;
+	selection-color:#002060;
+	font-weight:normal;
+	chrome-color:#8C9194;
+	
+	columnDropIndicatorSkin: ClassReference("mx.skins.halo.DataGridColumnDropIndicator");
+	columnResizeSkin: ClassReference("mx.skins.halo.DataGridColumnResizeSkin");
+	headerDragProxyStyleName: "headerDragProxyStyle";
+	headerBackgroundSkin: ClassReference("mx.skins.halo.DataGridHeaderBackgroundSkin");
+	headerSeparatorSkin: ClassReference("mx.skins.halo.DataGridHeaderSeparator");
+	
+	headerStyleName: "advancedDataGridStyles";
+	sortArrowSkin: ClassReference("mx.skins.halo.DataGridSortArrow");
+	stretchCursor: Embed(source="Assets.swf",symbol="cursorStretch");
+}
+
+s|DataGrid
+{
+	alternatingRowColors: #FFFFFF, #F3F4F9;
+}
+
+mx|AdvancedDataGrid
+{
+	backgroundAlpha:1;
+	alternating-item-colors:#FFFFFF, #F3F4F9;
+	
+	
+	header-colors:#445188, #445188;
+	
+	letter-spacing:0;
+	/*
+	horizontal-grid-lines:true;
+	horizontal-grid-line-color:#FFFFFF;
+	vertical-grid-lines:true;
+	vertical-grid-line-color:#FFFFFF;
+	*/
+	use-roll-over:true;
+	roll-over-color:#C9C9C9;
+	text-roll-over-color:#000000;
+	border-weight:0;
+	border-color:#D5D7D8;
+	color:#20454D;
+	text-indent:0;
+	text-selected-color:#F9F9F9;
+	selection-color:#002060;
+	font-weight:normal;
+	chrome-color:#8C9194;
+	columnDropIndicatorSkin: ClassReference("mx.skins.halo.DataGridColumnDropIndicator");
+	columnResizeSkin: ClassReference("mx.skins.halo.DataGridColumnResizeSkin");
+	headerDragProxyStyleName: "headerDragProxyStyle";
+	headerBackgroundSkin: ClassReference("mx.skins.halo.DataGridHeaderBackgroundSkin");
+	headerSeparatorSkin: ClassReference("mx.skins.halo.DataGridHeaderSeparator");
+	headerHorizontalSeparatorSkin: ClassReference("mx.skins.halo.AdvancedDataGridHeaderHorizontalSeparator");
+	headerStyleName: "advancedDataGridStyles";
+	sortArrowSkin: ClassReference("mx.skins.halo.DataGridSortArrow");
+	stretchCursor: Embed(source="Assets.swf",symbol="cursorStretch");
+}
+
+mx|PrintOLAPDataGrid{
+	alternatingItemColors: #FFFFFF, #FFFFFF;
+	borderColor: 0;
+	columnResizeSkin: ClassReference("mx.skins.halo.DataGridColumnResizeSkin");
+	headerColors: #FFFFFF, #FFFFFF;
+	headerSeparatorSkin: ClassReference("mx.skins.halo.DataGridHeaderSeparator");
+	headerStyleName: "advancedDataGridStyles";
+	horizontalGridLineColor: 0;
+	horizontalGridLines: true;
+	stretchCursor: Embed(source="Assets.swf",symbol="cursorStretch");
+	verticalGridLineColor: #000000;
+}
+/*
+mx|AdvancedDataGridHeaderRenderer
+{
+color:#FFFFFF;
+font-weight:normal;
+}
+*/
+.advancedDataGridStyles
+{
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+mx|FormItemLabel
+{
+	font-family:"Arial";
+	font-weight:normal;
+	font-size:14;
+}
+
+mx|Accordion
+{
+	color : #B53C00 ; 
+	backgroundColor: #F5F8F9 ;  
+}
+
+mx|AccordionHeader
+{
+	borderColor: #c8c8c8;
+	color : #B53C00 ; 
+	backgroundColor: #F5F8F9 ; 
+	chromeColor: #F5F8F9 ; 
+}
+
+j|Button{
+	fontSize: 12;
+	chromeColor: #3D53B6;
+	fontFamily: Arial, Helvetica,sans-serif !important;
+	color: #FFFFFF;
+	fontWeight:bold;
+	cornerRadius: 0;
+}
+
+j|Button:disabled{
+	font-weight:normal;
+	color: #303030;
+	
+}
+
+mx|ProgressBar{
+	fontSize: 16;
+	font    : Arial;
+}
+
+
+
+s|TitleWindow {
+	dropShadowEnabled: false;
+	borderAlpha: 1.0;
+	borderColor: haloSilver;
+	backgroundColor: haloSilver;
+	cornerRadius: 0;
+}
+
+mx|TitleWindow
+{
+	dropShadowEnabled: false;
+	borderAlpha: 1.0;
+	cornerRadius: 0;
+	borderColor: #404040;
+	borderStyle: solid;
+}
+
+
+.appMenuBar
+{
+	letterSpacing:0;
+	backgroundAlpha:1;
+	backgroundColor:#ffffff;
+	borderColor:#cccccc;
+	highlightAlphas:1, 1;
+	fillAlphas:1, 0.27;
+	fillColors:#ffffff, #ffffff;
+	rollOverColor:#66ccff;
+	fontWeight:bold;
+}
+
+mx|TabNavigator, mx|SuperTabNavigator {
+	cornerRadius: 0;
+	selectedTabTextStyleName: "selectedTab";
+	tabStyleName: "tabButton";
+	selectedTabStyleName: "selectedTab";
+	selectedFillColors: #445188, #445188;
+	selectedFillAlphas: 0, 0;
+	selectedFillColorRatios: 1, 1;
+	text-roll-over-color:#FFFFFF;
+	selected-up-skin: ClassReference("hk.judiciary.fmk.view.component.skin.SelectedTabSkin");
+	selected-down-skin: ClassReference("hk.judiciary.fmk.view.component.skin.SelectedTabSkin");
+	selected-over-skin: ClassReference("hk.judiciary.fmk.view.component.skin.SelectedTabSkin");
+	up-skin: ClassReference("hk.judiciary.fmk.view.component.skin.TabSkin");
+	down-skin: ClassReference("hk.judiciary.fmk.view.component.skin.TabSkin");
+	over-skin: ClassReference("hk.judiciary.fmk.view.component.skin.TabSkin");
+	/*
+	chromeColor: green;
+	color: red;
+	backgroundColor: blue;
+	*/
+}
+
+.tabButton{
+	background-color: #FFFFFF;
+	
+	font-weight: normal;
+	color: #808080;
+	text-roll-over-color: #808080;
+	
+	corner-radius: 0;
+	
+	border-style: solid;
+	border-thickness: 0;
+	border-color: #000000;
+	textAlign: center;
+}
+
+
+
+.selectedTab
+{
+	color: #445188;
+	text-roll-over-color: #445188;
+	fontSize: 13;
+	fontFamily: Arial, Helvetica,sans-serif !important;
+	
+	fontWeight:bold;
+	chromeColor: #445188;
+	background-color: #445188;
+	
+	selected-up-skin: ClassReference("hk.judiciary.fmk.view.component.skin.SelectedTabSkin");
+	selected-down-skin: ClassReference("hk.judiciary.fmk.view.component.skin.SelectedTabSkin");
+	selected-over-skin: ClassReference("hk.judiciary.fmk.view.component.skin.SelectedTabSkin");
+	up-skin: ClassReference("hk.judiciary.fmk.view.component.skin.TabSkin");
+	down-skin: ClassReference("hk.judiciary.fmk.view.component.skin.TabSkin");
+	over-skin: ClassReference("hk.judiciary.fmk.view.component.skin.TabSkin");
+	skin: ClassReference("hk.judiciary.fmk.view.component.skin.TabSkin");
+	textAlign: center;
+} 
+
+.selectedTabText {
+	font-weight: bold;
+	textRollOverColor: #445188;
+	color: #FFFFFF;
+	backgroundColor: #FFFFFF;
+	text-roll-over-color:#445188;
+}
+
+
+.partyType
+{
+	color: #ed1c24;
+	font-size: 18pt;
+	font-weight:bold;
+}
+j|AccordionTab
+{
+	skin-Class: ClassReference("hk.judiciary.fmk.view.component.skin.AdvCollapsiblePanelSkin");
+	
+}
+
+j|PlainCollapsiblePanel
+{
+	skin-Class: ClassReference("hk.judiciary.fmk.view.component.skin.PlainCollapsiblePanelSkin");
+}
+
+j|BindableDropDownList
+{
+	skin-class:ClassReference("hk.judiciary.fmk.view.component.skin.BindableDropDownSkin");
+}
+
+j|DateChooser, mx|DateChooser
+{
+	upSkin: ClassReference(null);
+	overSkin: ClassReference(null);
+	downSkin: ClassReference(null);
+	disabledSkin: ClassReference(null);
+	headerStyleName: "myHeaderStyle";
+	headerColors: #E5E5E5, #E5E5E5;
+}
+
+j|DateField, mx|DateField
+{
+	skin: Embed("../resources/assets/images/icon_date_select.png");
+	/* null the skins defined in default.css */
+	upSkin: ClassReference(null);
+	overSkin: ClassReference(null);
+	downSkin: ClassReference(null);
+	disabledSkin: ClassReference(null);
+}
+.myHeaderStyle
+{
+	color:#000000; 
+}
+.fmkErrorMessageBox
+{
+	color: #D63301;
+	background-color: #FFCCBA;
+	
+}
+
+j|Panel
+{
+	chromeColor: #C0C0C0;
+}
+
+.functionHeader
+{
+	font-size: 18pt;
+	font-weight:bold;
+}

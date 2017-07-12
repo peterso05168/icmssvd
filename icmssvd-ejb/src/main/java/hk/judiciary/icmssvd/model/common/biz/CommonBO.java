@@ -1,0 +1,694 @@
+package hk.judiciary.icmssvd.model.common.biz;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.fmk.model.cfs.biz.dto.FileDTO;
+import hk.judiciary.icms.model.dao.entity.BlfAssign;
+import hk.judiciary.icms.model.dao.entity.BlfOffice;
+import hk.judiciary.icms.model.dao.entity.BlfSeq;
+import hk.judiciary.icms.model.dao.entity.BlfTaskRsltRsn;
+import hk.judiciary.icms.model.dao.entity.BlfTaskRsltStatus;
+import hk.judiciary.icms.model.dao.entity.CaseType;
+import hk.judiciary.icms.model.dao.entity.CompsCourt;
+import hk.judiciary.icms.model.dao.entity.CourtLvlType;
+import hk.judiciary.icms.model.dao.entity.CourtRmChmbr;
+import hk.judiciary.icms.model.dao.entity.DocType;
+import hk.judiciary.icms.model.dao.entity.FpAppNatType;
+import hk.judiciary.icms.model.dao.entity.HandlingAgt;
+import hk.judiciary.icms.model.dao.entity.HkDist;
+import hk.judiciary.icms.model.dao.entity.HkRgn;
+import hk.judiciary.icms.model.dao.entity.HrnSchd;
+import hk.judiciary.icms.model.dao.entity.PartcpRoleType;
+import hk.judiciary.icms.model.dao.entity.Pd;
+import hk.judiciary.icms.model.dao.entity.PostOffice;
+import hk.judiciary.icms.model.dao.entity.ProofOfServDocType;
+import hk.judiciary.icms.model.dao.entity.ReqsStatusType;
+import hk.judiciary.icms.model.dao.entity.ReqsType;
+import hk.judiciary.icms.model.dao.entity.ServModeType;
+import hk.judiciary.icms.model.dao.entity.SpecialReqsType;
+import hk.judiciary.icmssvd.model.BaseBO;
+import hk.judiciary.icmssvd.model.common.biz.assembler.BailiffOfficeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.BailiffTaskResultReasonDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.BailiffTaskResultStatusDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.CaseTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.ComprisingCourtDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.CourtLevelTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.CourtRoomChambersDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.DocumentTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.FpApplicationNatureTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.HandlingAgentDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.HkDistrictDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.HkRegionDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.IntlUserAcDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.ParticipantRoleTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.PosDocumentTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.PostOfficeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.ProsecutionDepartmentDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.RequestStatusTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.RequestTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.ServiceModeTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.SpecialRequestTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.dto.BailiffOfficeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.BailiffTaskResultReasonDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.BailiffTaskResultStatusDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.CaseTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ComprisingCourtDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.CourtLevelTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.CourtRoomChambersDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.DocumentFileDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.DocumentTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.FpApplicationNatureTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HandlingAgentDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HkDistrictDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HkRegionDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ParticipantRoleTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.PostOfficeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ProsecutionDepartmentDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.RequestStatusTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.RequestTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ServiceModeTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.SpecialRequestTypeDTO;
+import hk.judiciary.icmssvd.model.common.dao.BailiffAssignedDAO;
+import hk.judiciary.icmssvd.model.common.dao.BailiffOfficeDAO;
+import hk.judiciary.icmssvd.model.common.dao.BailiffSequenceDAO;
+import hk.judiciary.icmssvd.model.common.dao.BailiffTaskResultReasonDAO;
+import hk.judiciary.icmssvd.model.common.dao.BailiffTaskResultStatusDAO;
+import hk.judiciary.icmssvd.model.common.dao.CaseTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.ComprisingCourtDAO;
+import hk.judiciary.icmssvd.model.common.dao.CourtLevelTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.CourtRmChmbrDAO;
+import hk.judiciary.icmssvd.model.common.dao.DocumentTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.FpApplicationNatureTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.HandlingAgentDAO;
+import hk.judiciary.icmssvd.model.common.dao.HkDistrictDAO;
+import hk.judiciary.icmssvd.model.common.dao.HkRegionDAO;
+import hk.judiciary.icmssvd.model.common.dao.ParticipantRoleTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.PosDocumentTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.PostOfficeDAO;
+import hk.judiciary.icmssvd.model.common.dao.ProsecutionDepartmentDAO;
+import hk.judiciary.icmssvd.model.common.dao.RequestStatusTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.RequestTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.ServiceModeTypeDAO;
+import hk.judiciary.icmssvd.model.common.dao.SpecialRequestTypeDAO;
+import hk.judiciary.icmssvd.model.common.util.DbCommonUtil;
+import hk.judiciary.icmssvd.model.common.util.DocumentFileUtil;
+import hk.judiciary.icmssvd.model.svdReq.RequestConstant;
+import hk.judiciary.icmssvd.model.svdReq.biz.assembler.RequestServiceTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.FunctionDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.IntlUserAcDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.PosDocumentTypeDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.RequestServiceTypeDTO;
+import hk.judiciary.icmssvd.model.svdReq.dao.HearingScheduleDAO;
+import hk.judiciary.icmssvd.model.svdReq.util.AppServiceDocValidationUtil;
+
+/**
+ * 
+ * @version $Revision: 7060 $ $Date: 2017-05-20 12:12:34 +0800 (週六, 20 五月 2017) $
+ * @author $Author: vicki.huang $
+ */
+public class CommonBO extends BaseBO {
+    public static final String NAME = "commonBO";
+
+    private BailiffOfficeDAO getBailiffOfficeDAO() {
+        return getDAO(BailiffOfficeDAO.BLF_OFFICE_DAO, BailiffOfficeDAO.class);
+    }
+
+    private CaseTypeDAO getCaseTypeDAO() {
+        return getDAO(CaseTypeDAO.CASE_TYPE_DAO, CaseTypeDAO.class);
+    }
+
+    private ComprisingCourtDAO getComprisingCourtDAO() {
+        return getDAO(ComprisingCourtDAO.COMPS_COURT_DAO, ComprisingCourtDAO.class);
+    }
+
+    private CourtLevelTypeDAO getCourtLevelTypeDAO() {
+        return getDAO(CourtLevelTypeDAO.COURT_LVL_DAO, CourtLevelTypeDAO.class);
+    }
+
+    private DocumentTypeDAO getDocumentTypeDAO() {
+        return getDAO(DocumentTypeDAO.DOC_TYPE_DAO, DocumentTypeDAO.class);
+    }
+
+    private HandlingAgentDAO getHandlingAgentDAO() {
+        return getDAO(HandlingAgentDAO.HANDLING_AGT_DAO, HandlingAgentDAO.class);
+    }
+
+    private HkDistrictDAO getHkDistrictDAO() {
+        return getDAO(HkDistrictDAO.HK_DISTRICT_DAO, HkDistrictDAO.class);
+    }
+
+    private HkRegionDAO getHkRegionDAO() {
+        return getDAO(HkRegionDAO.HK_RGN_DAO, HkRegionDAO.class);
+    }
+
+    private ParticipantRoleTypeDAO getParticipantRoleTypeDAO() {
+        return getDAO(ParticipantRoleTypeDAO.PARTICIPANT_ROLE_TYPE_DAO,
+                ParticipantRoleTypeDAO.class);
+    }
+
+    private PostOfficeDAO getPostOfficeDAO() {
+        return getDAO(PostOfficeDAO.POST_OFFICE_DAO, PostOfficeDAO.class);
+    }
+
+    private RequestStatusTypeDAO getRequestStatusTypeDAO() {
+        return getDAO(RequestStatusTypeDAO.REQS_STATUS_TYPE_DAO, RequestStatusTypeDAO.class);
+    }
+
+    private RequestTypeDAO getRequestTypeDAO() {
+        return getDAO(RequestTypeDAO.REQS_TYPE_DAO, RequestTypeDAO.class);
+    }
+
+    private BailiffTaskResultReasonDAO getBailiffTaskResultReasonDAO() {
+        return getDAO(BailiffTaskResultReasonDAO.BAILIFFTASK_RESULT_REASON_DAO,
+                BailiffTaskResultReasonDAO.class);
+    }
+
+    private BailiffTaskResultStatusDAO getBailiffTaskResultStatusDAO() {
+        return getDAO(BailiffTaskResultStatusDAO.BAILIFFTASK_RESULT_STATUS_DAO,
+                BailiffTaskResultStatusDAO.class);
+    }
+
+    private ServiceModeTypeDAO getServiceModeTypeDAO() {
+        return getDAO(ServiceModeTypeDAO.SERV_MODEL_TYPE_DAO, ServiceModeTypeDAO.class);
+    }
+
+    private SpecialRequestTypeDAO getSpecialRequestTypeDAO() {
+        return getDAO(SpecialRequestTypeDAO.SPECIAL_REQS_TYPE_DAO, SpecialRequestTypeDAO.class);
+    }
+
+    private BailiffSequenceDAO getBailiffSequenceDAO() {
+        return getDAO(BailiffSequenceDAO.BLF_SEQ_DAO, BailiffSequenceDAO.class);
+    }
+
+    private HearingScheduleDAO getHearingScheduleDAO() {
+        return getDAO(HearingScheduleDAO.HEARING_SCHEDULE_DAO, HearingScheduleDAO.class);
+    }
+
+    private PosDocumentTypeDAO getPosDocumentTypeDAO() {
+        return getDAO(PosDocumentTypeDAO.POS_DOCUMENT_TYPE_DAO, PosDocumentTypeDAO.class);
+    }
+
+    private CourtRmChmbrDAO getCourtRmChmbrDAO() {
+        return getDAO(CourtRmChmbrDAO.COURTRMCHMBR_DAO, CourtRmChmbrDAO.class);
+    }
+
+    private FpApplicationNatureTypeDAO getFpApplicationNatureTypeDAO() {
+        return getDAO(FpApplicationNatureTypeDAO.FP_APPLICATION_NATURE_TYPE_DAO,
+                FpApplicationNatureTypeDAO.class);
+    }
+
+    private ProsecutionDepartmentDAO getProsecutionDepartmentDAO() {
+        return getDAO(ProsecutionDepartmentDAO.PROSECUTION_DEPARTMENT_DAO,
+                ProsecutionDepartmentDAO.class);
+    }
+
+    private BailiffAssignedDAO getBailiffAssignedDAO() {
+        return getDAO(BailiffAssignedDAO.BAILIFF_ASSIGNED_DAO, BailiffAssignedDAO.class);
+    }
+
+    /**
+     * Retrieve Bailiff Office List
+     * 
+     * @return
+     */
+    public List<BailiffOfficeDTO> findBailiffOfficeList() {
+        info("excuting findBailiffOfficeList()");
+        List<BailiffOfficeDTO> returnVal = new ArrayList<BailiffOfficeDTO>();
+        List<BlfOffice> blfOffices = getBailiffOfficeDAO().findBailiffOfficeList();
+        if (!CommonUtil.isNullOrEmpty(blfOffices)) {
+            returnVal = BailiffOfficeDTOAssembler.toDtoList(blfOffices);
+        }
+        info("findBailiffOfficeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Case Type List
+     * 
+     * @return
+     */
+    public List<CaseTypeDTO> findCaseTypeList(FunctionDTO function) {
+        info("excuting findCaseTypeList() " + function);
+        List<CaseTypeDTO> returnVal = new ArrayList<CaseTypeDTO>();
+        List<CaseType> caseTypes = getCaseTypeDAO().findCaseTypeList();
+        if (!CommonUtil.isNullOrEmpty(caseTypes)) {
+            returnVal = CaseTypeDTOAssembler.toDtoList(caseTypes, function);
+        }
+        info("findCaseTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Comps Court List
+     * 
+     * @return
+     */
+    public List<ComprisingCourtDTO> findComprisingCourtList(FunctionDTO function) {
+        info("excuting findComprisingCourtList() " + function);
+        List<ComprisingCourtDTO> returnVal = new ArrayList<ComprisingCourtDTO>();
+        List<CompsCourt> compsCourts = getComprisingCourtDAO().findComprisingCourtList();
+        if (!CommonUtil.isNullOrEmpty(compsCourts)) {
+            returnVal = ComprisingCourtDTOAssembler.toDtoList(compsCourts, function);
+        }
+        info("findComprisingCourtList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Court Level Type List
+     * 
+     * @return
+     */
+    public List<CourtLevelTypeDTO> findCourtLevelTypeList() {
+        info("excuting findCourtLevelTypeList()");
+        List<CourtLevelTypeDTO> returnVal = new ArrayList<CourtLevelTypeDTO>();
+        List<CourtLvlType> courtLvlTypes = getCourtLevelTypeDAO().findCourtLevelTypeList();
+        if (!CommonUtil.isNullOrEmpty(courtLvlTypes)) {
+            returnVal = CourtLevelTypeDTOAssembler.toDtoList(courtLvlTypes);
+        }
+        info("findCourtLevelTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Document Type List
+     * 
+     * @return
+     */
+    public List<DocumentTypeDTO> findDocumentTypeList(FunctionDTO function) {
+        info("excuting findDocumentTypeList()");
+        List<DocumentTypeDTO> returnVal = new ArrayList<DocumentTypeDTO>();
+        List<DocType> docTypes = getDocumentTypeDAO().findDocumentTypeList();
+        if (!CommonUtil.isNullOrEmpty(docTypes)) {
+            returnVal = DocumentTypeDTOAssembler.toDtoList(docTypes, function);
+        }
+        info("findDocumentTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Handling Agent List
+     * 
+     * @return
+     */
+    public List<HandlingAgentDTO> findHandlingAgentList(FunctionDTO function) {
+        info("excuting findHandlingAgentList() " + function);
+        List<HandlingAgentDTO> returnVal = new ArrayList<HandlingAgentDTO>();
+        List<HandlingAgt> handlingAgts = getHandlingAgentDAO().findHandlingAgentList();
+        if (!CommonUtil.isNullOrEmpty(handlingAgts)) {
+            returnVal = HandlingAgentDTOAssembler.toDtoList(handlingAgts, function);
+        }
+        info("findHandlingAgentList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Hk District List
+     * 
+     * @return
+     */
+    public List<HkDistrictDTO> findHkDistrictList() {
+        info("excuting findHkDistrictList()");
+        List<HkDistrictDTO> returnVal = new ArrayList<HkDistrictDTO>();
+        List<HkDist> hkDists = getHkDistrictDAO().findHkDistrictList();
+        if (!CommonUtil.isNullOrEmpty(hkDists)) {
+            returnVal = HkDistrictDTOAssembler.toDtoList(hkDists);
+        }
+        info("findHkDistrictList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Hk Region List
+     * 
+     * @return
+     */
+    public List<HkRegionDTO> findHkRegionList() {
+        info("excuting findHkRegionList()");
+        List<HkRegionDTO> returnVal = new ArrayList<HkRegionDTO>();
+        List<HkRgn> hkRgns = getHkRegionDAO().findHkRegionList();
+        if (!CommonUtil.isNullOrEmpty(hkRgns)) {
+            returnVal = HkRegionDTOAssembler.toDtoList(hkRgns);
+        }
+        info("findHkRegionList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve the participant role type list
+     * 
+     * @return
+     */
+    public List<ParticipantRoleTypeDTO> findParticipantRoleTypeList(FunctionDTO function) {
+        info("excuting findParticipantRoleTypeList()");
+        List<ParticipantRoleTypeDTO> returnVal = new ArrayList<ParticipantRoleTypeDTO>();
+        List<PartcpRoleType> partcpRoleTypes = getParticipantRoleTypeDAO()
+                .findParticipantRoleTypeList();
+        if (!CommonUtil.isNullOrEmpty(partcpRoleTypes)) {
+            returnVal = ParticipantRoleTypeDTOAssembler.toDtoList(partcpRoleTypes, function);
+        }
+        info("findParticipantRoleTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Post Office List
+     * 
+     * @return
+     */
+    public List<PostOfficeDTO> findPostOfficeList() {
+        info("excuting findPostOfficeList()");
+        List<PostOfficeDTO> returnVal = new ArrayList<PostOfficeDTO>();
+        List<PostOffice> postOffices = getPostOfficeDAO().findPostOfficeList();
+        if (!CommonUtil.isNullOrEmpty(postOffices)) {
+            returnVal = PostOfficeDTOAssembler.toDtoList(postOffices);
+        }
+        info("findPostOfficeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Request Status Type List
+     * 
+     * @return
+     */
+    public List<RequestServiceTypeDTO> findRequestServiceTypeList() {
+        info("excuting findRequestStatusTypeList()");
+        List<RequestServiceTypeDTO> returnVal = new ArrayList<RequestServiceTypeDTO>();
+        returnVal.add(RequestServiceTypeDTOAssembler
+                .toDto(RequestConstant.REQUEST_SERVICE_TYPE_FRIST));
+        returnVal.add(RequestServiceTypeDTOAssembler
+                .toDto(RequestConstant.REQUEST_SERVICE_TYPE_RESERVICE));
+        info("findRequestStatusTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Request Status Type List
+     * 
+     * @return
+     */
+    public List<RequestStatusTypeDTO> findRequestStatusTypeList() {
+        info("excuting findRequestStatusTypeList()");
+        List<RequestStatusTypeDTO> returnVal = new ArrayList<RequestStatusTypeDTO>();
+        List<ReqsStatusType> reqsStatusTypes = getRequestStatusTypeDAO().findRequestStatusList();
+
+        String[] defined = { RequestConstant.REQUEST_STATUS_DRAFT,
+                RequestConstant.REQUEST_STATUS_PENDING_SUBMIT,
+                RequestConstant.REQUEST_STATUS_SUBMITTED,
+                RequestConstant.REQUEST_STATUS_REGISTERED, RequestConstant.REQUEST_STATUS_ACCEPTED,
+                RequestConstant.REQUEST_STATUS_ASSIGNED, RequestConstant.REQUEST_STATUS_WITHHELD,
+                RequestConstant.REQUEST_STATUS_COMPLETED, RequestConstant.REQUEST_STATUS_WITHDRAWN };
+        final List<String> definedOrder = Arrays.asList(defined);
+        Collections.sort(reqsStatusTypes, new Comparator<ReqsStatusType>() {
+            public int compare(ReqsStatusType o1, ReqsStatusType o2) {
+                int io1 = definedOrder.indexOf(o1.getReqsStatusTypeCd());
+                int io2 = definedOrder.indexOf(o2.getReqsStatusTypeCd());
+                return io1 - io2;
+            }
+        });
+
+        if (!CommonUtil.isNullOrEmpty(reqsStatusTypes)) {
+            returnVal = RequestStatusTypeDTOAssembler.toDtoList(reqsStatusTypes);
+        }
+        info("findRequestStatusTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Request Type List
+     * 
+     * @return
+     */
+    public List<RequestTypeDTO> findRequestTypeList() {
+        info("excuting findRequestTypeList()");
+        List<RequestTypeDTO> returnVal = new ArrayList<RequestTypeDTO>();
+        List<ReqsType> reqsTypes = getRequestTypeDAO().findRequestTypeList();
+        if (!CommonUtil.isNullOrEmpty(reqsTypes)) {
+            returnVal = RequestTypeDTOAssembler.toDtoList(reqsTypes);
+        }
+        info("findRequestTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Result Reason List
+     * 
+     * @return
+     */
+    public List<BailiffTaskResultReasonDTO> findBailiffTaskResultReasonList() {
+        info("excuting findBailiffTaskResultReasonList()");
+        List<BailiffTaskResultReasonDTO> returnVal = new ArrayList<BailiffTaskResultReasonDTO>();
+        List<BlfTaskRsltRsn> blfTaskRsltRsns = getBailiffTaskResultReasonDAO()
+                .findBailiffTaskResultReasonList();
+        if (!CommonUtil.isNullOrEmpty(blfTaskRsltRsns)) {
+            returnVal = BailiffTaskResultReasonDTOAssembler.toDtoList(blfTaskRsltRsns);
+        }
+        info("findBailiffTaskResultReasonList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Result Status List
+     * 
+     * @return
+     */
+    public List<BailiffTaskResultStatusDTO> findBailiffTaskResultStatusList() {
+        info("excuting findBailiffTaskResultStatusList()");
+        List<BailiffTaskResultStatusDTO> returnVal = new ArrayList<BailiffTaskResultStatusDTO>();
+        List<BlfTaskRsltStatus> blfTaskRsltStatus = getBailiffTaskResultStatusDAO()
+                .findBailiffTaskResultStatusList();
+        if (!CommonUtil.isNullOrEmpty(blfTaskRsltStatus)) {
+            returnVal = BailiffTaskResultStatusDTOAssembler.toDtoList(blfTaskRsltStatus);
+        }
+        info("findBailiffTaskResultStatusList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Service Mode Type List
+     * 
+     * @return
+     */
+    public List<ServiceModeTypeDTO> findServiceModeTypeList() {
+        info("excuting findServiceModeTypeList()");
+        List<ServiceModeTypeDTO> returnVal = new ArrayList<ServiceModeTypeDTO>();
+        List<ServModeType> servModeTypes = getServiceModeTypeDAO().findServiceModeList();
+        if (!CommonUtil.isNullOrEmpty(servModeTypes)) {
+            returnVal = ServiceModeTypeDTOAssembler.toDtoList(servModeTypes);
+        }
+        info("findServiceModeTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Special Request Type List
+     * 
+     * @return
+     */
+    public List<SpecialRequestTypeDTO> findSpecialRequestTypeList() {
+        info("excuting findSpecialRequestTypeList()");
+        List<SpecialRequestTypeDTO> returnVal = new ArrayList<SpecialRequestTypeDTO>();
+        List<SpecialReqsType> specialReqsTypes = getSpecialRequestTypeDAO()
+                .findSpecialRequestTypeList();
+        if (!CommonUtil.isNullOrEmpty(specialReqsTypes)) {
+            returnVal = SpecialRequestTypeDTOAssembler.toDtoList(specialReqsTypes);
+        }
+        info("findSpecialRequestTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Generate Bailiff Sequence No.
+     * 
+     * @param seqKey
+     * @return
+     */
+    public Integer genNextBailiffSequenceNo(String seqKey) {
+        BlfSeq blfSeq = getBailiffSequenceDAO().findBailiffSequenceBySequenceKey(seqKey);
+        if (blfSeq == null) {
+            blfSeq = new BlfSeq();
+            blfSeq.setBlfSeqKey(seqKey);
+            blfSeq.setBlfSeqNo(1);
+            getBailiffSequenceDAO().persist(blfSeq);
+        } else {
+            blfSeq.setBlfSeqNo(blfSeq.getBlfSeqNo() + 1);
+            blfSeq.setPreviousVersion(blfSeq.getVersion());
+            getBailiffSequenceDAO().merge(blfSeq);
+        }
+        return blfSeq.getBlfSeqNo();
+    }
+
+    /**
+     * Get Request Type Code
+     * 
+     * @param typeId
+     * @return
+     */
+    public String getRequestTypeCode(Integer typeId) {
+        String typeCode = "";
+        if (RequestConstant.REQUEST_TYPE_ID_SER.equals(typeId)) {
+            typeCode = RequestConstant.REQUEST_TYPE_CODE_SER;
+        } else if (RequestConstant.REQUEST_TYPE_ID_EXE.equals(typeId)) {
+            typeCode = RequestConstant.REQUEST_TYPE_CODE_EXE;
+        }
+        return typeCode;
+    }
+
+    /**
+     * get latest hearing schedule date
+     * 
+     * @param caseId
+     * @param date
+     * @return
+     */
+    public Date getLatestHearingDate(Integer caseId, Date date) {
+        Date returnVal = null;
+        HrnSchd latestHearingSchedule = getHearingScheduleDAO().findLatestHearingSchedule(caseId,
+                date);
+        if (latestHearingSchedule != null) {
+            returnVal = latestHearingSchedule.getHrnSchdDate();
+        }
+        return returnVal;
+    }
+
+    /**
+     * Retrieve the proof of service document type list
+     * 
+     * @return
+     */
+    public List<PosDocumentTypeDTO> findPosDocumentTypeList() {
+        List<ProofOfServDocType> proofOfServDocTypes = getPosDocumentTypeDAO()
+                .findPosDocumentTypeList();
+        return PosDocumentTypeDTOAssembler.toDtoList(proofOfServDocTypes);
+    }
+
+    /**
+     * Get full list of CourtRmChmbr
+     * 
+     * @return list of CourtRoomChambersDetailDTO
+     */
+    public List<CourtRoomChambersDTO> getCourtRoomChambers() {
+        info("executing getCourtRoomChambers()");
+        List<CourtRmChmbr> courtRmChmbrs = getCourtRmChmbrDAO().getCourtRoomChambers();
+        List<CourtRoomChambersDTO> returnval = CourtRoomChambersDTOAssembler
+                .toDtoList(courtRmChmbrs);
+        info("getCourtRoomChambers() end returnVal: " + returnval);
+        return returnval;
+    }
+
+    /**
+     * Get full list of FpAppNatType
+     * 
+     * @return list of FpApplicationNatureTypeDTO
+     */
+    public List<FpApplicationNatureTypeDTO> findFpApplicationNatureTypeList() {
+        info("executing getFpAppNatTypes()");
+        List<FpAppNatType> fpAppNatTypes = getFpApplicationNatureTypeDAO().getFpAppNatTypes();
+        List<FpApplicationNatureTypeDTO> returnVal = FpApplicationNatureTypeDTOAssembler
+                .toDtoList(fpAppNatTypes);
+        info("getFpAppNatTypes() end returnVal: " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve Prosecution Department List
+     * 
+     * @return
+     */
+    public List<ProsecutionDepartmentDTO> findProsecutionDepartmentList() {
+        info("executing findProsecutionDepartmentList()");
+        List<Pd> pds = getProsecutionDepartmentDAO().findProsecutionDepartmentList();
+        List<ProsecutionDepartmentDTO> returnVal = ProsecutionDepartmentDTOAssembler.toDtoList(pds);
+        info("findProsecutionDepartmentList() end returnVal: " + returnVal);
+        return returnVal;
+
+    }
+
+    /**
+     * Retrieve Case Type List
+     * 
+     * @return
+     */
+    public List<CaseTypeDTO> findSummonsCaseTypeList(FunctionDTO function) {
+        info("excuting findSummonsCaseTypeList() " + function);
+        List<CaseTypeDTO> returnVal = new ArrayList<CaseTypeDTO>();
+        List<CaseType> caseTypes = getCaseTypeDAO().findCaseTypeList();
+        for (CaseType caseType : caseTypes) {
+            if (AppServiceDocValidationUtil.isSummonsCaseType(caseType.getCaseTypeCd())) {
+                returnVal.add(CaseTypeDTOAssembler.toDto(caseType));
+            }
+        }
+        info("findSummonsCaseTypeList end returnVal : " + returnVal);
+        return returnVal;
+    }
+
+    /**
+     * Retrieve senior bailiff user account list
+     * 
+     * @param baiOffId
+     * @return
+     */
+    public List<IntlUserAcDTO> getSeniorBailiffUserAccountList(Integer baiOffId) {
+        List<IntlUserAcDTO> intlUserAcDTOs = new ArrayList<IntlUserAcDTO>();
+        List<BlfAssign> blfAssigns = getBailiffAssignedDAO()
+                .findSeniorBailiffAssignedByBailiffOfficeId(baiOffId);
+        if (!CommonUtil.isNullOrEmpty(blfAssigns)) {
+            for (BlfAssign blfAssign : blfAssigns) {
+                IntlUserAcDTO dto = IntlUserAcDTOAssembler.toDto(blfAssign.getIntlUserAc());
+                intlUserAcDTOs.add(dto);
+            }
+        }
+        return intlUserAcDTOs;
+    }
+
+    /**
+     * Get file from centralized file service
+     * 
+     * @param doc
+     * @return
+     * @throws Exception
+     */
+    public FileDTO getDocumentFile(DocumentFileDTO documentFile) throws Exception {
+        FileDTO fileDTO = null;
+        try {
+            String fileName = null;
+            String fileFormat = "PDF";
+
+            if (!CommonUtil.isNullOrEmpty(documentFile.getDocumentId())
+                    && DbCommonUtil.isValidDbId(documentFile.getDocumentId())) {
+                fileName = documentFile.getDocumentId().toString();
+                fileDTO = DocumentFileUtil.getEcfFile(getJudiciaryUser(),
+                        documentFile.getDocumentId());
+
+            } else if (!CommonUtil.isNullOrEmpty(documentFile.getSourceFileId())) {
+                fileName = documentFile.getSourceFileId();
+                fileDTO = DocumentFileUtil.getCfsFile(getJudiciaryUser(),
+                        documentFile.getSourceFileId());
+            }
+
+            if (!CommonUtil.isNullOrEmpty(fileDTO)) {
+                List<String> fullFilename = CommonUtil.split(fileDTO.getFilename(), ".");
+
+                if (CommonUtil.isNullOrEmpty(fileName)) {
+                    fileName = fullFilename.get(0);
+                }
+                if (fullFilename.size() == 2) {
+                    fileFormat = fullFilename.get(1);
+                }
+
+                fileDTO.setFilename(fileName + "." + fileFormat);
+            }
+
+        } catch (Exception e) {
+            error("Exception in getDocumentFile() : " + e.toString());
+        }
+        return fileDTO;
+    }
+}

@@ -1,0 +1,27 @@
+package hk.judiciary.icmssvd.model.svdReq.biz.dto;
+
+import hk.judiciary.icmssvd.model.BaseDTO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class FunctionDTO extends BaseDTO {
+    private static final long serialVersionUID = 1L;
+    private String courtLevelTypeCode;
+
+    public String getCourtLevelTypeCode() {
+        return courtLevelTypeCode;
+    }
+
+    public void setCourtLevelTypeCode(String courtLevelTypeCode) {
+        this.courtLevelTypeCode = courtLevelTypeCode;
+    }
+
+    @Override
+    public String toString() {
+        return "FunctionDTO [courtLevelTypeCode=" + courtLevelTypeCode + "]";
+    }
+
+}

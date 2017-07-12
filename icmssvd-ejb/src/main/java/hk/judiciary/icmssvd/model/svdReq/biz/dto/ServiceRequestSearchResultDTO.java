@@ -1,0 +1,138 @@
+package hk.judiciary.icmssvd.model.svdReq.biz.dto;
+
+import java.util.Date;
+
+import hk.judiciary.icmssvd.model.BaseDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HandlingAgentDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HkRegionDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.IdDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.RequestStatusTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ServiceModeTypeDTO;
+
+/**
+ * 
+ * @version $Revision: 2551 $ $Date: 2016-12-30 21:14:55 +0800 (週五, 30 十二月 2016) $
+ * @author $Author: vicki.huang $
+ */
+public class ServiceRequestSearchResultDTO extends BaseDTO {
+    private static final long serialVersionUID = 1L;
+    private IdDTO requestId;
+    private Date submitDate;
+    private String caseNo;
+    private PartyDTO requester;
+    private PartyDTO recipient;
+    private HkRegionDTO hkRegion;
+    private ServiceModeTypeDTO serviceModeType;
+    private HandlingAgentDTO handlingAgent;
+    private RequestServiceTypeDTO requestServiceType;
+    private boolean urgentServiceInd;
+    private RequestStatusTypeDTO requestStatusType;
+    private boolean allowCompleteInd;
+
+    public IdDTO getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(IdDTO requestId) {
+        this.requestId = requestId;
+    }
+
+    public Date getSubmitDate() {
+        return submitDate;
+    }
+
+    public void setSubmitDate(Date submitDate) {
+        this.submitDate = submitDate;
+    }
+
+    public String getCaseNo() {
+        return caseNo;
+    }
+
+    public void setCaseNo(String caseNo) {
+        this.caseNo = caseNo;
+    }
+
+    public PartyDTO getRequester() {
+        return requester;
+    }
+
+    public void setRequester(PartyDTO requester) {
+        this.requester = requester;
+    }
+
+    public PartyDTO getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(PartyDTO recipient) {
+        this.recipient = recipient;
+    }
+
+    public HkRegionDTO getHkRegion() {
+        return hkRegion;
+    }
+
+    public void setHkRegion(HkRegionDTO hkRegion) {
+        this.hkRegion = hkRegion;
+    }
+
+    public ServiceModeTypeDTO getServiceModeType() {
+        return serviceModeType;
+    }
+
+    public void setServiceModeType(ServiceModeTypeDTO serviceModeType) {
+        this.serviceModeType = serviceModeType;
+    }
+
+    public HandlingAgentDTO getHandlingAgent() {
+        return handlingAgent;
+    }
+
+    public void setHandlingAgent(HandlingAgentDTO handlingAgent) {
+        this.handlingAgent = handlingAgent;
+    }
+
+    public RequestServiceTypeDTO getRequestServiceType() {
+        return requestServiceType;
+    }
+
+    public void setRequestServiceType(RequestServiceTypeDTO requestServiceType) {
+        this.requestServiceType = requestServiceType;
+    }
+
+    public boolean isUrgentServiceInd() {
+        return urgentServiceInd;
+    }
+
+    public void setUrgentServiceInd(boolean urgentServiceInd) {
+        this.urgentServiceInd = urgentServiceInd;
+    }
+
+    public RequestStatusTypeDTO getRequestStatusType() {
+        return requestStatusType;
+    }
+
+    public void setRequestStatusType(RequestStatusTypeDTO requestStatusType) {
+        this.requestStatusType = requestStatusType;
+    }
+
+    public boolean isAllowCompleteInd() {
+        return allowCompleteInd;
+    }
+
+    public void setAllowCompleteInd(boolean allowCompleteInd) {
+        this.allowCompleteInd = allowCompleteInd;
+    }
+
+    @Override
+    public String toString() {
+        return "ServiceRequestSearchResultDTO [requestId=" + requestId + ", submitDate="
+                + submitDate + ", caseNo=" + caseNo + ", requester=" + requester + ", recipient="
+                + recipient + ", hkRegion=" + hkRegion + ", serviceModeType=" + serviceModeType
+                + ", handlingAgent=" + handlingAgent + ", requestServiceType=" + requestServiceType
+                + ", urgentServiceInd=" + urgentServiceInd + ", requestStatusType="
+                + requestStatusType + ", allowCompleteInd=" + allowCompleteInd + "]";
+    }
+
+}

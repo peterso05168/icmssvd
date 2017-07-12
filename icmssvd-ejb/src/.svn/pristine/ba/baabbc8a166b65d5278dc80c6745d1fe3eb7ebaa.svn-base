@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-10-28T08:41:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OMR" pageWidth="56" pageHeight="352" whenNoDataType="AllSectionsNoDetail" columnWidth="56" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isFloatColumnFooter="true" uuid="baa6d691-0542-403e-a836-4e3d4608105d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="omrData" class="java.lang.String"/>
+	<queryString language="XPath">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="56" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="240" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="225" width="32" height="14" uuid="bb96091c-2dd2-4c67-8a25-d417706e3c6b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(0, 1).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="222" width="32" height="14" uuid="f5120107-e9a1-4fdb-840d-d2c2740dbd14">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(1, 2).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="219" width="32" height="14" uuid="0f4dabd4-18e6-44e9-895e-3f981302b087">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(2, 3).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="216" width="32" height="14" uuid="a39c43d0-5536-4b55-8233-371d0bb790f7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(3, 4).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="213" width="32" height="14" uuid="71b87342-bb53-44f9-a749-2cd01ad20bce">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(4, 5).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="210" width="32" height="14" uuid="0a199657-5d5c-413c-8b0e-89485bb59ede">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(5, 6).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="196" width="32" height="14" uuid="406eaa27-dc91-4c58-8be2-6a643854eaef">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(6, 7).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="182" width="32" height="14" uuid="72b58468-af8e-4056-a5c1-f11d04f5c6b7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(7, 8).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="168" width="32" height="14" uuid="69e8689a-b3f9-4b98-bd22-6cce74f5d32f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(8, 9).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="154" width="32" height="14" uuid="fe5fd5f0-9019-44f3-aef8-bcad20f63827">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(9, 10).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="140" width="32" height="14" uuid="88ef9945-d5d7-4658-ab6b-435e1e11aebc">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(10, 11).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="126" width="32" height="14" uuid="94229930-5ba6-4d76-ab79-299e7a3a2885">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(11, 12).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="112" width="32" height="14" uuid="7cbed003-71ae-4e5e-b820-9d7506380cdb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(12, 13).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="98" width="32" height="14" uuid="d513a8e4-0db6-463a-9389-ccd817ddc7db">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(13, 14).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="84" width="32" height="14" uuid="8c80721b-e2cd-42a8-92ba-6487e82548a8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(14, 15).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="70" width="32" height="14" uuid="5f5e12d5-d2b0-4c3b-bdcc-a3e49aa9a1e0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(15, 16).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="56" width="32" height="14" uuid="838077ca-1cd5-4227-bb3e-5b8e389b6686">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$P{omrData}.substring(16, 17).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="42" width="32" height="14" uuid="75fd56e4-b821-4331-bc16-ec2ce2c0f393">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(17, 18).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="28" width="32" height="14" uuid="14f97433-3dc1-4ce6-9286-76c50831cb79">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(18, 19).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="14" width="32" height="14" uuid="bebabf62-2be8-4b73-831e-f8c9a0b3d7f1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(19, 20).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="16" y="0" width="32" height="14" uuid="864fec98-9613-4bf2-9434-96e636273454">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!$P{omrData}.isEmpty() && $P{omrData}.substring(20, 21).equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+				</box>
+			</textField>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="56" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+</jasperReport>

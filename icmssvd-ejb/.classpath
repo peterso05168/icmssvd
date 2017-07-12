@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/repository/javax/javaee-api/7.0/javaee-api-7.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/icmssvd-lib"/>
+	<classpathentry kind="lib" path="/repository/jud/framework/fmk-ejb-lib/0.24.0.0/fmk-ejb-lib-0.24.0.0.jar"/>
+	<classpathentry kind="lib" path="/repository/jud/framework/fmk-lib/0.26.0.0/fmk-lib-0.26.0.0.jar"/>
+	<classpathentry kind="lib" path="/repository/commons-codec/commons-codec/1.7/commons-codec-1.7.jar"/>
+	<classpathentry kind="lib" path="/repository/jud/entity-lib/icms-entity-lib/0.2.9.188_ICMS-SNAPSHOT-201706161424/icms-entity-lib-0.2.9.188_ICMS-SNAPSHOT-201706161424.jar"/>
+	<classpathentry kind="lib" path="/repository/jud/icms/icms-stub/icmscasews-stub/0.1.0.0-SNAPSHOT-201703230940/icmscasews-stub-0.1.0.0-SNAPSHOT-201703230940.jar"/>
+	<classpathentry kind="lib" path="/repository/jud/icms/icms-stub/icmslisws-stub/0.1.2.0-SNAPSHOT-201706021034/icmslisws-stub-0.1.2.0-SNAPSHOT-201706021034.jar"/>
+	<classpathentry kind="lib" path="/repository/jud/icms/icms-stub/icmscdyws-stub/0.1.3.0-SNAPSHOT-201706021143/icmscdyws-stub-0.1.3.0-SNAPSHOT-201706021143.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

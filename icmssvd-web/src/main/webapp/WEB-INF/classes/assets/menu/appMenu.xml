@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menuitems>
+	<menuitem label="Service Of Document">
+		<menuitem label="Search Service Request (DC)" functionId="SVD-SVD-00010" />
+		<menuitem label="Search Service Request (MC)" functionId="SVD-SVD-00020" />
+	    <menuitem label="Maintain Service Request (DC)" functionId="SVD-SVD-00030" />
+	    <menuitem label="Maintain Service Request (MC)" functionId="SVD-SVD-00040" />
+	    <menuitem label="Re-Service Request (By Batch)" functionId="SVD-SVD-00050" />
+	</menuitem>
+	
+	<menuitem label="Proof of Service Request">
+	    <menuitem label="Search Proof of Service Request (DC)" functionId="SVD-SVD-00110" />
+	    <menuitem label="Search Proof of Service Request (MC)" functionId="SVD-SVD-00120" />
+	    <menuitem label="Proof of Service Request (By Batch)" functionId="SVD-SVD-00150" />
+	</menuitem>
+	
+	<menuitem label="Execution Request">
+	    <menuitem label="Search Execution Request" functionId="SVD-SVD-00210" />
+	</menuitem>
+	
+	<menuitem>
+	    <menuitem label="Maintain Proof of Service Request (DC)" functionId="SVD-SVD-00130" />
+	    <menuitem label="Maintain Proof of Service Request (MC)" functionId="SVD-SVD-00140" />
+	    <menuitem label="Maintain Execution Request" functionId="SVD-SVD-00220" />
+	</menuitem>
+	
+</menuitems>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+    xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+
+
+    <persistence-unit name="icmssvdPU" transaction-type="JTA">
+        
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/appds</jta-data-source>  
+
+		<jar-file>icms-entity-lib-0.2.9.188_ICMS-SNAPSHOT-201706161424.jar</jar-file>
+		<jar-file>../icmssvd-ejb.jar</jar-file>
+		<properties>
+			<property name="jboss.entity.manager.jndi.name" value="java:jboss/persistence/icmssvdPU" />
+			<property name="eclipselink.target-database"
+				value="org.eclipse.persistence.platform.database.oracle.Oracle11Platform" />
+			<property name="eclipselink.target-server" value="JBoss" />
+			<property name="eclipselink.composite-unit" value="true" />
+			<property name="eclipselink.session.customizer"
+				value="hk.judiciary.fmk.ejb.dao.entity.DefaultEntityInterceptor" />
+		</properties>    
+	</persistence-unit>    
+
+</persistence>

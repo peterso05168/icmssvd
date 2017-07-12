@@ -1,0 +1,29 @@
+package hk.judiciary.icmssvd.model.svdReq.dao;
+
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+
+import hk.judiciary.icms.model.dao.entity.BlfTask;
+import hk.judiciary.icmssvd.model.BaseDAO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class BailiffTaskDAO extends BaseDAO<BlfTask> {
+    public static final String BAILIFF_TASK_DAO = "bailiffTaskDAO";
+
+    private static final String QUERY_BY_REQS_ID = "BlfTask.findBailiffTaskListByRequestId";
+
+    private static final String PARAM_REQUEST_ID = "reqsId";
+
+    public List<BlfTask> findBailiffTaskListByRequestId(Integer reqsId) {
+        info("findBailiffTaskListByRequestId() start " + reqsId);
+        TypedQuery<BlfTask> query = getEntityManager().createNamedQuery(QUERY_BY_REQS_ID,
+                BlfTask.class);
+        query.setParameter(PARAM_REQUEST_ID, reqsId);
+        return getResultList(query);
+    }
+}

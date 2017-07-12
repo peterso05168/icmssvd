@@ -1,0 +1,16 @@
+package hk.judiciary.icmssvd.model.common.biz.assembler;
+
+import hk.judiciary.icmssvd.model.common.biz.dto.IdDTO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class IdDTOAssembler {
+    public static IdDTO toDto(Integer id) {
+        IdDTO dto = new IdDTO();
+        dto.setId(id);
+        return dto;
+    }
+}

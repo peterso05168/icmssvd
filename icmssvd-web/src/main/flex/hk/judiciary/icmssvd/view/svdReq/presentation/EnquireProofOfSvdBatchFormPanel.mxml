@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  xmlns:com="hk.judiciary.icmssvd.view.common.presentation.*"
+					  width="100%" creationComplete="{model.init()}" height="100%">
+
+	<fx:Metadata>
+		[ResourceBundle("sharedButton")]
+		[ResourceBundle("sharedSVD")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:i18nHandler BundleNameCollection="{['sharedButton', 'sharedSVD']}" />
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import hk.judiciary.icmssvd.view.common.util.DateUtil;
+			[Inject]
+			[Bindable]
+			public var model:EnquireProofOfSvdBatchFormPanelPM;
+		]]>
+	</fx:Script>
+	
+	<j:layout>
+		<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+	</j:layout>
+	<!-- Error Box Section -->
+	<com:SvdReqBoErrorBox id="enquireProofBatchErrorBox" width="100%" paddingLeft="10" paddingRight="10"/>
+	<j:Scroller width="100%" height="100%">
+		<j:VGroup width="100%" height="100%" paddingLeft="10" paddingRight="10">
+			<j:Accordion id="accordion" width="100%" collapseOther="false"  selectedIndex="{model.selectedAccordionIndex}">
+				<j:AccordionTab id="searAbsAcc" width="100%" parentPanel="{this.accordion}">
+					<j:layout>
+						<j:VerticalLayout gap="10" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10"/>
+					</j:layout>
+					<j:HGroup width="100%" gap="0">
+						<j:Form width="100%" styleName="searchFrom" >
+							<j:layout>			
+								<j:FormLayout gap="-10" paddingBottom="-20" paddingLeft="0" paddingRight="0" paddingTop="0" /> 
+							</j:layout>
+							
+							<j:HGroup>
+								<j:VGroup>
+									<j:HGroup height="25">
+										<j:Label id="courtLabel" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="batchCourtDropDown" 
+																width="420" 
+																dataProvider="{model.comprisingCourtVOs}" 
+																labelField="comprisingCourtName"
+																valueField="comprisingCourtId"
+																selectedItemValue="{model.selectComprisingCourt}"
+																change="{model.changCourt(batchCourtDropDown.selectedItem)}" >
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25">
+										<j:Label id="courtRoomLabel" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="batchCourtRoom"
+																width="150" 
+																dataProvider="{model.displayCourtNumberVOs}"
+																labelField="courtRoomChambersName"
+																valueField="courtRoomChambersId" 
+																selectedItemValue="{model.selectCourtRm}"
+																change="{model.changCourtRm(batchCourtRoom.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25"> 
+										<j:Label id="hrnDateLabel" styleName="formLabel" width="150" verticalAlign="bottom" paddingTop="5"></j:Label>
+										<j:DateField id="batchHrnDateInput" 
+													 width="150" 
+													 formatString="{model.dateFormat}"
+													 parseFunction="{DateUtil.parseDate}" 
+													 selectedDate="@{model.batchSearchVO.hearingScheduleDate}"
+													 editable="true" restrict="[0-9] '\/'"/>
+									</j:HGroup>	
+									<j:HGroup height="25"> 
+										<j:Label id="startTime" styleName="formLabel" width="150" verticalAlign="bottom" paddingTop="5"></j:Label>
+										<j:BindableDropDownList id="hrnHour" width="50" dataProvider="{model.hourList}"
+																labelField="hour"
+																selectedItemValue="@{model.selectedHour}"
+																valueField="hour"/>
+										<j:Label id="tempPoint" verticalAlign="bottom" paddingTop="5"/>
+										<j:BindableDropDownList id="hrnMin" width="50" dataProvider="{model.minList}"
+																labelField="minute"
+																selectedItemValue="@{model.selectedMin}"
+																valueField="minute"/>
+									</j:HGroup>		
+								</j:VGroup>
+								
+								<j:VGroup paddingLeft="20">
+									<j:HGroup height="25">
+										<j:Label id="caseType" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="CaseType"
+																width="420"
+																dataProvider="{model.caseTypeVOs}"
+																labelField="caseTypeName"
+																valueField="caseTypeId" 
+																selectedItemValue="{model.selectCaseType}"
+																change="{model.changCaseType(CaseType.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25">
+										<j:Label id="appNature" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="AppNature"
+																width="420"
+																dataProvider="{model.fpApplicationNatureTypeVOs}"
+																labelField="englishFpApplicationNatureTypeName"
+																valueField="fpApplicationNatureTypeId" 
+																selectedItemValue="{model.selectApplicationNat}" 
+																change="{model.changAppNature(AppNature.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25">
+										<j:Label id="prosecution" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="Prosecution"
+																width="420"
+																dataProvider="{model.prosecutionDepartmentVOs}"
+																labelField="prosecutionDepartmentName"
+																valueField="prosecutionDepartmentCodeId" 
+																selectedItemValue="{model.selectProsecution}" 
+																change="{model.changProsecution(Prosecution.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+								</j:VGroup>
+							</j:HGroup>
+						</j:Form>
+					</j:HGroup>	
+					<j:HGroup width="100%" horizontalAlign="right">   
+						<j:Button id="searchBtn" click="{model.doSearch()}"/> 					
+						<j:Button id="clearBtn" click="{model.doClear()}"/> 	
+					</j:HGroup>
+				</j:AccordionTab>
+			</j:Accordion>
+			<j:Panel id="proofTabTitle" 
+					 width="100%" 
+					 borderVisible="false" 
+					 dropShadowVisible="false">
+				<j:layout>
+					<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>			 
+				</j:layout>
+				<j:VGroup gap="0" width="100%" >
+					<j:AdvancedDataGrid id="dataGrid" width="100%" height="200"
+										sortableColumns="true" 
+										selectable="false" 
+										dataProvider="{model.displayPosReqBatchSearchResultVOs}" 
+										click="{model.checkSubmitAble()}">
+						<j:columns>
+							<j:AdvancedDataGridColumn id = "adgcCheckboxColumn"
+													  headerRenderer="hk.judiciary.fmk.view.component.AdvancedDataGridHeaderCheckBoxRenderer"
+													  width = "40"
+													  dataField = "checked"
+													  headerText = "" 
+													  sortable = "false" />
+							<j:AdvancedDataGridColumn id = "caseNoColumn"
+													  width = "140"
+													  dataField="caseNo"
+													  sortable = "true"
+													  textAlign = "center" />
+							<j:AdvancedDataGridColumn id = "prosecutionColumn"
+													  width = "200"
+													  dataField = "requesterName"
+													  sortable = "true"
+													  textAlign = "center" />
+							<j:AdvancedDataGridColumn id = "recipientColumn"
+													  width = "140"
+													  dataField = "recipientName"
+													  sortable = "true"
+													  textAlign = "center" />
+							<j:AdvancedDataGridColumn id = "handlingAgentColumn"
+													  width = "140"
+													  dataField = "handlingAgentName"
+													  sortable = "true"
+													  textAlign = "center" />
+							<j:AdvancedDataGridColumn id = "servByColumn"
+													  width = "200"
+													  dataField = "servedByName"
+													  sortable = "true"
+													  textAlign = "center" />
+							<j:AdvancedDataGridColumn id = "affirColumn"
+													  width = "100"
+													  sortable = "true"
+													  textAlign = "center" >
+								<j:itemRenderer>
+									<fx:Component>
+										<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																		  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																		  xmlns:s="library://ns.adobe.com/flex/spark" 
+																		  xmlns:mx="library://ns.adobe.com/flex/mx"
+																		  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																		  >
+											<fx:Script>
+												<![CDATA[
+													import hk.judiciary.icmssvd.view.common.util.DateUtil;
+												]]>
+											</fx:Script>
+											<fx:Declarations>										
+											</fx:Declarations> 
+											<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+												<j:layout>
+													<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+												</j:layout>
+												<j:CheckBox selected="@{data.affirmation}" change="{outerDocument.model.changeAffirmation(data)}"/> 
+											</j:BorderContainer>						 	
+										</j:MXAdvancedDataGridItemRenderer> 
+									</fx:Component>			 		
+								</j:itemRenderer>
+							</j:AdvancedDataGridColumn>
+							<j:AdvancedDataGridColumn id = "dueColumn"
+													  width = "140"
+													  dataField = "courtRoomChambersName"
+													  sortable = "true"
+													  textAlign = "center">
+								<j:itemRenderer>
+									<fx:Component>
+										<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																		  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																		  xmlns:s="library://ns.adobe.com/flex/spark" 
+																		  xmlns:mx="library://ns.adobe.com/flex/mx"
+																		  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																		  >
+											<fx:Script>
+												<![CDATA[
+													import hk.judiciary.icmssvd.view.common.util.DateUtil;
+												]]>
+											</fx:Script>
+											<fx:Declarations>										
+											</fx:Declarations> 
+											<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+												<j:layout>
+													<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+												</j:layout>
+												<j:DateField selectedDate="@{data.dueDate}" width="150" enabled="{data.affirmation}"
+															 formatString="{outerDocument.model.dateFormat}"
+															 parseFunction="{DateUtil.parseDate}" 
+															 editable="true" restrict="[0-9] '\/'"/>    
+											</j:BorderContainer>						 	
+										</j:MXAdvancedDataGridItemRenderer> 
+									</fx:Component>			 		
+								</j:itemRenderer>
+							</j:AdvancedDataGridColumn>
+						</j:columns>
+						<j:rendererProviders>
+							<j:AdvancedDataGridRendererProvider column = "{adgcCheckboxColumn}"
+																renderer = "hk.judiciary.fmk.view.component.AdvancedDataGridCheckBoxRenderer" />
+						</j:rendererProviders>
+					</j:AdvancedDataGrid>	
+				</j:VGroup>
+				<j:HGroup height="30" verticalAlign="middle" width="100%" horizontalAlign="right" >  							
+					<j:Button id="submitBtn" click="{model.submit()}" enabled="{model.submitAble}"/>
+				</j:HGroup>
+			</j:Panel>
+		</j:VGroup>
+	</j:Scroller>
+</j:SkinnableContainer>

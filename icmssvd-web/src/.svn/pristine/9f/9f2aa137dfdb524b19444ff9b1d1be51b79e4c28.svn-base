@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:HBox xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:j="hk.judiciary.fmk.view.component.*"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		creationComplete="{model.init(this)}"
+		>
+	<fx:Script>
+		<![CDATA[
+			[Bindable]
+			public var model:DateTimeFieldPM = new DateTimeFieldPM();
+			[Bindble]
+			public function get displaySetting():int { return model.displaySetting; }
+			public function set displaySetting(value:int):void { 
+				model.displaySetting = value;
+				model.configDisplaySettingProperty(value);
+			}
+			[Bindable]
+			public function get required():Boolean { return model.required; }
+			public function set required(value:Boolean):void {
+				model.required = value;
+				model.configRequiredProperty(value);
+			}
+			[Bindable]
+			public function get selectedDate():Date {
+				//model.constructSelectedDate();
+				return model.selectedDate.value; 
+			}
+			public function set selectedDate(value:Date):void {
+				model.selectedDate.value = value;
+				model.configSelectedDate(value);
+			}
+			
+			override public function set enabled(value:Boolean):void
+			{
+				super.enabled = value;
+				model.configWidgetEnabled(value);
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<j:HGroup height="{model.formRowWithBoxHeight}" verticalAlign="middle" gap="{model.memberMargin}" >
+		<j:DateField id="dtDate" selectedDate="@{model.dtDate.value}" formatString="{model.defaultDateStringFormat}" width="{model.defaultDateFieldWidth}" enabled="{model.dtDate.enable}" />
+		<j:TextInput id="txtHour" text="@{model.txtHour.value}" width="{model.txtHour.width}" restrict="{model.txtHour.inputFormat}" enabled="{model.txtHour.enable}" change="{model.timeChangeEvent()}" />
+		<j:Label text=":" />
+		<j:TextInput id="txtMinute" text="@{model.txtMinute.value}" width="{model.txtMinute.width}" restrict="{model.txtMinute.inputFormat}" enabled="{model.txtMinute.enable}" change="{model.timeChangeEvent()}" />
+		<j:BindableDropDownList id="amPmBDD" dataProvider="{model.amPmBDDObject.dataProvider}" width="{model.amPmBDDObject.width}"
+								selectedItemValue="@{model.amPmBDDObject.value}" selectedIndex="@{model.amPmBDDObject.selectedIndex}"
+								labelField="{model.amPmBDDObject.labelField}"
+								enabled="{model.amPmBDDObject.enable}" 
+								visible="{model.amPmVisible}" includeInLayout="{model.amPmVisible}"
+								change="{model.amPmBDDChangeEvent(amPmBDD.selectedIndex, amPmBDD.selectedItem)}"
+								>
+		</j:BindableDropDownList>
+	</j:HGroup>
+</j:HBox>

@@ -1,0 +1,12 @@
+package hk.judiciary.icmssvd.model.svdReq;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class TaskConstant {
+    public static final String TASK_STATUS_APPROVED = "AP";
+    public static final String TASK_STATUS_CANCELLED = "CC";
+
+}

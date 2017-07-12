@@ -1,0 +1,20 @@
+package hk.judiciary.icmssvd.model.report.biz.dto;
+
+public class PrintFreshSummonsResultDTO extends CommonWsDTO {
+	private Integer totalPageCount;
+	private boolean svdWsSuccess;
+	
+	public boolean isSvdWsSuccess() {
+		return svdWsSuccess;
+	}
+	public void setSvdWsSuccess(boolean svdWsSuccess) {
+		this.svdWsSuccess = svdWsSuccess;
+	}
+	public Integer getTotalPageCount() {
+		return totalPageCount;
+	}
+	public void setTotalPageCount(Integer totalPageCount) {
+		this.totalPageCount = totalPageCount;
+	}
+}
+

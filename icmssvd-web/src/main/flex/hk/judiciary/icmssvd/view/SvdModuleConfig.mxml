@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fx:Object xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:infrastructure="hk.judiciary.fmk.web.infrastructure.*">
+	<fx:Script>
+		<![CDATA[
+			import hk.judiciary.icmssvd.view.svdReq.context.EnquiryProofOfSvdBatchContext;
+			import hk.judiciary.icmssvd.view.svdReq.context.EquireSvdReqContextDC;
+			import hk.judiciary.icmssvd.view.svdReq.context.InputProofOfSvdContextDC;
+			import hk.judiciary.icmssvd.view.svdReq.context.EnquiryReServiceContext;
+			import hk.judiciary.icmssvd.view.exeReq.context.InputExecutionReqsContext;
+			import hk.judiciary.icmssvd.view.svdReq.context.EnquiryProofOfSvdContextDC;
+			import hk.judiciary.icmssvd.view.exeReq.context.EnquiryExecutionReqsContext;
+			import hk.judiciary.icmssvd.view.svdReq.context.EnquiryProofOfSvdContextMC;
+			import hk.judiciary.icmssvd.view.svdReq.context.InputSvdReqContextMC;
+			import hk.judiciary.icmssvd.view.svdReq.context.InputProofOfSvdContextMC;
+			import hk.judiciary.icmssvd.view.svdReq.context.EquireSvdReqContextMC;
+			import hk.judiciary.icmssvd.view.svdReq.context.InputSvdReqContextDC;
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00010" contextConfig="{EquireSvdReqContextDC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00020" contextConfig="{EquireSvdReqContextMC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00030" contextConfig="{InputSvdReqContextDC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00040" contextConfig="{InputSvdReqContextMC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00050" contextConfig="{EnquiryReServiceContext}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00110" contextConfig="{EnquiryProofOfSvdContextDC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00120" contextConfig="{EnquiryProofOfSvdContextMC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00130" contextConfig="{InputProofOfSvdContextDC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00140" contextConfig="{InputProofOfSvdContextMC}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00150" contextConfig="{EnquiryProofOfSvdBatchContext}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00210" contextConfig="{EnquiryExecutionReqsContext}" />
+		
+		<infrastructure:FunctionConfig functionId="SVD-SVD-00220" contextConfig="{InputExecutionReqsContext}" />
+	</fx:Declarations>
+</fx:Object>

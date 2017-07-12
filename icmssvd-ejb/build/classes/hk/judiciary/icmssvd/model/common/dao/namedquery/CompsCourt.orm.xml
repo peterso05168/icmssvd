@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+                        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<named-query name="CompsCourt.findComprisingCourtList">
+		<query>
+        	<![CDATA[
+	            SELECT c FROM CompsCourt c 
+	            WHERE c.effvStartDate<= :effvStartDate 
+	            AND c.effvEndDate>= :effvEndDate 
+	            AND c.activeFlag = :activeFlag
+	            ORDER BY c.compsCourtId
+        	]]>
+        </query>
+	</named-query>
+
+</entity-mappings>

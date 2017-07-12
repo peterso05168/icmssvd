@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+                        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<named-query name="HkRgn.findHkRegionList">
+		<query>
+        	<![CDATA[
+	            SELECT r FROM HkRgn r 
+	            WHERE r.effvStartDate<= :effvStartDate 
+	            AND r.effvEndDate>= :effvEndDate 
+	            AND r.activeFlag = :activeFlag
+	            ORDER BY r.hkRgnId
+        	]]>
+        </query>
+	</named-query>
+
+</entity-mappings>

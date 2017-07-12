@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  xmlns:com="hk.judiciary.icmssvd.view.common.presentation.*"
+					  width="100%" creationComplete="{model.init()}">
+
+	<fx:Metadata>
+		[ResourceBundle("sharedButton")]
+		[ResourceBundle("sharedSVD")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:i18nHandler BundleNameCollection="{['sharedButton', 'sharedSVD']}" />
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import hk.judiciary.icmssvd.view.common.util.DateUtil;
+			[Inject]
+			[Bindable]
+			public var model:EnquireExeReqFormPanelPM;
+		]]>
+	</fx:Script>
+	
+	<j:layout>
+		<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+	</j:layout>
+	
+	<!-- Error Box Section -->
+	<com:SvdReqBoErrorBox id="enquireExeReqBoErrorBox" width="100%" paddingLeft="10" paddingRight="10"/>
+	
+	<j:Accordion id="accordion" width="100%" collapseOther="false"  selectedIndex="{model.selectedAccordionIndex}">
+		<j:AccordionTab id="exeReqsAcc" width="100%" parentPanel="{this.accordion}">
+			<j:layout>
+				<j:VerticalLayout gap="10" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10"/>
+			</j:layout>
+			<j:HGroup width="100%" gap="0">
+				<j:Form width="100%" styleName="searchFrom" >
+					<j:layout>			
+						<j:FormLayout gap="-10" paddingBottom="-20" paddingLeft="0" paddingRight="0" paddingTop="0" /> 
+					</j:layout>
+					
+					<j:HGroup>
+						<j:VGroup>
+							<j:HGroup height="25"> 
+								<j:Label id="reqsDate" styleName="formLabel" width="150" paddingTop="5"></j:Label>
+								<j:Label id="startDate" styleName="formLabel" width="50" verticalAlign="bottom" paddingTop="5"></j:Label> 
+								<j:DateField id="LastReceivedDateForm" 
+											  width="150" 
+											  formatString="{model.dateFormat}"
+											  selectedDate="@{model.executionRequestSearchVO.submitStartDate}"
+											  parseFunction="{DateUtil.parseDate}"
+											  editable="true" restrict="[0-9] '\/'"/>
+								<j:Label id="endDate" styleName="formLabel" width="50" verticalAlign="bottom" paddingLeft="10" paddingTop="5"></j:Label>
+								<j:DateField id="LastReceivedDateTo" 
+											  width="150" 
+											  formatString="{model.dateFormat}"
+											  selectedDate="@{model.executionRequestSearchVO.submitEndDate}"
+											  parseFunction="{DateUtil.parseDate}"
+											  editable="true" restrict="[0-9] '\/'"/>
+							</j:HGroup>				
+							<j:HGroup height="25">
+								<j:Label id="court" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+								<j:BindableDropDownList id="Court" 
+														width="420" 
+														dataProvider="{model.comprisingCourtVOs}" 
+														labelField="comprisingCourtName"
+														valueField="comprisingCourtId"
+														selectedItemValue="{model.selectComprisingCourt}"
+														change="{model.changCourt(Court.selectedItem)}" >
+								</j:BindableDropDownList> 
+							</j:HGroup>
+							<j:HGroup height="25">
+								<j:Label id="caseType" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+								<j:BindableDropDownList id="CaseType"
+														width="420"
+														dataProvider="{model.caseTypeVOs}"
+														labelField="caseTypeName"
+														valueField="caseTypeId" 
+														selectedItemValue="{model.selectCaseType}"
+														change="{model.changCaseType(CaseType.selectedItem)}">
+								</j:BindableDropDownList> 
+							</j:HGroup>
+							<j:HGroup height="25">  
+								<j:Label id="servStatus" styleName="formLabel" width="150" paddingTop="5" ></j:Label>   
+								<j:VGroup paddingLeft="-20" paddingTop="-5">
+									<j:FormItem id="status" creationComplete="{model.formObj(status)}">
+									</j:FormItem>
+								</j:VGroup>	
+							</j:HGroup>
+						</j:VGroup>
+						
+						<j:VGroup paddingLeft="20">
+							<j:HGroup height="25">
+								<j:Label id="caseNo" styleName="formLabel" width="140" paddingTop="5" ></j:Label>
+								<j:TextInput id="CaseNo" 
+											 width="150"
+											 maxChars="15" 
+											 text="@{model.executionRequestSearchVO.caseNo}" 
+											 change="{model.changeCaseNo()}"
+											 typographicCase="uppercase"/>
+							</j:HGroup>
+						</j:VGroup>
+					</j:HGroup>
+				</j:Form>
+				
+				
+				<j:Spacer width="100%" />
+				<j:HGroup gap="10" paddingTop="180" >   
+					<j:Button id="searchBtn" click="{model.doSearch()}"/> 					
+					<j:Button id="clearBtn" click="{model.doClear()}"/> 		
+				</j:HGroup>
+			</j:HGroup>	
+		</j:AccordionTab>
+	</j:Accordion>
+	<j:Panel id="exeTabTitle" 
+			 width="100%" 
+			 borderVisible="false" 
+			 dropShadowVisible="false">
+		<j:layout>
+			<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>			 
+		</j:layout>
+		<j:VGroup gap="0" width="100%" >
+			<j:AdvancedDataGrid width="100%" 
+								height="200" 
+								dataProvider="{model.displayExecutionRequestSearchResultVOs}" 
+								sortableColumns="true" 
+								selectable="false">
+				<j:columns>
+					<j:AdvancedDataGridColumn id = "submitDateColumn"
+											  width = "140"
+											  dataField="submitDate"
+											  labelFunction="{DateUtil.labelFuncForDate}"
+											  sortable = "true"
+											  textAlign = "center" />
+					<j:AdvancedDataGridColumn id = "caseNoColumn"
+											  width = "140"
+											  dataField = "caseNo"
+											  sortable = "true"
+											  textAlign = "center" />
+					<j:AdvancedDataGridColumn id = "applicantColumn"
+											  width = "280"
+											  dataField = "applicantName"
+											  sortable = "true"
+											  textAlign = "center" />
+					<j:AdvancedDataGridColumn id = "baiOfficeColumn"
+											  width = "280"
+											  dataField = "bailiffOfficeName"
+											  sortable = "true"
+											  textAlign = "center" />
+					<j:AdvancedDataGridColumn id = "statusColumn"
+											  width = "140"
+											  dataField = "requestStatusTypeName"
+											  sortable = "true"
+											  textAlign = "center" />
+					<j:AdvancedDataGridColumn id="detailColumn" width="90" textAlign="center" >
+						<j:itemRenderer>
+							<fx:Component>
+								<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																  xmlns:s="library://ns.adobe.com/flex/spark" 
+																  xmlns:mx="library://ns.adobe.com/flex/mx"
+																  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																  >
+									<fx:Declarations>										
+									</fx:Declarations> 
+									<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+										<j:layout>
+											<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+										</j:layout>
+										<j:Button label="Detail" click="{outerDocument.model.doShowContact(data)}"/>    
+									</j:BorderContainer>						 	
+								</j:MXAdvancedDataGridItemRenderer> 
+							</fx:Component>			 		
+						</j:itemRenderer>
+					</j:AdvancedDataGridColumn>
+				</j:columns>
+			</j:AdvancedDataGrid>				
+		</j:VGroup>
+		
+		<j:HGroup gap="6" styleName="formRow" height="30" verticalAlign="middle" width="100%" horizontalAlign="right" >  							
+			<j:Label  id="reCaseNo" styleName="formLabel" width="90" />
+			<j:TextInput id="CaseNoNew" 
+						 text="@{model.newCaseNo}" 
+						 width="150" maxChars="15" 
+						 typographicCase="uppercase"
+						 change="{model.newAbleCheck(CaseNoNew.text)}" />
+			<j:Button id="newButton" enabled="{model.newAble}"  click="{model.doNew()}"/>
+		</j:HGroup>
+	</j:Panel>
+</j:SkinnableContainer>

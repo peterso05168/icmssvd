@@ -1,0 +1,67 @@
+package hk.judiciary.icmssvd.model.svdReq.biz.assembler;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.icms.model.dao.entity.ReqsPartcpRole;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.RequestParticipantRoleDTO;
+
+/**
+ * 
+ * @version $Revision: 2551 $ $Date: 2016-12-30 21:14:55 +0800 (週五, 30 十二月 2016) $
+ * @author $Author: vicki.huang $
+ */
+public class RequestParticipantRoleDTOAssembler {
+    /**
+     * parse entity to dto
+     * 
+     * @param reqsPartcpRole
+     *            entity
+     * @return RequestParticipantRoleDTO
+     */
+    public static RequestParticipantRoleDTO toDto(ReqsPartcpRole reqsPartcpRole) {
+        RequestParticipantRoleDTO dto = new RequestParticipantRoleDTO();
+        if (reqsPartcpRole != null && reqsPartcpRole.getReqsPartcpRoleId() != null
+                && reqsPartcpRole.getReqsPartcpRoleId() != 0) {
+            dto.setRequestParticipantRoleId(reqsPartcpRole.getReqsPartcpRoleId());
+            if (reqsPartcpRole.getReqs() != null) {
+                dto.setRequestId(reqsPartcpRole.getReqs().getReqsId());
+            }
+            if (reqsPartcpRole.getPartcp() != null) {
+                dto.setParticipantId(reqsPartcpRole.getPartcp().getPartcpId());
+            }
+            if (reqsPartcpRole.getOrigPartcpRole() != null) {
+                dto.setOriginalParticipantRoleId(reqsPartcpRole.getOrigPartcpRole()
+                        .getPartcpRoleId());
+            }
+            if (reqsPartcpRole.getPartcpRoleType() != null) {
+                dto.setParticipantRoleTypeId(reqsPartcpRole.getPartcpRoleType()
+                        .getPartcpRoleTypeId());
+            }
+            dto.setRespondentSeqNo(reqsPartcpRole.getRespondentSeqNo());
+            dto.setRespondentSubSeqNo(reqsPartcpRole.getRespondentSubseqNo());
+            dto.setRecipientRequesterIndicator(reqsPartcpRole.getRecipReqserInd());
+            dto.setVersionAndNanos(reqsPartcpRole.getVersion());
+        }
+        return dto;
+    }
+
+    /**
+     * parse entity list to dto list
+     * 
+     * @param reqsPartcpRoles
+     *            List of Entity
+     * @return list of RequestParticipantRoleDTO
+     */
+    public static List<RequestParticipantRoleDTO> toDtoList(List<ReqsPartcpRole> reqsPartcpRoles) {
+        List<RequestParticipantRoleDTO> dtos = new ArrayList<RequestParticipantRoleDTO>();
+        if (!CommonUtil.isNullOrEmpty(reqsPartcpRoles)) {
+            for (ReqsPartcpRole reqsPartcpRole : reqsPartcpRoles) {
+                dtos.add(toDto(reqsPartcpRole));
+            }
+        }
+        return dtos;
+    }
+
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-09-22T16:15:48 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_base" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d4f6d835-a947-44d6-8525-1b3a7f791563">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="templates\hk\judiciary\icms\icmsfil\DeptSummonAdaptor.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<parameter name="RPT_HDR_TMPL" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RPT_CONT_TMPL" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RPT_FTR_TMPL" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RPT_ID" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="XPath">
+		<![CDATA[/]]>
+	</queryString>
+	<detail>
+		<band height="484" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="595" height="484" uuid="6c1d4f41-29c7-4e2e-af77-0893af611357">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="XML_DATA_DOCUMENT">
+					<subreportParameterExpression><![CDATA[$P{XML_DATA_DOCUMENT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="XML_DATE_PATTERN">
+					<subreportParameterExpression><![CDATA[$P{XML_DATE_PATTERN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="XML_NUMBER_PATTERN">
+					<subreportParameterExpression><![CDATA[$P{XML_NUMBER_PATTERN}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="XML_LOCALE">
+					<subreportParameterExpression><![CDATA[$P{XML_LOCALE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="XML_TIME_ZONE">
+					<subreportParameterExpression><![CDATA[$P{XML_TIME_ZONE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{RPT_CONT_TMPL}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

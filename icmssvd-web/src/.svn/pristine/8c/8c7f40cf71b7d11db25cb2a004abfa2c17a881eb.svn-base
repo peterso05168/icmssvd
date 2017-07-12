@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<context-param>
+		<param-name>projectCode</param-name>
+		<param-value>ICMSSVD</param-value>
+	</context-param>
+	<context-param>
+		<param-name>environment</param-name>
+		<param-value>DEVELOPMENT</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+	        		classpath*:config/context-webapp.xml
+	        		classpath*:config/context-module.xml
+	        		classpath*:config/context-fmk-webapp.xml
+	        		classpath*:config/context-security-portal.xml
+	        		classpath*:config/context-fmk-webservice.xml   
+		            classpath*:config/context-webservice.xml      
+	        </param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>hk.judiciary.fmk.web.application.ApplicationInitService</listener-class>
+	</listener>
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<async-supported>true</async-supported>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- MC -->
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/reportFacade</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>hk.judiciary.icmssvd.model.report.facade.ReportFacade</local>
+	</ejb-local-ref>
+	<!-- MC -->
+
+
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/commonFacade</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>hk.judiciary.icmssvd.model.common.facade.CommonFacade</local>
+	</ejb-local-ref>
+
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/svdReqFacade</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>hk.judiciary.icmssvd.model.svdReq.facade.SvdReqFacade</local>
+	</ejb-local-ref>
+
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/exeReqFacade</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>hk.judiciary.icmssvd.model.exeReq.facade.ExeReqFacade</local>
+	</ejb-local-ref>
+
+</web-app>

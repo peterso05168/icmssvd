@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+    xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+
+
+    <persistence-unit name="icmssvdEJBPU" transaction-type="JTA">
+        
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/appds</jta-data-source>
+
+<!--  		<mapping-file>hk/judiciary/icmssvd/model/sample/dao/namedquery/Project.orm.xml</mapping-file> -->
+		<!-- common -->
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/BlfAssign.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/BlfDocStatusType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/BlfOffice.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/BlfSeq.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/BlfTaskRsltRsn.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/BlfTaskRsltStatus.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/BlfTaskStatusType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/CaseType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/CompsCourt.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/CourtLvlType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/CourtRmChmbr.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/DocType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/FpAppNatType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/HandlingAgt.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/HkDist.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/HkRgn.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/IntlUserAc.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/PartcpRoleCat.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/PartcpRoleType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/Pd.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/PostOffice.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/ProofOfServDocType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/ReqsStatusType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/ReqsType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/ServModeType.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/common/dao/namedquery/SpecialReqsType.orm.xml</mapping-file>
+		
+		<!-- servicedoc -->
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/BlfTask.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/Case.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/CourtRmToList.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/Doc.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/HrnSchd.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/ListSchd.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/ProofOfServReqs.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/Reqs.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/ReqsAddr.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/ReqsDoc.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/ServReqs.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/SpecialReqs.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/StnceOrdrToDoc.orm.xml</mapping-file>
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/SummonNoti.orm.xml</mapping-file>
+		
+		<!-- exeReqs -->
+		<mapping-file>hk/judiciary/icmssvd/model/servicedoc/dao/namedquery/ExecReqs.orm.xml</mapping-file>
+		
+        <properties>
+   			<property name="eclipselink.composite-unit-member" value="true" />
+        </properties>
+    </persistence-unit>    
+
+</persistence>

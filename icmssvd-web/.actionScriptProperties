@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<actionScriptProperties analytics="false" mainApplicationPath="Main.mxml" projectUUID="61eb9ffb-0489-4acd-873f-4e8ea2728d51" version="11">
+  <compiler additionalCompilerArguments="-source-path=${DOCUMENTS}\icmssvd-web\src\main\resources\assets\i18n\{locale}  -locale=en_US,zh_TW,zh_CN -keep-all-type-selectors" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="target" removeUnusedRSL="true" rootURL="http://localhost:8080/icmssvd-web/" sourceFolderPath="src/main/flex" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" useFlashSDK="false" verifyDigests="true" warn="true">
+    <compilerSourcePath>
+      <compilerSourcePathEntry kind="1" linkType="1" path="src/main/resources"/>
+    </compilerSourcePath>
+    <libraryPath defaultLinkType="0">
+      <libraryPathEntry kind="4" path="">
+        <excludedEntries>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/core.swc" useDefaultLinkType="false"/>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/flex.swc" useDefaultLinkType="false"/>
+        </excludedEntries>
+      </libraryPathEntry>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/parsley/parsley-core-3.0.0.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/parsley/parsley-flex-3.0.0.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/parsley/spicelib-commands-3.1.1.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/parsley/spicelib-reflect-3.0.0.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/parsley/spicelib-util-3.0.0.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/granite/granite-client-flex-3.1.0.GA.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/granite/granite-client-flex-advanced-3.1.0.GA.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/granite/granite-client-flex-udp-3.1.0.GA.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/granite/granite-client-flex45-advanced-3.1.0.GA.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/cairngorm/validation-1.9.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/parsley/cairngorm-popup-flex4-1.7.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/flex/parsley/parsley-popup-3.0.2.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="${DOCUMENTS}/repository/jud/framework/fmk-ria-lib/0.21.1.0/fmk-ria-lib-0.21.1.0.swc" useDefaultLinkType="false"/>
+    </libraryPath>
+    <sourceAttachmentPath/>
+  </compiler>
+  <theme themeIsDefault="false" themeIsSDK="true" themeLocation="${SDK_THEMES_DIR}/samples/themes/spark_sky"/>
+  <applications>
+    <application path="Main.mxml"/>
+  </applications>
+  <modules>
+    <module application="src/main/flex/Main.mxml" destPath="hk/judiciary/icmssvd/view/SvdModule.swf" optimize="true" sourcePath="src/main/flex/hk/judiciary/icmssvd/view/SvdModule.mxml"/>
+  </modules>
+  <workers/>
+  <buildCSSFiles/>
+  <flashCatalyst validateFlashCatalystCompatibility="false"/>
+</actionScriptProperties>

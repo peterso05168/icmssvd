@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  xmlns:app="hk.judiciary.icmssvd.view.exeReq.presentation.*"
+					  xmlns:com="hk.judiciary.icmssvd.view.common.presentation.*"
+					  width="100%" creationComplete="model.init()">
+	<fx:Script>
+		<![CDATA[
+			import hk.judiciary.icmssvd.view.common.util.DateUtil;
+			[Inject]
+			[Bindable]
+			public var model:InputExeReqPanelPM;
+		]]>
+	</fx:Script>
+	
+	<fx:Metadata>
+		[ResourceBundle("sharedButton")]
+		[ResourceBundle("sharedSVD")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:Configure/>
+		<j:i18nHandler BundleNameCollection="{['sharedButton', 'sharedSVD']}" />
+	</fx:Declarations>
+	
+	<j:layout>
+		<j:VerticalLayout gap="10" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10"/>
+	</j:layout>
+	
+	
+	<j:Accordion id="accordion" width="100%" minHeight="50" collapseOther="false" selectedIndex="{model.selectedAccordionIndex}">
+		<j:AccordionTab id="exeReqsAcc" width="100%" parentPanel="{this.accordion}">
+			<j:Form width="100%">
+				<j:layout>			
+					<j:FormLayout gap="-10" paddingBottom="-10" paddingLeft="0" paddingRight="0" paddingTop="0" />
+				</j:layout>
+				<j:HGroup width="100%">
+					<j:VGroup paddingLeft="20">
+						<j:HGroup height="25">
+							<j:Label id="caseNo" width="180" paddingTop="5" />
+							<j:TextInput width="250" 
+										 text="@{model.executionRequestDetailVO.request.caseNo}" 
+										 editable="false"/> 
+						</j:HGroup>
+						<j:HGroup height="25">
+							<j:Label id="applicant" width="180" paddingTop="5" />
+							<j:BindableDropDownList width="250" maxWidth="250" id="bindableApplicant"
+													dataProvider="{model.displayApplicantVOs}"
+													labelField="displayName"
+													valueField="participantId" 
+													change="{model.changApplicant(bindableApplicant.selectedItem)}"
+													selectedItemValue="{model.applicantDisplayName}"
+													enabled="{model.exeReqsEditable}"/> 	
+						</j:HGroup>
+					</j:VGroup>
+					<j:VGroup paddingLeft="20">
+						<j:HGroup height="25"> 
+							<j:Label id="registrationNo" width="180" paddingTop="5"/>
+							<j:TextInput width="300" 
+										 text="@{model.executionRequestDetailVO.request.registrationNo}" 
+										 editable="false"/>
+						</j:HGroup>
+						<j:HGroup height="25" visible="{model.exeReqsEditable}">
+							<j:Label id="appliAddrSeq" width="180" paddingTop="5"/> 
+							<j:BindableDropDownList width="300" id="addrSeqDropDown"
+													dataProvider="{model.displayAddressRoleVOs}" 
+													labelField="addressRoleTypeName"
+													valueField="addressRoleId" 
+													change="{model.changeAddrSeq(addrSeqDropDown.selectedItem)}"
+													selectedItemValue="{model.addrSeqName}"/>
+						</j:HGroup>
+					</j:VGroup>
+				</j:HGroup>
+				<j:HGroup paddingTop="15" width="100%" paddingLeft="20">  
+					<j:Label id="addrForExe" width="180" paddingTop="5"/>
+					<j:VGroup>
+						<j:Label id="addrEng" width="180" paddingTop="5"/>
+						<j:TextInput id="AddressEng1" 
+									 width="400" 
+									 maxChars="100"
+									 text="@{model.executionRequestDetailVO.requestAddress.englishAddress1}"
+									 editable="{model.exeReqsEditable}"/>
+						<j:TextInput id="AddressEng2" 
+									 width="400"
+									 maxChars="100"
+									 text="@{model.executionRequestDetailVO.requestAddress.englishAddress2}"
+									 editable="{model.exeReqsEditable}"/>
+						<j:TextInput id="AddressEng3"
+									 text="@{model.executionRequestDetailVO.requestAddress.englishAddress3}"
+									 width="400"
+									 maxChars="100"
+									 editable="{model.exeReqsEditable}"/>
+					</j:VGroup>
+					<j:VGroup>
+						<j:Label id="addrChi" width="180" paddingTop="5"/>
+						<j:TextInput id="AddressChi1" 
+									 width="400"
+									 maxChars="100"
+									 text="@{model.executionRequestDetailVO.requestAddress.chineseAddress1}"
+									 editable="{model.exeReqsEditable}"/>
+						<j:TextInput id="AddressChi2"
+									 width="400"
+									 maxChars="100"
+									 text="@{model.executionRequestDetailVO.requestAddress.chineseAddress2}"
+									 editable="{model.exeReqsEditable}"/>
+						<j:TextInput id="AddressChi3" 
+									 width="400"
+									 maxChars="100"
+									 text="@{model.executionRequestDetailVO.requestAddress.chineseAddress3}"
+									 editable="{model.exeReqsEditable}"/>
+					</j:VGroup>			
+				</j:HGroup>
+				<j:HGroup  paddingTop="20" paddingLeft="205" height="40">
+					<j:Label id="district" width="100" paddingTop="5"/>
+					<j:VGroup paddingRight="30">
+						<j:BindableDropDownList width="260" id="bindableHkDistrict"
+												dataProvider="{model.displayHkDistrictVOs}" 
+												labelField="hkDistrictName"
+												valueField="hkDistrictId"
+												change="{model.changHkDistrict(bindableHkDistrict.selectedItem)}"
+												selectedItemValue="{model.hkDistrictName}"
+												enabled="{model.exeReqsEditable}"> 
+						</j:BindableDropDownList>
+					</j:VGroup>				
+					<j:Label id="region" width="100" paddingTop="5"/> 
+					<j:VGroup>
+						<j:BindableDropDownList width="260" id="bindableHkRegion" 
+												dataProvider="{model.hkRegionVOs}" 
+												labelField="hkRegionName"
+												valueField="hkRegionId"
+												change="{model.changHkRegion(bindableHkRegion.selectedItem)}"
+												selectedItemValue="{model.hkRegionName}"
+												enabled="{model.exeReqsEditable}"> 
+						</j:BindableDropDownList>
+					</j:VGroup>
+				</j:HGroup>
+				<j:HGroup paddingTop="20" width="100%">
+					<j:VGroup paddingLeft="20">
+						<j:HGroup height="25">
+							<j:Label id="bailiffOfficeInput" 
+									 width="180" paddingTop="5" />
+							<j:BindableDropDownList width="250" id="bindableBailiffOffice"
+													dataProvider="{model.bailiffOfficeVOs}" 
+													labelField="bailiffOfficeName"
+													valueField="bailiffOfficeId"
+													change="{model.changBailiffOffice(bindableBailiffOffice.selectedItem)}"
+													selectedItemValue="{model.bailiffOfficeName}"
+													enabled="{model.exeReqsEditable}"> 
+							</j:BindableDropDownList> 	
+						</j:HGroup>
+						<j:HGroup height="25"> 
+							<j:Label id="requestStatus" width="180" paddingTop="5"/> 
+							<j:TextInput width="250"
+										 text="{model.executionRequestDetailVO.request.requestStatusType.requestStatusTypeName}"
+										 editable="false"/>		
+						</j:HGroup>
+						<j:HGroup height="25"> 
+							<j:Label id="reqsDate" 
+									 width="180" 
+									 paddingTop="5"/>
+							<j:TextInput width="250" 
+										 text="{model.submitDate}"
+										 editable="false"/>			
+						</j:HGroup>
+					</j:VGroup>
+					<j:VGroup paddingLeft="100">
+						<j:HGroup height="25">
+							<j:Label id="documentType" width="145" paddingTop="5"/>
+							<j:BindableDropDownList width="260" id="bindableDocType" 
+													dataProvider="{model.documentTypeVOs}" 
+													labelField="documentTypeName"
+													valueField="documentTypeId" 
+													selectedItemValue="{model.documentType}"
+													change="{model.changDocumentType(bindableDocType.selectedItem)}"
+													enabled="{model.exeReqsEditable}"> 
+							</j:BindableDropDownList>
+						</j:HGroup>
+					</j:VGroup>
+				</j:HGroup>
+			</j:Form> 
+		</j:AccordionTab>
+		<j:AccordionTab id="docListAcc" width="100%" parentPanel="{this.accordion}">
+			<j:Panel id="exeDocToServ" 
+					 width="100%" 
+					 borderVisible="false" 
+					 dropShadowVisible="false">
+				<j:layout>
+					<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>			 
+				</j:layout>
+				<j:HGroup width="100%" >
+					<j:AdvancedDataGrid width="100%" height="200" 
+										sortableColumns="true" 
+										selectable="false" 
+										dataProvider="{model.document}" 
+										wordWrap="true" 
+										variableRowHeight="true" >  
+						<j:columns>
+							<j:AdvancedDataGridColumn id = "adgcCheckboxColumn"
+													  width = "40"
+													  dataField = "checked"
+													  headerText = "" 
+													  visible="{model.docListEditable}"
+													  sortable = "false" />
+							<j:AdvancedDataGridColumn id = "documentNameColumn"
+													  width = "700" 
+													  dataField="documentName" />
+							<j:AdvancedDataGridColumn id = "documentFileByColumn"
+													  width = "200" 
+													  dataField="documentFileBy"
+													  sortable = "true"
+													  textAlign = "center" />
+							<j:AdvancedDataGridColumn id = "documentFileDateColumn"
+													  dataField = "documentFileDate"
+													  sortable = "true" 
+													  width="200"
+													  labelFunction="{DateUtil.labelFuncForDate}"
+													  textAlign = "center" />
+							<j:AdvancedDataGridColumn sortable = "true"
+													  textAlign = "center" >
+								<j:itemRenderer>
+									<fx:Component>
+										<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																		  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																		  xmlns:s="library://ns.adobe.com/flex/spark" 
+																		  xmlns:mx="library://ns.adobe.com/flex/mx"
+																		  xmlns:j="hk.judiciary.fmk.view.component.*">
+											<fx:Declarations>										
+											</fx:Declarations> 
+											<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+												<j:layout>
+													<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+												</j:layout>
+												<j:Button label="Download" enabled="{data.downloadAble}"
+														  click="{outerDocument.model.downloadDocFile(data.documentId)}"/>
+											</j:BorderContainer>						 	
+										</j:MXAdvancedDataGridItemRenderer> 
+									</fx:Component>			 		
+								</j:itemRenderer>
+							</j:AdvancedDataGridColumn>
+						</j:columns>
+						<j:rendererProviders>
+							<j:AdvancedDataGridRendererProvider column = "{adgcCheckboxColumn}"
+																renderer = "hk.judiciary.fmk.view.component.AdvancedDataGridCheckBoxRenderer" />
+						</j:rendererProviders>
+					</j:AdvancedDataGrid>
+				</j:HGroup>
+			</j:Panel>
+		</j:AccordionTab>
+		<j:AccordionTab id="exeRsltAcc" 
+						width="100%" 
+						parentPanel="{this.accordion}"
+						visible="{model.executionRequestDetailVO.submittedModeInd}"
+						includeInLayout="{model.executionRequestDetailVO.submittedModeInd}" >
+			<j:HGroup width="100%" gap="0">
+				<j:Form width="100%">
+					<j:layout>			
+						<j:FormLayout gap="-10" paddingBottom="-10" paddingLeft="0" paddingRight="0" paddingTop="0" />
+					</j:layout>
+					<j:HGroup width="100%">
+						<j:VGroup paddingLeft="20">
+							<j:HGroup height="25">
+								<j:Label id="resultStatus" width="180" paddingTop="5"/>
+								<j:BindableDropDownList width="250" id="bindableResultStatus" enabled="false"
+														dataProvider="{model.bailiffTaskResultStatusVOs}" 
+														labelField="bailiffTaskResultStatusName"
+														valueField="bailiffTaskResultStatusId" 
+														change="{model.changeBailiffTaskResultStatus(bindableResultStatus.selectedItem)}"
+														selectedItemValue="{model.resultStatusName}"/> 	
+							</j:HGroup>
+							<j:HGroup height="25">
+								<j:Label id="reason" width="180" paddingTop="5"/>
+								<j:BindableDropDownList width="250" id="bindableResultReason" enabled="false"
+														dataProvider="{model.bailiffTaskResultReasonVOs}" 
+														labelField="bailiffTaskResultReasonName"
+														valueField="bailiffTaskResultReasonId" 
+														change="{model.changeBailiffTaskResultReason(bindableResultReason.selectedItem)}"
+														selectedItemValue="{model.resultReasonName}"> 
+								</j:BindableDropDownList>
+							</j:HGroup>
+							<j:HGroup height="55" >
+								<j:Label id="notes" width="180" paddingTop="5" />
+								<j:TextArea enabled="false" text="@{model.executionRequestDetailVO.requestResult.requestResultNotes}" width="960" height="50">
+								</j:TextArea>
+							</j:HGroup>
+						</j:VGroup>
+					</j:HGroup>
+				</j:Form> 
+			</j:HGroup>
+		</j:AccordionTab>
+	</j:Accordion>
+	<j:BorderContainer id="buttonsContainer" width="100%" borderVisible="false" styleName="btnSet" >
+		<j:layout> 
+			<j:HorizontalLayout gap="10" paddingBottom="10" paddingTop="10" horizontalAlign="right"/>    
+		</j:layout> 
+		<j:Button id="saveBtn" click="{model.doSaveDraft()}"
+				  visible="{!model.executionRequestDetailVO.submittedModeInd}"
+				  includeInLayout="{!model.executionRequestDetailVO.submittedModeInd}"
+				  enabled="{model.executionRequestDetailVO.allowSaveDraftInd}"/>
+		<j:Button id="submitBtn" click="{model.doSubmit()}"
+				  visible="{!model.executionRequestDetailVO.submittedModeInd}"
+				  includeInLayout="{!model.executionRequestDetailVO.submittedModeInd}"
+				  enabled="{model.executionRequestDetailVO.allowSubmitInd}"/>
+		<j:Button id="withdrawEBtn" click="{model.doWithdraw()}"
+				  visible="{model.executionRequestDetailVO.submittedModeInd}"
+				  includeInLayout="{model.executionRequestDetailVO.submittedModeInd}"
+				  enabled="{model.executionRequestDetailVO.allowWithdrawInd}"/>  
+	</j:BorderContainer>
+</j:SkinnableContainer>

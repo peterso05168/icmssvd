@@ -1,0 +1,27 @@
+package hk.judiciary.icmssvd.model.common.biz.dto;
+
+import hk.judiciary.icmssvd.model.BaseDTO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class IdDTO extends BaseDTO {
+    private static final long serialVersionUID = 1L;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "IdDTO [id=" + id + "]";
+    }
+
+}

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabSequences>	
+	<tabSequenceGroup screenId="SVD-SVD-00011">
+		<tabSeq seq="1" componentId="enquireSvdReqFormPanelDC.LastReceivedDateForm"/>
+		<tabSeq seq="2" componentId="enquireSvdReqFormPanelDC.LastReceivedDateTo"/>
+		<tabSeq seq="3" componentId="enquireSvdReqFormPanelDC.CaseNo"/>
+		<tabSeq seq="4" componentId="enquireSvdReqFormPanelDC.Court"/>
+		<tabSeq seq="5" componentId="enquireSvdReqFormPanelDC.ModeofService"/>
+		<tabSeq seq="6" componentId="enquireSvdReqFormPanelDC.CaseType"/>
+		<tabSeq seq="7" componentId="enquireSvdReqFormPanelDC.ServiceAgent"/>
+		<tabSeq seq="8" componentId="enquireSvdReqFormPanelDC.ServiceType"/>
+		<tabSeq seq="9" componentId="enquireSvdReqFormPanelDC.CaseNoNew"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00021">
+		<tabSeq seq="1" componentId="enquireSvdReqFormPanelMC.LastReceivedDateForm"/>
+		<tabSeq seq="2" componentId="enquireSvdReqFormPanelMC.LastReceivedDateTo"/>
+		<tabSeq seq="3" componentId="enquireSvdReqFormPanelMC.CaseNo"/>
+		<tabSeq seq="4" componentId="enquireSvdReqFormPanelMC.Court"/>
+		<tabSeq seq="5" componentId="enquireSvdReqFormPanelMC.ModeofService"/>
+		<tabSeq seq="6" componentId="enquireSvdReqFormPanelMC.CaseType"/>
+		<tabSeq seq="7" componentId="enquireSvdReqFormPanelMC.ServiceAgent"/>
+		<tabSeq seq="8" componentId="enquireSvdReqFormPanelMC.ServiceType"/>
+		<tabSeq seq="9" componentId="enquireSvdReqFormPanelMC.CaseNoNew"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00031">
+		<tabSeq seq="1" componentId="inputSvdReqPanelDC.bindableRequester"/>
+		<tabSeq seq="2" componentId="inputSvdReqPanelDC.bindableRecipient"/>
+		<tabSeq seq="3" componentId="inputSvdReqPanelDC.bindableParticipantRole"/>
+		<tabSeq seq="4" componentId="inputSvdReqPanelDC.recipientEng1"/>
+		<tabSeq seq="5" componentId="inputSvdReqPanelDC.recipientEng2"/>
+		<tabSeq seq="6" componentId="inputSvdReqPanelDC.recipientChi1"/>
+		<tabSeq seq="7" componentId="inputSvdReqPanelDC.recipientChi2"/>
+		<tabSeq seq="8" componentId="inputSvdReqPanelDC.AddressEng1"/>
+		<tabSeq seq="9" componentId="inputSvdReqPanelDC.AddressEng2"/>
+		<tabSeq seq="10" componentId="inputSvdReqPanelDC.AddressEng3"/>
+		<tabSeq seq="11" componentId="inputSvdReqPanelDC.AddressChi1"/>
+		<tabSeq seq="12" componentId="inputSvdReqPanelDC.AddressChi2"/>
+		<tabSeq seq="13" componentId="inputSvdReqPanelDC.AddressChi3"/>
+		<tabSeq seq="14" componentId="inputSvdReqPanelDC.bindableHkDistrict"/>
+		<tabSeq seq="15" componentId="inputSvdReqPanelDC.bindableHkRegion"/>
+		<tabSeq seq="16" componentId="inputSvdReqPanelDC.bindablePostOffice"/>
+		<tabSeq seq="17" componentId="inputSvdReqPanelDC.bindableBailiffOffice"/>
+		<tabSeq seq="18" componentId="inputSvdReqPanelDC.bindableRequestServiceType"/>
+		<tabSeq seq="19" componentId="inputSvdReqPanelDC.bindableServiceMode"/>
+		<tabSeq seq="20" componentId="inputSvdReqPanelDC.bindableHandlingAgent"/>
+		<tabSeq seq="21" componentId="inputSvdReqPanelDC.urgentCheckbox"/>
+		<tabSeq seq="22" componentId="inputSvdReqPanelDC.servBefDate"/>
+		<tabSeq seq="23" componentId="inputSvdReqPanelDC.affirCheckbox"/>
+		<tabSeq seq="24" componentId="inputSvdReqPanelDC.deliText"/>
+		<tabSeq seq="25" componentId="inputSvdReqPanelDC.inputMail"/>
+		<tabSeq seq="26" componentId="inputSvdReqPanelDC.bindableResultStatus"/>
+		<tabSeq seq="27" componentId="inputSvdReqPanelDC.serviceDate"/>
+		<tabSeq seq="28" componentId="inputSvdReqPanelDC.endorDate"/>
+		<tabSeq seq="29" componentId="inputSvdReqPanelDC.returnDate"/>
+		<tabSeq seq="30" componentId="inputSvdReqPanelDC.bindableResultReason"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00041">
+		<tabSeq seq="1" componentId="inputSvdReqPanelMC.bindableRequester"/>
+		<tabSeq seq="2" componentId="inputSvdReqPanelMC.bindableRecipient"/>
+		<tabSeq seq="3" componentId="inputSvdReqPanelMC.bindableParticipantRole"/>
+		<tabSeq seq="4" componentId="inputSvdReqPanelMC.recipientEng1"/>
+		<tabSeq seq="5" componentId="inputSvdReqPanelMC.recipientEng2"/>
+		<tabSeq seq="6" componentId="inputSvdReqPanelMC.recipientChi1"/>
+		<tabSeq seq="7" componentId="inputSvdReqPanelMC.recipientChi2"/>
+		<tabSeq seq="8" componentId="inputSvdReqPanelMC.AddressEng1"/>
+		<tabSeq seq="9" componentId="inputSvdReqPanelMC.AddressEng2"/>
+		<tabSeq seq="10" componentId="inputSvdReqPanelMC.AddressEng3"/>
+		<tabSeq seq="11" componentId="inputSvdReqPanelMC.AddressChi1"/>
+		<tabSeq seq="12" componentId="inputSvdReqPanelMC.AddressChi2"/>
+		<tabSeq seq="13" componentId="inputSvdReqPanelMC.AddressChi3"/>
+		<tabSeq seq="14" componentId="inputSvdReqPanelMC.bindableHkDistrict"/>
+		<tabSeq seq="15" componentId="inputSvdReqPanelMC.bindableHkRegion"/>
+		<tabSeq seq="16" componentId="inputSvdReqPanelMC.bindablePostOffice"/>
+		<tabSeq seq="17" componentId="inputSvdReqPanelMC.bindableBailiffOffice"/>
+		<tabSeq seq="18" componentId="inputSvdReqPanelMC.bindableRequestServiceType"/>
+		<tabSeq seq="19" componentId="inputSvdReqPanelMC.bindableServiceMode"/>
+		<tabSeq seq="20" componentId="inputSvdReqPanelMC.bindableHandlingAgent"/>
+		<tabSeq seq="21" componentId="inputSvdReqPanelMC.urgentCheckbox"/>
+		<tabSeq seq="22" componentId="inputSvdReqPanelMC.servBefDate"/>
+		<tabSeq seq="23" componentId="inputSvdReqPanelMC.affirCheckbox"/>
+		<tabSeq seq="24" componentId="inputSvdReqPanelMC.deliText"/>
+		<tabSeq seq="25" componentId="inputSvdReqPanelMC.inputMail"/>
+		<tabSeq seq="26" componentId="inputSvdReqPanelMC.bindableResultStatus"/>
+		<tabSeq seq="27" componentId="inputSvdReqPanelMC.serviceDate"/>
+		<tabSeq seq="28" componentId="inputSvdReqPanelMC.endorDate"/>
+		<tabSeq seq="29" componentId="inputSvdReqPanelMC.returnDate"/>
+		<tabSeq seq="30" componentId="inputSvdReqPanelMC.bindableResultReason"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00051">
+		<tabSeq seq="1" componentId="courtDropDown"/>
+		<tabSeq seq="2" componentId="CaseType"/>
+		<tabSeq seq="3" componentId="courtRoom"/>
+		<tabSeq seq="4" componentId="AppNature"/>
+		<tabSeq seq="5" componentId="hrnDateInput"/>
+		<tabSeq seq="6" componentId="Prosecution"/>
+		<tabSeq seq="7" componentId="hrnHour"/>
+		<tabSeq seq="8" componentId="hrnMin"/>
+		<tabSeq seq="9" componentId="mailFormInput"/>
+		<tabSeq seq="10" componentId="mailToInput"/>
+		<tabSeq seq="11" componentId="firstClerk"/>
+		<tabSeq seq="12" componentId="posFeeInput"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00111">
+		<tabSeq seq="1" componentId="enquireProofOfSvdPanelDC.from"/>
+		<tabSeq seq="2" componentId="enquireProofOfSvdPanelDC.to"/>
+		<tabSeq seq="3" componentId="enquireProofOfSvdPanelDC.caseNoInput"/>
+		<tabSeq seq="4" componentId="enquireProofOfSvdPanelDC.courtInput"/>
+		<tabSeq seq="5" componentId="enquireProofOfSvdPanelDC.serviceAgentBindble"/>
+		<tabSeq seq="6" componentId="enquireProofOfSvdPanelDC.caseTypeInput"/>
+		<tabSeq seq="6" componentId="enquireProofOfSvdPanelDC.caseNoNew"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00121">
+		<tabSeq seq="1" componentId="enquireProofOfSvdPanelMC.from"/>
+		<tabSeq seq="2" componentId="enquireProofOfSvdPanelMC.to"/>
+		<tabSeq seq="3" componentId="enquireProofOfSvdPanelMC.caseNoInput"/>
+		<tabSeq seq="4" componentId="enquireProofOfSvdPanelMC.courtInput"/>
+		<tabSeq seq="5" componentId="enquireProofOfSvdPanelMC.serviceAgentBindble"/>
+		<tabSeq seq="6" componentId="enquireProofOfSvdPanelMC.caseTypeInput"/>
+		<tabSeq seq="6" componentId="enquireProofOfSvdPanelMC.caseNoNew"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00131">
+		<tabSeq seq="1" componentId="inputProofPanelDC.affCheckBox"/>
+		<tabSeq seq="2" componentId="inputProofPanelDC.due"/>
+		<tabSeq seq="3" componentId="inputProofPanelDC.bindableType"/>
+		<tabSeq seq="4" componentId="inputProofPanelDC.attCheckBox"/>
+		<tabSeq seq="5" componentId="inputProofPanelDC.hrn"/>
+		<tabSeq seq="6" componentId="inputProofPanelDC.hrnHour"/>
+		<tabSeq seq="7" componentId="inputProofPanelDC.hrnMin"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00141">
+		<tabSeq seq="1" componentId="inputProofPanelMC.affCheckBox"/>
+		<tabSeq seq="2" componentId="inputProofPanelMC.due"/>
+		<tabSeq seq="3" componentId="inputProofPanelMC.bindableType"/>
+		<tabSeq seq="4" componentId="inputProofPanelMC.attCheckBox"/>
+		<tabSeq seq="5" componentId="inputProofPanelMC.hrn"/>
+		<tabSeq seq="6" componentId="inputProofPanelMC.hrnHour"/>
+		<tabSeq seq="7" componentId="inputProofPanelMC.hrnMin"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00151">
+		<tabSeq seq="1" componentId="batchCourtDropDown"/>
+		<tabSeq seq="2" componentId="CaseType"/>
+		<tabSeq seq="3" componentId="batchCourtRoom"/>
+		<tabSeq seq="4" componentId="AppNature"/>
+		<tabSeq seq="5" componentId="batchHrnDateInput"/>
+		<tabSeq seq="6" componentId="Prosecution"/>
+		<tabSeq seq="7" componentId="hrnHour"/>
+		<tabSeq seq="8" componentId="hrnMin"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00211">
+		<tabSeq seq="1" componentId="LastReceivedDateForm"/>
+		<tabSeq seq="2" componentId="LastReceivedDateTo"/>
+		<tabSeq seq="3" componentId="CaseNo"/>
+		<tabSeq seq="4" componentId="Court"/>
+		<tabSeq seq="5" componentId="CaseType"/>
+		<tabSeq seq="6" componentId="CaseNoNew"/>
+	</tabSequenceGroup>
+	
+	<tabSequenceGroup screenId="SVD-SVD-00221">
+		<tabSeq seq="1" componentId="inputExeReqPanel.bindableApplicant"/>
+		<tabSeq seq="2" componentId="inputExeReqPanel.AddressEng1"/>
+		<tabSeq seq="3" componentId="inputExeReqPanel.AddressEng2"/>
+		<tabSeq seq="4" componentId="inputExeReqPanel.AddressEng3"/>
+		<tabSeq seq="5" componentId="inputExeReqPanel.AddressChi1"/>
+		<tabSeq seq="6" componentId="inputExeReqPanel.AddressChi2"/>
+		<tabSeq seq="7" componentId="inputExeReqPanel.AddressChi3"/>
+		<tabSeq seq="8" componentId="inputExeReqPanel.bindableHkDistrict"/>
+		<tabSeq seq="9" componentId="inputExeReqPanel.bindableHkRegion"/>
+		<tabSeq seq="10" componentId="inputExeReqPanel.bindableBailiffOffice"/>
+		<tabSeq seq="11" componentId="inputExeReqPanel.bindableDocType"/>
+	</tabSequenceGroup>
+</tabSequences>

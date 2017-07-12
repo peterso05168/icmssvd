@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-03-28T16:26:12 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RPT-SVD-SERHIST-HDR" pageWidth="802" pageHeight="69" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b37ba19c-dcc4-48e6-bfe3-347b607cbabc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="content\DefaultDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<style name="fontstyle" isDefault="true" fontName="FreeSerif"/>
+	<queryString language="XPath">
+		<![CDATA[/Report/Content/Data]]>
+	</queryString>
+	<field name="timestamp" class="java.lang.String">
+		<fieldDescription><![CDATA[timestamp]]></fieldDescription>
+	</field>
+	<field name="caseNo" class="java.lang.String">
+		<fieldDescription><![CDATA[caseNo]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="16" width="802" height="19" uuid="e0343bc6-9646-46c6-8931-3a697708c9af">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Service History Record]]></text>
+			</staticText>
+			<textField pattern="MM/d/yyyy hh:mm:ss">
+				<reportElement x="620" y="30" width="182" height="20" uuid="4b4e0954-2d62-4a23-887d-2a7e7cfc9eff"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Case No. " + ($F{caseNo}!=null?$F{caseNo}:"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

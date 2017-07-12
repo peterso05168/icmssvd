@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+                        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<named-query name="DocType.findDocumentTypeList">
+		<query>
+        	<![CDATA[
+	            SELECT t FROM DocType t 
+	            WHERE t.effvStartDate<= :effvStartDate 
+	            AND t.effvEndDate>= :effvEndDate 
+	            AND t.activeFlag = :activeFlag
+	            ORDER BY t.docTypeDesc
+        	]]>
+        </query>
+	</named-query>
+	
+	<named-query name="DocType.findByDocumentTypeCode">
+		<query>
+        	<![CDATA[
+	            SELECT t FROM DocType t 
+	            WHERE t.effvStartDate<= :effvStartDate 
+	            AND t.effvEndDate>= :effvEndDate 
+	            AND t.activeFlag = :activeFlag
+	            AND t.docTypeCd = :docTypeCd
+	            ORDER BY t.docTypeDesc
+        	]]>
+        </query>
+	</named-query>
+
+</entity-mappings>

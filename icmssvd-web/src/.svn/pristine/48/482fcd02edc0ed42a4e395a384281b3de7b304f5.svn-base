@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fx:Object xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:model="hk.judiciary.icmssvd.view.exeReq.presentation.*">
+	<fx:Declarations>
+		<model:InputExeReqMain id="mainView" />
+		
+		<model:EnquireExeReqFormPanelPM />
+		
+		<model:InputExeReqMainPM />
+		
+		<model:InputExeReqPanelPM />
+		
+		<model:ExeReqPresenter />
+	</fx:Declarations>
+</fx:Object>

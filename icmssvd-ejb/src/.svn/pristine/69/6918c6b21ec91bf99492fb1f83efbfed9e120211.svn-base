@@ -1,0 +1,71 @@
+package hk.judiciary.icmssvd.model.svdReq.biz.assembler;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.fmk.model.application.dao.entity.AuditEntity;
+import hk.judiciary.icms.model.dao.entity.Doc;
+import hk.judiciary.icmssvd.model.common.biz.assembler.DocumentClassDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.DocumentStatusDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.DocumentTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.util.DbCommonUtil;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.DocumentDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.PartyDTO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class DocumentDTOAssembler {
+    /**
+     * parse entity to dto
+     * 
+     * @param doc
+     *            entity
+     * @return DocumentDTO
+     */
+    public static DocumentDTO toDto(Doc doc) {
+        DocumentDTO dto = new DocumentDTO();
+        if (doc != null && doc.getDocId() != null && doc.getDocId() != 0) {
+            dto.setDocumentId(doc.getDocId());
+            dto.setDocumentClass(DocumentClassDTOAssembler.toDto(doc.getDocClass()));
+            dto.setDocumentStatus(DocumentStatusDTOAssembler.toDto(doc.getDocStatus()));
+            dto.setDocumentType(DocumentTypeDTOAssembler.toDto(doc.getDocType()));
+            dto.setDocumentReferenceNo(DbCommonUtil.getDbValueOrEmpty(doc.getDocRefNo()));
+            // TODO document file by person name should build up by ?
+            PartyDTO documentFileBy = new PartyDTO();
+            documentFileBy.setEnglishGivenName("");
+            AuditEntity auditEntity = doc.getAuditEntity();
+            if (auditEntity != null) {
+                documentFileBy.setEnglishSurname(DbCommonUtil.getDbValueOrEmpty(auditEntity
+                        .getCreateBy()));
+            } else {
+                documentFileBy.setEnglishSurname("");
+            }
+            dto.setDocumentFileBy(documentFileBy);
+            dto.setDocumentFileDate(doc.getDocFileDate());
+            dto.setCfsFileId(doc.getCfsFileId());
+            dto.setVersionAndNanos(doc.getVersion());
+        }
+        return dto;
+    }
+
+    /**
+     * parse entity list to dto list
+     * 
+     * @param docs
+     *            List of Entity
+     * @return list of DocumentDTO
+     */
+    public static List<DocumentDTO> toDtoList(List<Doc> docs) {
+        List<DocumentDTO> dtos = new ArrayList<DocumentDTO>();
+        if (!CommonUtil.isNullOrEmpty(docs)) {
+            for (Doc doc : docs) {
+                dtos.add(toDto(doc));
+            }
+        }
+        return dtos;
+    }
+}

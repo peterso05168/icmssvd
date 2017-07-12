@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:mx="library://ns.adobe.com/flex/mx"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  xmlns:com="hk.judiciary.icmssvd.view.common.presentation.*"
+					  width="100%" creationComplete="{model.init()}" height="100%">
+
+	<fx:Metadata>
+		[ResourceBundle("sharedButton")]
+		[ResourceBundle("sharedSVD")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:i18nHandler BundleNameCollection="{['sharedButton', 'sharedSVD']}" />
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import hk.judiciary.icmssvd.view.common.util.BooleanUtil;
+			import hk.judiciary.icmssvd.view.common.util.DateUtil;
+			[Inject]
+			[Bindable]
+			public var model:EnquireReServiceFormPanelPM;
+		]]>
+	</fx:Script>
+	
+	<j:layout>
+		<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+	</j:layout>
+	
+	<!-- Error Box Section -->
+	<com:SvdReqBoErrorBox id="enquireReServBoErrorBox" width="100%" paddingLeft="10" paddingRight="10"/>
+	<j:Scroller width="100%" height="100%">
+		<j:VGroup width="100%" height="100%" paddingLeft="10" paddingRight="10">
+			<j:Accordion id="accordion" width="100%" collapseOther="false"  selectedIndex="{model.selectedAccordionIndex}">
+				<j:AccordionTab id="searAbsAcc" width="100%" parentPanel="{this.accordion}">
+					<j:layout>
+						<j:VerticalLayout gap="10" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10"/>
+					</j:layout>
+					<j:HGroup width="100%" gap="0">
+						<j:Form width="100%" styleName="searchFrom" >
+							<j:layout>			
+								<j:FormLayout gap="-10" paddingBottom="-20" paddingLeft="0" paddingRight="0" paddingTop="0" /> 
+							</j:layout>
+							
+							<j:HGroup>
+								<j:VGroup>
+									<j:HGroup height="25">
+										<j:Label id="courtLabel" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="courtDropDown" 
+																width="420" 
+																dataProvider="{model.comprisingCourtVOs}" 
+																labelField="comprisingCourtName"
+																valueField="comprisingCourtId"
+																selectedItemValue="{model.selectComprisingCourt}"
+																change="{model.changCourt(courtDropDown.selectedItem)}" >
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25">
+										<j:Label id="courtRoomLabel" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="courtRoom"
+																width="150" 
+																dataProvider="{model.displayCourtNumberVOs}"
+																labelField="courtRoomChambersName"
+																valueField="courtRoomChambersId" 
+																selectedItemValue="{model.selectCourtRm}"
+																change="{model.changCourtRm(courtRoom.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25"> 
+										<j:Label id="hrnDateLabel" styleName="formLabel" width="150" verticalAlign="bottom" paddingTop="5"></j:Label>
+										<j:DateField id="hrnDateInput" 
+													 width="150" 
+													 formatString="{model.dateFormat}"
+													 parseFunction="{DateUtil.parseDate}" 
+													 selectedDate="@{model.batchSearchVO.hearingScheduleDate}"
+													 editable="true" restrict="[0-9] '\/'"/>
+									</j:HGroup>	
+									<j:HGroup height="25"> 
+										<j:Label id="startTime" styleName="formLabel" width="150" verticalAlign="bottom" paddingTop="5"></j:Label>
+										<j:BindableDropDownList id="hrnHour" width="50" dataProvider="{model.hourList}"
+																labelField="hour"
+																selectedItemValue="@{model.selectedHour}"
+																valueField="hour"/>
+										<j:Label id="tempPoint" verticalAlign="bottom" paddingTop="5"/>
+										<j:BindableDropDownList id="hrnMin" width="50" dataProvider="{model.minList}"
+																labelField="minute"
+																selectedItemValue="@{model.selectedMin}"
+																valueField="minute"/>
+									</j:HGroup>		
+								</j:VGroup>
+								
+								<j:VGroup paddingLeft="20">
+									<j:HGroup height="25">
+										<j:Label id="caseType" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="CaseType"
+																width="420"
+																dataProvider="{model.caseTypeVOs}"
+																labelField="caseTypeName"
+																valueField="caseTypeId" 
+																selectedItemValue="{model.selectCaseType}"
+																change="{model.changCaseType(CaseType.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25">
+										<j:Label id="appNature" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="AppNature"
+																width="420"
+																dataProvider="{model.fpApplicationNatureTypeVOs}"
+																labelField="englishFpApplicationNatureTypeName"
+																valueField="fpApplicationNatureTypeId" 
+																selectedItemValue="{model.selectApplicationNat}" 
+																change="{model.changAppNature(AppNature.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+									<j:HGroup height="25">
+										<j:Label id="prosecution" styleName="formLabel" width="150" paddingTop="5" ></j:Label>
+										<j:BindableDropDownList id="Prosecution"
+																width="420"
+																dataProvider="{model.prosecutionDepartmentVOs}"
+																labelField="prosecutionDepartmentName"
+																valueField="prosecutionDepartmentCodeId" 
+																selectedItemValue="{model.selectProsecution}" 
+																change="{model.changProsecution(Prosecution.selectedItem)}">
+										</j:BindableDropDownList> 
+									</j:HGroup>
+								</j:VGroup>
+							</j:HGroup>
+						</j:Form>
+					</j:HGroup>	
+					<j:HGroup width="100%" horizontalAlign="right">   
+						<j:Button id="searchBtn" click="{model.doSearch()}"/> 					
+						<j:Button id="clearBtn" click="{model.doClear()}"/> 	
+					</j:HGroup>
+				</j:AccordionTab>
+				<j:AccordionTab id="schNextAcc" width="100%" parentPanel="{this.accordion}">
+					<j:VGroup width="100%">
+						<j:HGroup width="100%" height="240" >
+							<j:Panel id="nextHrnTabTitle" 
+									 width="100%" 
+									 borderVisible="false" 
+									 dropShadowVisible="false">
+								<j:AdvancedDataGrid width="100%" height="200"
+													sortableColumns="true" 
+													selectable="false" 
+													dataProvider="{model.nextHearingDetailVOs}" click="{model.checkNextHrnBtnAble()}">
+									<j:columns>
+										<j:AdvancedDataGridColumn id = "adgcCheckboxColumn"
+																  headerRenderer="hk.judiciary.fmk.view.component.AdvancedDataGridHeaderCheckBoxRenderer"
+																  width = "40"
+																  dataField = "checked"
+																  headerText = "" 
+																  sortable = "false" />
+										<j:AdvancedDataGridColumn id = "caseNoColumn"
+																  width = "140"
+																  dataField="caseNo"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "prosecutionColumn"
+																  width = "140"
+																  dataField = "pdCode"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "defendantColumn"
+																  width = "250"
+																  dataField = "defendantName"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "daysFromAllColumn"
+																  width = "140"
+																  dataField = "dayFromAllocation"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "nextDateColumn"
+																  width = "250"
+																  sortable = "true"
+																  textAlign = "center" >
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																					  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																					  >
+														<fx:Script>
+															<![CDATA[
+																import hk.judiciary.icmssvd.view.common.util.DateUtil;
+															]]>
+														</fx:Script>
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:TextInput borderVisible="false" editable="false" text="{DateUtil.toFormattedDateString(data.hearingScheduleDate)}" />
+															<j:Button label="Search" click="{outerDocument.model.nextHrnSearch(data)}"/>    
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+										<j:AdvancedDataGridColumn id = "nextTimeColumn"
+																  width = "140"
+																  dataField = "hearingStartTime"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "nextCourtColumn"
+																  width = "140"
+																  dataField = "courtRoomChambersName"
+																  sortable = "true"
+																  textAlign = "center" />
+									</j:columns>
+									<j:rendererProviders>
+										<j:AdvancedDataGridRendererProvider column = "{adgcCheckboxColumn}"
+																			renderer = "hk.judiciary.fmk.view.component.AdvancedDataGridCheckBoxRenderer" />
+									</j:rendererProviders>
+								</j:AdvancedDataGrid>				
+							</j:Panel>
+						</j:HGroup>
+						<j:HGroup width="100%" horizontalAlign="right" paddingRight="10" >  							
+							<j:Label id="overDays" width="180" paddingTop="5"  />
+							<j:TextInput id="overDaysInput" width="50" maxChars="3" restrict="0-9" text="@{model.overridDays}" change="{model.checkRegenDefHrnAble()}" enabled="{model.confirmAble}" editable="{model.confirmAble}" borderVisible="{model.confirmAble}"/>
+							<j:Button id="genDefHrnBtn" click="{model.reGenDefHrn()}" visible="{!model.regenDefHrnVisable}" includeInLayout="{!model.regenDefHrnVisable}" enabled="{model.genDefHrnAble}"/>
+							<j:Button id="reGenDefHrnBtn" click="{model.reGenDefHrn()}" visible="{model.regenDefHrnVisable}" includeInLayout="{model.regenDefHrnVisable}" enabled="{model.regenDefHrnAble}"/>
+							<j:Button id="conSchBtn" click="{model.confirmSchd()}" enabled="{model.confirmAble}"/>
+						</j:HGroup>
+					</j:VGroup>
+				</j:AccordionTab>
+				<j:AccordionTab id="genReServAcc" width="100%" parentPanel="{this.accordion}">
+					<j:VGroup width="100%">
+						<j:HGroup width="100%" height="240">
+							<j:Panel id="reServReqsTabTitle" 
+									 width="100%" 
+									 borderVisible="false" 
+									 dropShadowVisible="false">
+								<j:AdvancedDataGrid width="100%"  height="200"
+												 	dataProvider="{model.reserviceRequestDetailVOs}"
+													sortableColumns="true" 
+													selectable="false" click="{model.checkGenReServBtnAble()}">
+									<j:columns>
+										<j:AdvancedDataGridColumn id = "checkboxColumn" 
+																  headerRenderer="hk.judiciary.fmk.view.component.AdvancedDataGridHeaderCheckBoxRenderer"
+																  width = "40"
+																  dataField = "checked"
+																  headerText = "" 
+																  sortable = "false" />
+										<j:AdvancedDataGridColumn id = "reCaseNoColumn"
+																  width = "100"
+																  dataField="caseNo"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "recipientColumn"
+																  width = "140"
+																  dataField = "recipientName"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "reNextDateColumn"
+																  width = "100"
+																  dataField = "hearingScheduleDate"
+																  labelFunction="{DateUtil.labelFuncForDate}"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "genedColumn"
+																  width = "100"
+																  dataField = "summonsGeneratedInd"
+																  labelFunction="{BooleanUtil.labelFuncForBoolean}"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "hkRegionColumn"
+																  width = "100"
+																  dataField = "regionName"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "serviceModeTypeColumn"
+																  width = "200"
+																  dataField = "serviceModeName"
+																  sortable = "true">
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																					  >
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:BindableDropDownList id="ModeofService" enabled="{data.editable}"
+																					width="100%"
+																					dataProvider="{outerDocument.model.serviceModeTypeVOs}"
+																					labelField="serviceModeTypeName"
+																					valueField="serviceModeTypeId"
+																					selectedItemValue="{data.serviceModeName}"
+																					change="{outerDocument.model.changeServModeType(data,ModeofService.selectedItem)}"/>
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+										<j:AdvancedDataGridColumn id = "handlingAgentColumn"
+																  width = "200"
+																  dataField = "serviceAgentName"
+																  sortable = "true">
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																					  >
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:BindableDropDownList id="ServiceAgent" enabled="{data.editable}"
+																					width="100%"
+																					dataProvider="{outerDocument.model.handlingAgentVOs}"
+																					labelField="handlingAgentName"
+																					valueField="handlingAgentId"
+																					selectedItemValue="{data.serviceAgentName}" 
+																					change="{outerDocument.model.changeHkRegion(data,ServiceAgent.selectedItem)}"/> 
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+										<j:AdvancedDataGridColumn id = "baiOfficeColumn"
+																  width = "200"
+																  dataField = "baiOfficeName"
+																  sortable = "true">
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*">
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:BindableDropDownList width="100%" id="bindableBailiffOffice"
+																					dataProvider="{outerDocument.model.bailiffOfficeVOs}" 
+																					labelField="bailiffOfficeName"
+																					valueField="bailiffOfficeId"
+																					selectedItemValue="{data.baiOfficeName}" 
+																					enabled="{data.isBailiff}"
+																					change="{outerDocument.model.changeBaiOffice(data,bindableBailiffOffice.selectedItem)}"/> 
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+										<j:AdvancedDataGridColumn id = "reqsStatusColumn"
+																  width = "100"
+																  dataField = "reqStatusName"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn  id="reqsDetailColumn" 
+																   width = "100" 
+																   sortable = "true"
+																   textAlign = "center" >
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																					  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																					  >
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:Button label="Detail" click="{outerDocument.model.genReServDetail(data)}" enabled="{data.detailAble}"/>    
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+									</j:columns>
+									<j:rendererProviders>
+										<j:AdvancedDataGridRendererProvider column = "{checkboxColumn}"
+																			renderer = "hk.judiciary.fmk.view.component.AdvancedDataGridCheckBoxRenderer" />
+									</j:rendererProviders>
+								</j:AdvancedDataGrid>				
+							</j:Panel>
+						</j:HGroup>
+						<j:HGroup width="100%" height="240">
+							<j:Panel id="reServOfSumTabTitle" 
+									 width="100%" 
+									 borderVisible="false" 
+									 dropShadowVisible="false">
+								<j:AdvancedDataGrid width="100%"  height="200" id="dopDataGrid"
+													sortableColumns="true" 
+													selectable="false" 
+													dataProvider="{model.dopReserviceRequestDetailVOs}" click="{model.checkGenReServBtnAble()}">
+									<j:columns>
+										<j:AdvancedDataGridColumn id = "cboxColumn" 
+																  headerRenderer="hk.judiciary.fmk.view.component.AdvancedDataGridHeaderCheckBoxRenderer"
+																  width = "40"
+																  dataField = "checked"
+																  headerText = "" 
+																  sortable = "false" />
+										<j:AdvancedDataGridColumn id = "reRecaseNoColumn"
+																  width = "100"
+																  dataField="caseNo"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "reRecipientColumn"
+																  width = "140"
+																  dataField = "recipientName"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "reReNextDateColumn"
+																  width = "100"
+																  dataField = "hearingScheduleDate"
+																  labelFunction="{DateUtil.labelFuncForDate}"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "reGenedColumn"
+																  width = "100"
+																  dataField = "summonsGeneratedInd"
+																  labelFunction="{BooleanUtil.labelFuncForBoolean}"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "reHkRegionColumn"
+																  width = "100"
+																  dataField = "regionName"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn id = "reServiceModeTypeColumn"
+																  width = "200"
+																  dataField = "serviceModeName"
+																  sortable = "true">
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*" >
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:BindableDropDownList id="ModeofService" enabled="false"
+																					width="100%"
+																					dataProvider="{outerDocument.model.serviceModeTypeVOs}"
+																					labelField="serviceModeTypeName"
+																					valueField="serviceModeTypeId"
+																					selectedItemValue="{data.serviceModeName}"
+																					change="{outerDocument.model.changeServModeType(data,ModeofService.selectedItem)}"/>
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+										<j:AdvancedDataGridColumn id = "regMailColumn"
+																  width = "200"
+																  dataField = "registeredMailBarcode"
+																  sortable = "true">
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*">
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:TextInput id="mailBoardText" width="100%"  enabled="{data.editable}"
+																		 text="@{data.registeredMailBarcode}"
+																		 change="outerDocument.model.changMailBoard(data,mailBoardText.text)"
+																		 maxChars="20" />
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+										<j:AdvancedDataGridColumn id = "reReqsStatusColumn"
+																  width = "100"
+																  dataField = "reqStatusName"
+																  sortable = "true"
+																  textAlign = "center" />
+										<j:AdvancedDataGridColumn  id="reReqsDetailColumn" 
+																   width = "100" 
+																   sortable = "true"
+																   textAlign = "center" >
+											<j:itemRenderer>
+												<fx:Component>
+													<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																					  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																					  xmlns:s="library://ns.adobe.com/flex/spark" 
+																					  xmlns:mx="library://ns.adobe.com/flex/mx"
+																					  xmlns:j="hk.judiciary.fmk.view.component.*"														  
+																					  >
+														<fx:Declarations>										
+														</fx:Declarations> 
+														<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+															<j:layout>
+																<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+															</j:layout>
+															<j:Button label="Detail" click="{outerDocument.model.reServOfDOPDetail(data)}" enabled="{data.detailAble}"/>    
+														</j:BorderContainer>						 	
+													</j:MXAdvancedDataGridItemRenderer> 
+												</fx:Component>			 		
+											</j:itemRenderer>
+										</j:AdvancedDataGridColumn>
+									</j:columns>
+									<j:rendererProviders>
+										<j:AdvancedDataGridRendererProvider column = "{cboxColumn}"
+																			renderer = "hk.judiciary.fmk.view.component.AdvancedDataGridCheckBoxRenderer" />
+									</j:rendererProviders>
+								</j:AdvancedDataGrid>				
+							</j:Panel>
+						</j:HGroup>
+						<j:HGroup width="100%">
+							<j:VGroup width="100%">
+								<j:HGroup gap="10" height="25">
+									<j:Label id="regMailBarcode" paddingTop="5" width="180" />
+									<j:Label id="startDate" width="30" paddingTop="5" />
+									<j:TextInput id="mailFormInput" width="80" text="@{model.mailBarcodeFrom}" change="{model.checkFillInRegAble()}" maxChars="20" />
+									<j:Label id="endDate" width="30" paddingTop="5" />
+									<j:TextInput width="80" id="mailToInput" text="@{model.mailBarcodeTo}" change="{model.checkFillInRegAble()}" maxChars="20" />
+									<j:Button id="fillBtn" click="{model.fillInReg()}" enabled="{model.fillInAble}" />
+								</j:HGroup>
+								<j:HGroup gap="10" height="25">
+									<j:Label id="forFirst" paddingTop="5" width="180" />
+									<j:TextInput width="300" id="firstClerk" text="@{model.forFirstClerk}" change="{model.checkGenCerAble()}" />
+								</j:HGroup>
+								<j:HGroup gap="10" height="25">
+									<j:Label id="posfee" paddingTop="5" width="180" />
+									<j:TextInput width="80" id="posFeeInput" restrict="0-9." text="@{model.posFee}" change="{model.checkGenCerAble()}"/>
+									<j:Button id="genCerBtn" click="{model.genCer()}" enabled="{model.genCerAble}" />
+								</j:HGroup>
+							</j:VGroup>
+						</j:HGroup>
+						<j:HGroup gap="6" styleName="formRow" height="30" verticalAlign="middle" width="100%" horizontalAlign="right" paddingRight="5" >  							
+							<j:Button id="genDocDraBtn" click="{model.genDocDra()}" enabled="{model.saveAble}"/>
+							<j:Button id="saveDraBtn" click="{model.saveDraft()}" enabled="{model.saveAble}"/>
+							<j:Button id="submitReBtn" click="{model.submitReServ()}" enabled="{model.submitAble}"/>
+						</j:HGroup>
+					</j:VGroup>
+				</j:AccordionTab>
+			</j:Accordion>
+		</j:VGroup>
+	</j:Scroller>
+</j:SkinnableContainer>

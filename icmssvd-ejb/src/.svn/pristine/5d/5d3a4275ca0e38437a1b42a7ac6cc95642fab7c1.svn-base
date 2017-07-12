@@ -1,0 +1,97 @@
+package hk.judiciary.icmssvd.model.svdReq.biz.assembler;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.icms.model.dao.entity.Doc;
+import hk.judiciary.icms.model.dao.entity.ReqsDoc;
+import hk.judiciary.icmssvd.model.common.util.DbCommonUtil;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.DocumentRecordDTO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class DocumentRecordDTOAssembler {
+    /**
+     * parse entity to dto
+     * 
+     * @param doc
+     *            entity
+     * @return DocumentRecordDTO
+     */
+    public static DocumentRecordDTO toDto(ReqsDoc reqsDoc) {
+        DocumentRecordDTO dto = new DocumentRecordDTO();
+        if (reqsDoc != null && reqsDoc.getReqsDocId() != null && reqsDoc.getReqsDocId() != 0) {
+            dto.setRequestDocument(RequestDocumentDTOAssembler.toDto(reqsDoc));
+            dto.setDocument(DocumentDTOAssembler.toDto(reqsDoc.getDoc()));
+            dto.setReturnedDocumentInd(CommonUtil.toBoolean(reqsDoc.getRtnDocFlag()));
+            dto.setSelectedDocumentInd(true);
+            dto.setVersionAndNanos(reqsDoc.getVersion());
+        }
+        return dto;
+    }
+
+    public static DocumentRecordDTO toDto(Doc doc) {
+        DocumentRecordDTO dto = new DocumentRecordDTO();
+        if (doc != null && doc.getDocId() != null && doc.getDocId() != 0) {
+            dto.setDocument(DocumentDTOAssembler.toDto(doc));
+            dto.setReturnedDocumentInd(false);
+            dto.setSelectedDocumentInd(false);
+            dto.setVersionAndNanos(doc.getVersion());
+        }
+        return dto;
+    }
+
+    /**
+     * parse entity list to dto list
+     * 
+     * @param docs
+     *            List of Entity
+     * @return list of DocumentRecordDTO
+     */
+    public static List<DocumentRecordDTO> toDtoList(List<ReqsDoc> reqsDocs, List<Doc> docs) {
+        List<DocumentRecordDTO> dtos = new ArrayList<DocumentRecordDTO>();
+        
+        if (!CommonUtil.isNullOrEmpty(reqsDocs)) {        	
+        	List<ReqsDoc> ecfReqsDocs = new ArrayList<ReqsDoc>();
+            for (ReqsDoc reqsDoc : reqsDocs) {            	
+            	if (!CommonUtil.isNullOrEmpty(reqsDoc.getDoc()) && DbCommonUtil.isValidDbId(reqsDoc.getDoc().getDocId()) && CommonUtil.isNullOrEmpty(reqsDoc.getAdmAndSuppFileId())) { 
+            		dtos.add(toDto(reqsDoc));
+            		ecfReqsDocs.add(reqsDoc);
+            	}
+            }
+            if (!CommonUtil.isNullOrEmpty(docs)) {
+                List<Doc> docsInReqs = new ArrayList<Doc>();
+                for (ReqsDoc ecfReqsDoc : ecfReqsDocs) {
+                    if (ecfReqsDoc.getDoc() != null && ecfReqsDoc.getDoc().getDocId() != null
+                            && ecfReqsDoc.getDoc().getDocId() > 0) {
+                        docsInReqs.add(ecfReqsDoc.getDoc());
+                    }
+                }
+                boolean inReqs;
+                for (Doc doc : docs) {
+                    inReqs = false;
+                    for (Doc docInReqs : docsInReqs) {
+                        if (doc.getDocId().equals(docInReqs.getDocId())) {
+                            inReqs = true;
+                            break;
+                        }
+                    }
+                    if (!inReqs) {
+                        dtos.add(toDto(doc));
+                    }
+                }
+            }
+        } else {
+            if (!CommonUtil.isNullOrEmpty(docs)) {
+                for (Doc doc : docs) {
+                    dtos.add(toDto(doc));
+                }
+            }
+        }
+        return dtos;
+    }
+}

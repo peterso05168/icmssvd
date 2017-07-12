@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  creationComplete="model.init(this)"
+					  >
+	<fx:Script>
+		<![CDATA[
+			[Inject]
+			[Bindable]
+			public var model:CspuCentralPrintingModulePM;
+			
+//			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+//			{
+//				// TODO Auto Generated method stub
+//				model.recalcuateResolution(this.parent.width, this.parent.height);
+//				
+//				super.updateDisplayList(model.portalWidth, model.portalHeight);
+//			}
+		]]>
+	</fx:Script>
+	
+	<fx:Metadata>
+		[ResourceBundle("sharedButton")]
+		[ResourceBundle("sharedSVD")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:i18nHandler BundleNameCollection="{['sharedButton']}" />
+		<j:i18nHandler BundleNameCollection="{['sharedSVD']}" />
+		<j:ValidationGroupSubscriber id="validationGroupSubscriber" >
+		</j:ValidationGroupSubscriber>
+	</fx:Declarations>
+	
+	<!--<j:VGroup width="100%" height="100%" gap="{model.memberMargin}"
+			  paddingTop="{model.panelPadding}" paddingRight="{model.panelPadding}" paddingBottom="{model.panelPadding}" paddingLeft="{model.panelPadding}">
+		<j:Label id="lblDepartmentalSummons" visible="false" includeInLayout="false" />
+		<j:Label id="lblDOPSummons" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpNoticeAntiLitter" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpNoticeGeneric" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpNoticeMoving" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpNoticeParking" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpSummonsAntiLitter" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpSummonsGeneric" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpSummonsMoving" visible="false" includeInLayout="false" />
+		<j:Label id="lblFpSummonsParking" visible="false" includeInLayout="false" />
+		<j:Label id="lblLessesOffenceReport" visible="false" includeInLayout="false" />
+		<j:Label id="lblXeroxPrintJobChecklist" visible="false" includeInLayout="false" />
+		<j:Group width="100%" height="100%" >
+			<s:Rect width="100%" height="100%" visible="{model.showResolutionBorder}">
+				<s:stroke>
+					<s:SolidColorStroke color="{model.tabBorderColorHex}" weight="{model.resolutionBorderWeight}" />
+				</s:stroke>
+			</s:Rect>
+			<j:VGroup width="100%" height="100%" 
+					  paddingTop="{model.panelPadding}" paddingRight="{model.panelPadding}" paddingBottom="{model.panelPadding}" paddingLeft="{model.panelPadding}">
+				<j:ViewStack id="groupViewStack" width="100%" height="100%" selectedIndex="{model.viewStackIndex}" creationPolicy="all" >
+					<j:NavigatorContent id="index" width="100%" height="100%" >
+						<j:VGroup width="100%" height="100%" gap="{model.memberMargin}" >
+							<j:HGroup width="100%" gap="{model.memberMargin}" >
+								<j:TitledBorderBox id="titlePrintServiceOfSummons" >
+									<j:VGroup width="100%" height="100%" 
+											  paddingTop="{model.borderPadding}" paddingRight="{model.borderPadding}" paddingBottom="{model.borderPadding}" paddingLeft="{model.borderPadding}">
+										<j:Button id="btnDeptSummonsPS" click="{model.deptSummonsPSClickedEvent()}" label="{model.btnDeptSummonsPS.fieldLabel}" enabled="{model.btnDeptSummonsPS.enable}" width="{model.btnDeptSummonsPS.width}" />
+										<j:Button id="btnDopSummonsPS" click="{model.dopSummonsPSClickedEvent()}" label="{model.btnDopSummonsPS.fieldLabel}" enabled="{model.btnDopSummonsPS.enable}" width="{model.btnDopSummonsPS.width}" />
+										<j:Button id="btnFpSummonsGenericPS" click="{model.fpSummonsGenericPSClickedEvent()}" label="{model.btnFpSummonsGenericPS.fieldLabel}" enabled="{model.btnFpSummonsGenericPS.enable}" width="{model.btnFpSummonsGenericPS.width}" />
+										<j:Button id="btnFpSummonsPakingPS" click="{model.fpSummonsParkingPSClickedEvent()}" label="{model.btnFpSummonsPakingPS.fieldLabel}" enabled="{model.btnFpSummonsPakingPS.enable}" width="{model.btnFpSummonsPakingPS.width}" />
+										<j:Button id="btnFpSummonsMovingPS" click="{model.fpSummonsMovingPSClickedEvent()}" label="{model.btnFpSummonsMovingPS.fieldLabel}" enabled="{model.btnFpSummonsMovingPS.enable}" width="{model.btnFpSummonsMovingPS.width}" />
+										<j:Button id="btnFpSummonsAntiLitterPS" click="{model.fpSummonsAntiLitterPSClickedEvent()}" label="{model.btnFpSummonsAntiLitterPS.fieldLabel}" enabled="{model.btnFpSummonsAntiLitterPS.enable}" width="{model.btnFpSummonsAntiLitterPS.width}" />
+									</j:VGroup>
+								</j:TitledBorderBox>
+								<j:TitledBorderBox id="titlePrintReServiceOfSummons" >
+									<j:VGroup width="100%" height="100%" 
+											  paddingTop="{model.borderPadding}" paddingRight="{model.borderPadding}" paddingBottom="{model.borderPadding}" paddingLeft="{model.borderPadding}">
+										<j:Button id="btnDeptSummonsPRS" label="{model.btnDeptSummonsPRS.fieldLabel}" enabled="{model.btnDeptSummonsPRS.enable}" width="{model.btnDeptSummonsPRS.width}" />
+										<j:Button id="btnDopSummonsPRS" label="{model.btnDopSummonsPRS.fieldLabel}" enabled="{model.btnDopSummonsPRS.enable}" width="{model.btnDopSummonsPRS.width}" />
+										<j:Button id="btnFpSummonsGenericPRS" label="{model.btnFpSummonsGenericPRS.fieldLabel}" enabled="{model.btnFpSummonsGenericPRS.enable}" width="{model.btnFpSummonsGenericPRS.width}" />
+										<j:Button id="btnFpSummonsPakingPRS" label="{model.btnFpSummonsPakingPRS.fieldLabel}" enabled="{model.btnFpSummonsPakingPRS.enable}" width="{model.btnFpSummonsPakingPRS.width}" />
+										<j:Button id="btnFpSummonsMovingPRS" label="{model.btnFpSummonsMovingPRS.fieldLabel}" enabled="{model.btnFpSummonsMovingPRS.enable}" width="{model.btnFpSummonsMovingPRS.width}" />
+										<j:Button id="btnFpSummonsAntiLitterPRS" label="{model.btnFpSummonsAntiLitterPRS.fieldLabel}" enabled="{model.btnFpSummonsAntiLitterPRS.enable}" width="{model.btnFpSummonsAntiLitterPRS.width}" />
+									</j:VGroup>
+								</j:TitledBorderBox>
+							</j:HGroup>
+							<j:HGroup width="100%" gap="{model.memberMargin}" >
+								<j:TitledBorderBox id="titlePrintNoticeOfOrder" >
+									<j:VGroup width="100%" height="100%" 
+											  paddingTop="{model.borderPadding}" paddingRight="{model.borderPadding}" paddingBottom="{model.borderPadding}" paddingLeft="{model.borderPadding}">
+										<j:Button id="btnFpNoticeGeneric" label="{model.btnFpNoticeGeneric.fieldLabel}" enabled="{model.btnFpNoticeGeneric.enable}" width="{model.btnFpNoticeGeneric.width}" />
+										<j:Button id="btnFpNoticePaking" label="{model.btnFpNoticePaking.fieldLabel}" enabled="{model.btnFpNoticePaking.enable}" width="{model.btnFpNoticePaking.width}" />
+										<j:Button id="btnFpNoticeMoving" label="{model.btnFpNoticeMoving.fieldLabel}" enabled="{model.btnFpNoticeMoving.enable}" width="{model.btnFpNoticeMoving.width}" />
+										<j:Button id="btnFpNoticeAntiLitter" label="{model.btnFpNoticeAntiLitter.fieldLabel}" enabled="{model.btnFpNoticeAntiLitter.enable}" width="{model.btnFpNoticeAntiLitter.width}" />
+									</j:VGroup>
+								</j:TitledBorderBox>
+								<j:TitledBorderBox id="titlePrintOtherReports" >
+									<j:VGroup width="100%" height="100%" 
+											  paddingTop="{model.borderPadding}" paddingRight="{model.borderPadding}" paddingBottom="{model.borderPadding}" paddingLeft="{model.borderPadding}">
+										<j:Button id="btnLessesOffenceReport" label="{model.btnLessesOffenceReport.fieldLabel}" enabled="{model.btnLessesOffenceReport.enable}" width="{model.btnLessesOffenceReport.width}" />
+										<j:Button id="btnXeroxPrintJobChecklist" label="{model.btnXeroxPrintJobChecklist.fieldLabel}" enabled="{model.btnXeroxPrintJobChecklist.enable}" width="{model.btnXeroxPrintJobChecklist.width}" />
+										<j:HGroup width="100%" height="{model.formRowWithBoxHeight}" gap="{model.labelFieldSpacing}" >
+											<j:Button id="btnTest" click="{model.textClickedEvent()}" />
+										</j:HGroup>
+									</j:VGroup>
+								</j:TitledBorderBox>
+							</j:HGroup>
+						</j:VGroup>
+					</j:NavigatorContent>
+				</j:ViewStack>
+			</j:VGroup>
+		</j:Group>
+	</j:VGroup>	-->
+	<j:HGroup>
+		<j:Button id="btnTest" click="{model.textClickedEvent(txtCaseNo.text)}" />
+		<j:TextInput id="txtCaseNo" editable="false" text="ESAH 22/2017" width="{model.txtCaseNo.width}" />
+	</j:HGroup>
+</j:SkinnableContainer>

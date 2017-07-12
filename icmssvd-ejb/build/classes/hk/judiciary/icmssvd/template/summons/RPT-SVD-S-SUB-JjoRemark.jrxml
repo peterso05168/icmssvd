@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-10-24T10:38:21 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="JjoRemark" pageWidth="180" pageHeight="190" whenNoDataType="AllSectionsNoDetail" columnWidth="180" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="971cdb34-79d6-4708-91e8-2f951d168efc">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="190" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="180" height="190" uuid="82138696-7c1e-454a-bf0c-824fe936b42c">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="0" width="165" height="13" uuid="77726c36-acf7-4e41-b172-2c60992110e5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Defendant Present,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="13" width="165" height="13" uuid="dbd2eba6-1757-4289-a20d-aff4002ee77f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Charge read and explained.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="26" width="165" height="13" uuid="1970d047-9c5c-4c0c-ab08-5c57a4f20be3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Deft. Pleads]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="39" width="165" height="13" uuid="057e510b-aa73-40c1-a756-e34a3c0e2aa4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA["]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="52" width="165" height="13" uuid="1b8a7d87-e533-4013-be23-a99c6724ae7f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Guilty"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="65" width="165" height="13" uuid="24cfa781-ac75-4853-a699-1dfa9a9714eb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="78" width="25" height="13" uuid="1f2af715-a2e5-4f6a-89f8-45dfba59f195">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Deft. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="78" width="100" height="13" uuid="cc1749d3-71be-4d12-83be-a2310c88270f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Has nothing to say,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="91" width="165" height="13" uuid="69177c61-6efc-4ca7-a092-1d322ee1c47c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="104" width="165" height="13" uuid="ff7bdb24-d75a-4aad-adc2-12443ecdc84d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Convicted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="117" width="165" height="13" uuid="b590ed1f-d8f5-43bc-831a-fb473b287ae7">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[And Fined $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="130" width="165" height="13" uuid="e69c4458-c1ea-4b55-a23d-81f8bc2e3a30">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="143" width="165" height="13" uuid="832ee24c-9a3b-468d-a6eb-a77814b79b34">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Signed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="156" width="165" height="13" uuid="a81ddd73-e160-49f7-9db4-3491c697e8e5">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[And]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="169" width="165" height="13" uuid="2fc89865-021d-4022-bf2d-a4ea5ae2821d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="11"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+</jasperReport>

@@ -1,0 +1,12 @@
+package hk.judiciary.icmssvd.model.svdReq;
+
+/**
+ * 
+ * @version $Revision: 2551 $ $Date: 2016-12-30 21:14:55 +0800 (Fri, 30 Dec 2016) $
+ * @author $Author: vicki.huang $
+ */
+public class DocumentConstant {
+    public static final String DOCUMENT_TYPE_DS = "DS";// Departmental Summons
+    public static final String DOCUMENT_TYPE_DOPS = "DOPS";// Driving Offence Points Summons
+    public static final String DOCUMENT_TYPE_FPS = "FPS";// Fixed Penalty Summon
+}

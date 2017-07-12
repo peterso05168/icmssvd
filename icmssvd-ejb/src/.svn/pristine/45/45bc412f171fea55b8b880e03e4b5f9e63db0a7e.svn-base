@@ -1,0 +1,51 @@
+package hk.judiciary.icmssvd.model.common.dao;
+
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.icms.model.dao.entity.DocType;
+import hk.judiciary.icmssvd.model.BaseDAO;
+import hk.judiciary.icmssvd.model.common.CommonConstant;
+import hk.judiciary.icmssvd.model.common.util.DbCommonUtil;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class DocumentTypeDAO extends BaseDAO<DocType> {
+    public static final String DOC_TYPE_DAO = "documentTypeDAO";
+
+    private static final String QUERY_LIST = "DocType.findDocumentTypeList";
+    private static final String QUERY_BY_CODE = "DocType.findByDocumentTypeCode";
+
+    private static final String PARAM_TYPE_CODE = "docTypeCd";
+
+    public List<DocType> findDocumentTypeList() {
+        info("findDocumentTypeList() start ");
+        TypedQuery<DocType> query = getEntityManager().createNamedQuery(QUERY_LIST, DocType.class);
+        query.setParameter(PARAM_EFFV_START_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_EFFV_END_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_ACTIVE_FLAG, CommonConstant.COMMON_FLAG_TRUE);
+        List<DocType> list = getResultList(query);
+        return list;
+    }
+
+    public DocType findByDocumentTypeCode(String code) {
+        info("findByDocumentTypeCode() start ");
+        DocType docType = null;
+        TypedQuery<DocType> query = getEntityManager().createNamedQuery(QUERY_BY_CODE,
+                DocType.class);
+        query.setParameter(PARAM_EFFV_START_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_EFFV_END_DATE, DbCommonUtil.getCurrentSystemDateTime());
+        query.setParameter(PARAM_ACTIVE_FLAG, CommonConstant.COMMON_FLAG_TRUE);
+        query.setParameter(PARAM_TYPE_CODE, code);
+        List<DocType> list = getResultList(query);
+        if (!CommonUtil.isNullOrEmpty(list)) {
+            docType = list.get(0);
+        }
+        return docType;
+    }
+}

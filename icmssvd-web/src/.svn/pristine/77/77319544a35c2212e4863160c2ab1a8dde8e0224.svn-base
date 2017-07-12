@@ -1,0 +1,14 @@
+
+search.label=Search
+
+lblNoOfRecord.text=Total Number of Records:
+
+adgcProjectId.headerText=Project Id
+adgcprojectCode.headerText=Project Code
+adgcProjectName.headerText=Project Name
+adgcActive.headerText=Active
+adgcCreateBy.headerText=Create By
+adgcCreateDate.headerText=Create Date
+adgcLastUpdateBy.headerText=Update By
+adgcLastUpdateDate.headerText=Update Date
+adgcVersion.headerText=Column Version Date

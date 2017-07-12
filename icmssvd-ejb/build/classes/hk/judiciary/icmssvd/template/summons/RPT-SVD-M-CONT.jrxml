@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-06-01T16:53:08 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RPT-SVD-M-CONT" pageWidth="595" pageHeight="842" columnWidth="493" leftMargin="56" rightMargin="46" topMargin="14" bottomMargin="17" uuid="6cd12c3c-72fd-4342-9f25-29ed6d5ebacd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString language="xPath">
+		<![CDATA[/Report/Content/Data]]>
+	</queryString>
+	<field name="langType" class="java.lang.String">
+		<fieldDescription><![CDATA[langType]]></fieldDescription>
+	</field>
+	<field name="caseNo" class="java.lang.String">
+		<fieldDescription><![CDATA[caseNo]]></fieldDescription>
+	</field>
+	<field name="drnNo" class="java.lang.String">
+		<fieldDescription><![CDATA[drnNo]]></fieldDescription>
+	</field>
+	<field name="courtName" class="java.lang.String">
+		<fieldDescription><![CDATA[courtName]]></fieldDescription>
+	</field>
+	<field name="courtAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[courtAddress]]></fieldDescription>
+	</field>
+	<field name="defendantName" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantName]]></fieldDescription>
+	</field>
+	<field name="defendantAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAddress1]]></fieldDescription>
+	</field>
+	<field name="defendantAddress2" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAddress2]]></fieldDescription>
+	</field>
+	<field name="defendantAddress3" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAddress3]]></fieldDescription>
+	</field>
+	<field name="defendantDrivingLicenseNo" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantDrivingLicenseNo]]></fieldDescription>
+	</field>
+	<field name="defendantGender" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantGender]]></fieldDescription>
+	</field>
+	<field name="defendantAge" class="java.lang.String">
+		<fieldDescription><![CDATA[defendantAge]]></fieldDescription>
+	</field>
+	<field name="pdRefNo" class="java.lang.String">
+		<fieldDescription><![CDATA[pdRefNo]]></fieldDescription>
+	</field>
+	<field name="chargeParticular" class="java.lang.String">
+		<fieldDescription><![CDATA[chargeParticular]]></fieldDescription>
+	</field>
+	<field name="orderDate" class="java.lang.String">
+		<fieldDescription><![CDATA[orderDate]]></fieldDescription>
+	</field>
+	<field name="fixedPenaltyAmt" class="java.lang.String">
+		<fieldDescription><![CDATA[fixedPenaltyAmt]]></fieldDescription>
+	</field>
+	<field name="additionalPenaltyAmt" class="java.lang.String">
+		<fieldDescription><![CDATA[additionalPenaltyAmt]]></fieldDescription>
+	</field>
+	<field name="costs" class="java.lang.String">
+		<fieldDescription><![CDATA[costs]]></fieldDescription>
+	</field>
+	<field name="paymentAmt" class="java.lang.String">
+		<fieldDescription><![CDATA[paymentAmt]]></fieldDescription>
+	</field>
+	<field name="issueDate" class="java.lang.String">
+		<fieldDescription><![CDATA[issueDate]]></fieldDescription>
+	</field>
+	<field name="reviewProcedurePhone" class="java.lang.String">
+		<fieldDescription><![CDATA[reviewProcedurePhone]]></fieldDescription>
+	</field>
+	<field name="courtPaymentNo" class="java.lang.String">
+		<fieldDescription><![CDATA[courtPaymentNo]]></fieldDescription>
+	</field>
+	<field name="writNo" class="java.lang.String">
+		<fieldDescription><![CDATA[writNo]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="250" height="39" isRemoveLineWhenBlank="true" uuid="a028c890-acfc-4536-bed0-9c37c0a5e6a3">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Fixed Penalty
+(Criminal Proceedings) Ordinance,
+Cap. 240. s. 3A(2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="70" height="15" uuid="5fa39d0b-fefb-46af-837b-10b000e98c03">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="FreeSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[M.P.No.: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="390" y="0" width="103" height="15" uuid="e304c407-71cf-4916-8af1-e20b99a3b5d6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{caseNo}!=null ? $F{caseNo} : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="11" width="493" height="33" uuid="6deaaf31-7c81-44f6-8763-cd8b86fb7155">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="FreeSerif" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTICE OF ORDER
+TO PAY PENALTY UNDER SECTION 3A(1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="493" height="22" uuid="20c4eb53-6871-490b-ae26-b3b3d7ebf956">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="FreeSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[HONG KONG SPECIAL ADMINISTRATIVE REGION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="61" width="493" height="11" uuid="80101824-4385-44cb-9717-627ee054795a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="FreeSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtName}!=null ? $F{courtName} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="72" width="493" height="11" uuid="4cf401c1-aaae-408f-b466-a091f6586aee">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="FreeSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtAddress}!=null ? $F{courtAddress} : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="250" height="30" uuid="0f4e05af-7361-4ee8-9515-09e019aaa4da">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK" size="8"/>
+				</textElement>
+				<text><![CDATA[定額罰款(刑事訴訟)條例
+( 第240章 ) 第3A(2)條]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="70" height="15" uuid="9c0f198d-4fb8-4a42-bab7-84ea3fe3f74e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<text><![CDATA[雜項案件編號 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="493" height="33" uuid="ec1fdc32-b537-405c-9b37-5dfc94050748">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[根據第3A(1)條命令繳付罰款通知書
+香港特別行政區]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="53" width="493" height="15" uuid="44230bec-1f6e-4450-a3a7-09450fb5ae25">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtName}!=null ? $F{courtName} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="68" width="493" height="15" uuid="a622f3bf-2d2c-4554-a4f9-ca4ff1e6aa33">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{courtAddress}!=null ? $F{courtAddress} : "")]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="370" y="27" width="120" height="35" uuid="b156b426-9733-4110-92fc-10b20695129f">
+					<property name="com.jaspersoft.studio.unit.moduleWidth" value="pixel"/>
+				</reportElement>
+				<jr:PDF417 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="50.0" textPosition="top" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA["<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"><judiciaryBarcode><c>"+($F{caseNo}!=null?$F{caseNo}:"")+"</c><w>"+($F{writNo}!=null?$F{writNo}:"")+"</w><d>"+($F{drnNo}!=null?$F{drnNo}:"")+"</d></judiciaryBarcode>"]]></jr:codeExpression>
+				</jr:PDF417>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="700" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="493" height="20" uuid="c5b6d93e-9c1f-4a92-aa83-7e625a528a65">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="40" width="270" height="20" uuid="4abf193a-9b71-4f74-a54c-74e43a077f26">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantName}!=null ? $F{defendantName} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="55" width="270" height="15" uuid="cb297d4d-ecf7-4e11-b649-be95357f2509">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress1}!=null ? $F{defendantAddress1} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="70" width="270" height="15" uuid="44af082e-0617-495b-a94a-8edee3a332a5">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress2}!=null ? $F{defendantAddress2} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="85" width="270" height="15" uuid="56091a11-9701-4033-80e3-ad6ca96b338f">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress3}!=null ? $F{defendantAddress3} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="40" width="223" height="20" uuid="9e4824ee-294b-4df9-8f47-33bf2b2a0398">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DRN:   "+($F{drnNo}!=null ? $F{drnNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="55" width="223" height="15" uuid="e53bc359-8c69-43ef-8a73-570f1666ff11">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Driving Lic.:   "+($F{defendantDrivingLicenseNo}!=null ? $F{defendantDrivingLicenseNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="70" width="223" height="15" uuid="1dc1bdd0-cccf-453f-b773-f870d2de31ea">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sex:   "+($F{defendantGender}!=null ? $F{defendantGender} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="85" width="223" height="15" uuid="ccb62bb5-4599-4ad7-b296-02b2c280dda5">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Age:   "+($F{defendantAge}!=null ? $F{defendantAge} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="100" width="223" height="15" uuid="6c53b94c-2e7f-49bf-b81d-1e4780fc1a1d">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PD Ref No.:   "+($F{pdRefNo}!=null ? $F{pdRefNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="130" width="493" height="120" uuid="c12c91ff-dd2c-41a0-a0a8-798263f826fa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{chargeParticular}!=null ? $F{chargeParticular} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="260" width="493" height="30" uuid="fa6b8742-a493-4432-8130-751d3ecd385d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TAKE NOTICE THAT the magistrate on "+($F{orderDate}!=null ? $F{orderDate} : "")+" ordered that you do within 14 days of this notice being served on you pay the sum of"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="310" width="120" height="20" uuid="6dc012c8-ba44-4933-b97f-d2754cf4d74f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<text><![CDATA[Fixed Penalty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="310" width="120" height="20" uuid="2e07b653-bae5-4fd3-aa9a-717d735542ed">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<text><![CDATA[+ Additional Penalty ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="310" width="120" height="20" uuid="fab16ba3-f9d8-43dc-9210-171e45cb8fd5">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<text><![CDATA[+ Costs ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="310" width="133" height="20" uuid="b83691cb-b4ed-470e-8e4a-be9d43d2c847">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<text><![CDATA[= Payment Amount ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="330" width="120" height="20" uuid="00103ec1-6a7f-4b66-863b-afc919ff788e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ "+($F{fixedPenaltyAmt}!=null ? $F{fixedPenaltyAmt} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="330" width="120" height="20" uuid="161026fb-b523-4df7-80ab-0d0f9921b9e3"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["+ $ "+($F{additionalPenaltyAmt}!=null ? $F{additionalPenaltyAmt} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="329" width="120" height="20" uuid="9eb9e63d-5d92-404c-b7bb-8d35a3245456"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["+ $ "+($F{costs}!=null ? $F{costs} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="330" width="133" height="20" uuid="e8d30ce8-8fd2-4e80-92ab-7229b4b5572f"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["= $ "+($F{paymentAmt}!=null ? $F{paymentAmt} : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="410" width="493" height="20" uuid="892c169c-fddd-4bc3-b15f-dc9ce3dab24d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<text><![CDATA[First Clerk of the Magistrates’ Courts]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="440" width="240" height="30" uuid="06416d55-563a-43de-9061-24b986750c04">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="styled">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Dated :     </b>"+($F{issueDate}!=null ? $F{issueDate} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="500" width="493" height="70" uuid="33ebf558-fe9b-47e3-a01e-5de267572a40">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="FreeSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["[<b>Note:</b> You may, within 14 days of receipt of this Notice of Order, apply to the magistrate for a review, subject to satisfactory proof that the above Notice has not come to your personal notice without any neglect on your part. For enquires about the review procedure, please call "+($F{reviewProcedurePhone}!=null ? $F{reviewProcedurePhone} : "")+".]"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="570" width="293" height="40" uuid="8ffd8581-42f4-453e-b85d-7389915ef328">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="FreeSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Court Payment Number: "+($F{courtPaymentNo}!=null ? $F{courtPaymentNo} : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="493" height="20" uuid="907b6f9a-e97f-4999-9301-15eb30fc07da">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK" isBold="true"/>
+				</textElement>
+				<text><![CDATA[致:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="40" width="270" height="20" uuid="5b4ec63b-5d32-4d93-a6bc-d408ef558782">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantName}!=null ? $F{defendantName} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="55" width="270" height="15" uuid="3498a67c-a605-4526-b5d5-cba133c04a96">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress1}!=null ? $F{defendantAddress1} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="70" width="270" height="15" uuid="89c8b8dd-1cd3-4c4f-8e55-3112ce4ffb0a">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress2}!=null ? $F{defendantAddress2} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="85" width="270" height="15" uuid="cccfa4cb-1a4e-488c-be30-f0a5d128f816">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{defendantAddress3}!=null ? $F{defendantAddress3} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="40" width="223" height="20" uuid="7a586354-0743-42d7-9ddd-3896facf4329">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["檔案參考編號:   "+($F{drnNo}!=null ? $F{drnNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="55" width="223" height="15" uuid="11456706-4dd7-4e69-b52c-fef69fde1402">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["駕駛執照號碼:   "+($F{defendantDrivingLicenseNo}!=null ? $F{defendantDrivingLicenseNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="70" width="223" height="15" uuid="5c32110b-9f8b-46ed-a30c-6c70abdf2046">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["性別:   "+($F{defendantGender}!=null ? $F{defendantGender} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="85" width="223" height="15" uuid="c283058a-53df-4b1d-935a-142d061ccb3f">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["年齡:   "+($F{defendantAge}!=null ? $F{defendantAge} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="100" width="223" height="15" uuid="30b10fb6-de66-491c-ab73-aaae5330d5db">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["檢控部門參考編號:   "+($F{pdRefNo}!=null ? $F{pdRefNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="130" width="493" height="120" uuid="db571168-d0db-4c7e-9139-3213564f858a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{chargeParticular}!=null ? $F{chargeParticular} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="260" width="493" height="30" uuid="3cedadf5-fa61-4404-80d5-480569dc20ef">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["裁判官已在  "+($F{orderDate}!=null ? $F{orderDate} : "")+"命令你須在此通知書的送達日期起計的14天內繳付下述罰款。"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="310" width="120" height="20" uuid="67afb628-4e13-4bac-be00-6bf6a6725c86">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<text><![CDATA[定額罰款]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="310" width="120" height="20" uuid="ce122424-75c2-45b7-8aef-2b8b68982b31">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<text><![CDATA[+ 附加罰款]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="310" width="120" height="20" uuid="265a2928-c5e4-4b3d-a2c8-1043fbffac59">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<text><![CDATA[+ 訟費 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="310" width="133" height="20" uuid="cc1db986-a65f-45f6-813c-0c9f30b109c8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<text><![CDATA[= 應付款額 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="410" width="493" height="20" uuid="18c33460-fd06-4d7a-95fe-5b2b24bc6fdf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<text><![CDATA[裁判法院書記長啟]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="440" width="240" height="30" uuid="0a7521af-be5f-4ca7-8420-cb7c0ea59699">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="styled">
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>日期 :</b>   "+($F{issueDate}!=null ? $F{issueDate} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="500" width="493" height="70" uuid="5906d102-02fc-415b-ab49-abb774a770f7">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="styled">
+					<font fontName="AR PL UKai HK"/>
+				</textElement>
+				<textFieldExpression><![CDATA["[<b>備註：</b>如你沒有收過通知書，而這並非由於你的疏忽所致，你有權在收到本命令的14天內向裁判官申請覆核及提出有關的證據。有關覆核程序的查詢，請致電 "+($F{reviewProcedurePhone}!=null ? $F{reviewProcedurePhone} : "")+"。]"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="570" width="293" height="40" uuid="72f2d053-3fde-47f0-9e2d-2386636a6b9f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="AR PL UKai HK" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["法庭繳款編號: "+($F{courtPaymentNo}!=null ? $F{courtPaymentNo} : "")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="493" height="17" uuid="cde1740f-a88b-41b5-a0b4-0ad2b12f6de4">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("e")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="FreeSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[F470C2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="493" height="17" uuid="a7cc205a-3dbc-4f19-b166-19dd17f50d9b">
+					<printWhenExpression><![CDATA[$F{langType}.equalsIgnoreCase("c")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="AR PL UKai HK" size="8"/>
+				</textElement>
+				<text><![CDATA[F470C1]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

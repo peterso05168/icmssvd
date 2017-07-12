@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+                        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<named-query name="Doc.findDocByCaseId">
+		<query>
+        	<![CDATA[
+	            SELECT d FROM Doc d 
+	            LEFT JOIN FETCH d.docFolio f
+	            LEFT JOIN FETCH f.subFlr s
+	            LEFT JOIN FETCH s.vcase c
+	            WHERE c.caseId = :caseId
+	            ORDER BY d.docId
+        	]]>
+        </query>
+	</named-query>
+
+</entity-mappings>

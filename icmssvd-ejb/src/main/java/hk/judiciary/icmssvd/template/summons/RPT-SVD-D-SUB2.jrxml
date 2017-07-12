@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-03-27T10:46:55 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Driving Offence Points Summons-SUB2" pageWidth="495" pageHeight="842" columnWidth="495" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="58547458-3b59-483f-b826-22e46b7de35d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<queryString language="xPath">
+		<![CDATA[/Report/Content/Data/drivingOffence2]]>
+	</queryString>
+	<field name="transportDeptRefNo" class="java.lang.String">
+		<fieldDescription><![CDATA[transportDeptRefNo]]></fieldDescription>
+	</field>
+	<field name="caseNo" class="java.lang.String">
+		<fieldDescription><![CDATA[caseNo]]></fieldDescription>
+	</field>
+	<field name="disqualificationOrderDate" class="java.lang.String">
+		<fieldDescription><![CDATA[disqualificationOrderDate]]></fieldDescription>
+	</field>
+	<field name="disqualificationPeriod" class="java.lang.String">
+		<fieldDescription><![CDATA[disqualificationPeriod]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="100" height="24" uuid="764a4c0a-b8b3-491d-8614-ae2c58c9fee1">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{transportDeptRefNo}!=null ? $F{transportDeptRefNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="80" height="24" uuid="be2aa913-ba55-41ec-9ea6-266bf91cb597">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{caseNo}!=null ? $F{caseNo} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="80" height="24" uuid="5850eb78-1e4e-434c-b184-73228a768b2a">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{disqualificationOrderDate}!=null ? $F{disqualificationOrderDate} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="100" height="12" uuid="0962ee52-2eb9-436c-b828-d0513b0eca80">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="FreeSerif" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{disqualificationPeriod}!=null ? $F{disqualificationPeriod} : "")+"Months"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="12" width="100" height="12" uuid="c6fbeb5d-bab0-448a-913d-7a1289c9d7de">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="AR PL UKai HK" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["("+($F{disqualificationPeriod}!=null ? $F{disqualificationPeriod} : "")+"個月)"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="495" height="24" uuid="ac9cea9f-7400-4e05-91d4-6722bc61ec85"/>
+				<box>
+					<pen lineWidth="0.1" lineStyle="Double"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.1" lineStyle="Dotted"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,124 @@
+package hk.judiciary.icmssvd.model.report.facade.internal;
+
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.List;
+import java.util.UUID;
+
+import javax.activation.DataHandler;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
+import javax.interceptor.Interceptors;
+import javax.persistence.PersistenceContext;
+
+import hk.judiciary.fmk.common.security.user.JudiciaryUser;
+import hk.judiciary.fmk.ejb.facade.AbstractFacade;
+import hk.judiciary.fmk.ejb.facade.DefaultFacadeInterceptor;
+import hk.judiciary.fmk.logging.FmkLogger;
+import hk.judiciary.fmk.model.cfs.biz.dto.FileDTO;
+import hk.judiciary.fmk.model.report.biz.dto.ReportResultDTO;
+import hk.judiciary.icmssvd.model.common.util.DocumentFileUtil;
+import hk.judiciary.icmssvd.model.courtCase.exception.CriminalGenericException;
+import hk.judiciary.icmssvd.model.report.biz.ReportBO;
+import hk.judiciary.icmssvd.model.report.biz.dto.PrintCheckListAndCoverSheetResultDTO;
+import hk.judiciary.icmssvd.model.report.biz.dto.PrintFreshSummonsResultDTO;
+import hk.judiciary.icmssvd.model.report.biz.dto.ReportResultPackDTO;
+import hk.judiciary.icmssvd.model.report.constant.CopyTypeConstant;
+import hk.judiciary.icmssvd.model.report.facade.ReportFacade;
+
+
+@Stateless(mappedName = "ejb/reportFacade")
+@Interceptors(DefaultFacadeInterceptor.class)
+@PersistenceContext(name = "icmssvdPU", unitName = "icmssvdPU")
+@TransactionManagement(TransactionManagementType.BEAN)
+public class ReportFacadeBean extends AbstractFacade implements ReportFacade {
+	public static final FmkLogger logger = new FmkLogger(ReportFacadeBean.class);
+	public ReportBO getReportBO() {
+		return getBO(ReportBO.NAME, ReportBO.class);
+	}
+	
+	@Override
+	public PrintFreshSummonsResultDTO batchGenSummons(String regNo, Integer caseId, String copyType, boolean isReservice, String reportTypeCode, JudiciaryUser user) throws CriminalGenericException {
+		logger.info("batchGenSummons start ");
+		PrintFreshSummonsResultDTO resultDTO = new PrintFreshSummonsResultDTO();
+		if (copyType.equals(CopyTypeConstant.PROSECUTION_DEPARTMENT.getCode())) {
+			resultDTO.setTotalPageCount(0);
+			return resultDTO;
+		}		
+		CopyTypeConstant copyTypeConst = null;
+
+		List<ReportResultPackDTO> RRPDTOList;
+		if (CopyTypeConstant.DEFENDANT.getCode().equals(copyType)) {
+			copyTypeConst = CopyTypeConstant.DEFENDANT;
+		}else if (CopyTypeConstant.COURT.getCode().equals(copyType)) {
+			copyTypeConst = CopyTypeConstant.COURT;
+		}else if (CopyTypeConstant.PROSECUTION_DEPARTMENT.getCode().equals(copyType)) {
+			copyTypeConst = CopyTypeConstant.PROSECUTION_DEPARTMENT;
+		}
+		RRPDTOList = this.getReportBO().genRptSvd("", caseId, copyTypeConst, false, reportTypeCode);
+		for (ReportResultPackDTO reportResultPackDTO: RRPDTOList) {
+			FileDTO fileDto = new FileDTO();
+			FileDTO fileDto2 = new FileDTO();
+			fileDto.setFilename("SVD-BATCH-TESTING");
+			fileDto.setVersion(new java.sql.Timestamp(new java.util.Date().getTime()));
+			fileDto.setContent(new DataHandler(reportResultPackDTO.getReportResult().getDocument(), reportTypeCode));
+			
+			try {
+				if (!copyType.equals(CopyTypeConstant.PROSECUTION_DEPARTMENT.getCode())) {
+					logger.info("save to ecf start ");
+					String drn = DocumentFileUtil.generateDrn(getJudiciaryUser());
+					String documentTypeCode = reportResultPackDTO.getReportTypeCode();
+					//String documentTypeCode = this.getReportBO().getDocumentTypeCode("RPT-SVD-" + reportTypeCode);
+					//int icmsDocId = 12345;
+					int icmsDocId = DocumentFileUtil.createDocument(getJudiciaryUser(), caseId, documentTypeCode, drn, fileDto);
+					DocumentFileUtil.addEcfFile(getJudiciaryUser(), icmsDocId, fileDto);
+					fileDto2 = DocumentFileUtil.getEcfFile(getJudiciaryUser(), icmsDocId);
+					
+					if (fileDto2.getFilename() != null) {
+						logger.info("save to ecf end ");
+						resultDTO.setSvdWsSuccess(true);
+					}else {
+						logger.info("save to ecf failed ");
+						resultDTO.setSvdWsSuccess(false);
+					}
+					
+					return resultDTO;
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}        
+		logger.info("batchGenSummons end ");
+		return resultDTO;
+	}
+	
+	@Override
+	public PrintCheckListAndCoverSheetResultDTO batchGenCheckList(List<Integer> caseIds, String reportTypeCode, JudiciaryUser user) throws CriminalGenericException {
+		logger.info("batchGenCheckList start ");
+		PrintCheckListAndCoverSheetResultDTO resultDTO = new PrintCheckListAndCoverSheetResultDTO();
+		ReportResultDTO reportResultDTO;
+		reportResultDTO = this.getReportBO().genCheckList(caseIds, reportTypeCode);
+		resultDTO.setDocument(reportResultDTO.getDocument());
+		resultDTO.setErrorMessage(reportResultDTO.getErrorMessage());
+		logger.info("batchGenCheckList end ");
+		return resultDTO;		
+	}
+
+	
+	@Override
+	public PrintCheckListAndCoverSheetResultDTO batchGenCover(List<String> caseNos, JudiciaryUser user) throws CriminalGenericException {
+		logger.info("batchGenCover start ");
+		PrintCheckListAndCoverSheetResultDTO resultDTO = new PrintCheckListAndCoverSheetResultDTO();
+
+		ReportResultDTO reportResultDTO;		
+		reportResultDTO = this.getReportBO().genCover(caseNos);
+
+		resultDTO.setDocument(reportResultDTO.getDocument());
+		resultDTO.setErrorMessage(reportResultDTO.getErrorMessage());
+		logger.info("batchGenCover end ");
+		return resultDTO;
+	}
+}

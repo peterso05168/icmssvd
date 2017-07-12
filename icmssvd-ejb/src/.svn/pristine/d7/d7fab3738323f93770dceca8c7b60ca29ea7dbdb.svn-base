@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-05T11:08:41 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RPT-SVD-SERHIST-HDR" pageWidth="802" pageHeight="69" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b37ba19c-dcc4-48e6-bfe3-347b607cbabc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="content\DefaultDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<style name="fontstyle" isDefault="true" fontName="FreeSerif"/>
+	<queryString language="XPath">
+		<![CDATA[/Report/Content/Data]]>
+	</queryString>
+	<field name="timestamp" class="java.lang.String">
+		<fieldDescription><![CDATA[timestamp]]></fieldDescription>
+	</field>
+	<field name="magistrateCourt" class="java.lang.String">
+		<fieldDescription><![CDATA[magistrateCourt]]></fieldDescription>
+	</field>
+	<field name="prosecutionDept" class="java.lang.String">
+		<fieldDescription><![CDATA[prosecutionDept]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="280" y="0" width="241" height="35" uuid="e0343bc6-9646-46c6-8931-3a697708c9af">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CASE AND SUMMONS MANAGEMENT SYSTEM
+DEPARTMENTAL SUMMONS CHECK LIST
+(PROSECUTION DEPARTMENT'S COPY)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="650" y="15" width="50" height="15" uuid="9efd9d49-c478-4199-83f8-998836b40063"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[DATE  :]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="700" y="15" width="102" height="15" uuid="2e0beccf-2770-43c1-923f-bc509aaec0ad"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="39" width="250" height="30" uuid="60398256-2483-465b-a768-9d8edd379b73"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MAGISTRATES' COURTS : " + ($F{magistrateCourt}!=null?$F{magistrateCourt}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="39" width="280" height="30" uuid="372d7aae-1b6e-4e6c-9c09-4d1e76c8cd3c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PROS. DEPT. : " + ($F{prosecutionDept}!=null?$F{prosecutionDept}:"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

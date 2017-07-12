@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  width="100%" height="100%"
+					  >
+	
+	
+	
+	<fx:Metadata>
+		[ResourceBundle("projectMain")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:i18nHandler BundleNameCollection="{['projectMain']}" />
+	</fx:Declarations>
+	
+	
+	<j:layout>
+		<j:VerticalLayout gap="5"/>
+	</j:layout>
+	
+	
+	<fx:Script>
+		<![CDATA[
+			
+		]]>
+	</fx:Script>
+	<j:Spacer height="20" />
+	<j:Label text="test" />
+	<j:VGroup width="100%" height="100%" paddingRight="10" paddingLeft="10">
+		<j:HGroup horizontalAlign="left" width="100%" height="30" >
+			<j:Label id="labeltext" fontSize="50" />
+		</j:HGroup>
+	</j:VGroup>
+	
+</j:SkinnableContainer>

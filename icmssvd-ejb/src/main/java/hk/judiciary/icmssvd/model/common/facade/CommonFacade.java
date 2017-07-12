@@ -1,0 +1,89 @@
+package hk.judiciary.icmssvd.model.common.facade;
+
+import java.util.List;
+
+import hk.judiciary.fmk.common.security.user.JudiciaryUser;
+import hk.judiciary.fmk.model.cfs.biz.dto.FileDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.BailiffOfficeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.BailiffTaskResultReasonDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.BailiffTaskResultStatusDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.CaseTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ComprisingCourtDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.CourtLevelTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.CourtRoomChambersDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.DocumentFileDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.DocumentTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.FpApplicationNatureTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HandlingAgentDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HkDistrictDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.HkRegionDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ParticipantRoleTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.PostOfficeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ProsecutionDepartmentDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.RequestStatusTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.RequestTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.ServiceModeTypeDTO;
+import hk.judiciary.icmssvd.model.common.biz.dto.SpecialRequestTypeDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.FunctionDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.IntlUserAcDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.PosDocumentTypeDTO;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.RequestServiceTypeDTO;
+
+/**
+ * 
+ * @version $Revision: 6787 $ $Date: 2017-05-09 18:09:55 +0800 (週二, 09 五月 2017) $
+ * @author $Author: mtse $
+ */
+public interface CommonFacade {
+
+    public static final String NAME = "commonFacade";
+
+    public List<BailiffOfficeDTO> findBailiffOfficeList(JudiciaryUser user);
+
+    public List<CaseTypeDTO> findCaseTypeList(JudiciaryUser user, FunctionDTO function);
+
+    public List<CaseTypeDTO> findSummonsCaseTypeList(JudiciaryUser user, FunctionDTO function);
+
+    public List<ComprisingCourtDTO> findComprisingCourtList(JudiciaryUser user, FunctionDTO function);
+
+    public List<CourtLevelTypeDTO> findCourtLevelTypeList(JudiciaryUser user);
+
+    public List<DocumentTypeDTO> findDocumentTypeList(JudiciaryUser user, FunctionDTO function);
+
+    public List<HandlingAgentDTO> findHandlingAgentList(JudiciaryUser user, FunctionDTO function);
+
+    public List<HkDistrictDTO> findHkDistrictList(JudiciaryUser user);
+
+    public List<HkRegionDTO> findHkRegionList(JudiciaryUser user);
+
+    public List<PostOfficeDTO> findPostOfficeList(JudiciaryUser user);
+
+    public List<RequestStatusTypeDTO> findRequestStatusTypeList(JudiciaryUser user);
+
+    public List<RequestTypeDTO> findRequestTypeList(JudiciaryUser user);
+
+    public List<BailiffTaskResultReasonDTO> findBailiffTaskResultReasonList(JudiciaryUser user);
+
+    public List<BailiffTaskResultStatusDTO> findBailiffTaskResultStatusList(JudiciaryUser user);
+
+    public List<ServiceModeTypeDTO> findServiceModeTypeList(JudiciaryUser user);
+
+    public List<SpecialRequestTypeDTO> findSpecialRequestTypeList(JudiciaryUser user);
+
+    public List<RequestServiceTypeDTO> findRequestServiceTypeList(JudiciaryUser user);
+
+    public List<ParticipantRoleTypeDTO> findParticipantRoleTypeList(JudiciaryUser user,
+            FunctionDTO function);
+
+    public List<PosDocumentTypeDTO> findPosDocumentTypeList(JudiciaryUser user);
+
+    public List<CourtRoomChambersDTO> findCourtRoomChambers(JudiciaryUser user);
+
+    public List<FpApplicationNatureTypeDTO> findFpApplicationNatureTypeList(JudiciaryUser user);
+
+    public List<ProsecutionDepartmentDTO> findProsecutionDepartmentList(JudiciaryUser user);
+
+    public List<IntlUserAcDTO> findSeniorBailiffUserAccountList(JudiciaryUser user, Integer baiOffId);
+
+    public FileDTO getDocumentFile(JudiciaryUser user, DocumentFileDTO doc) throws Exception;
+}

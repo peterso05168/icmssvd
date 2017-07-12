@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  xmlns:app="hk.judiciary.icmssvd.view.svdReq.presentation.*"
+					  xmlns:com="hk.judiciary.icmssvd.view.common.presentation.*"
+					  width="100%">
+	<fx:Script>
+		<![CDATA[
+			import hk.judiciary.icmssvd.view.common.util.DateUtil;
+			[Inject]
+			[Bindable]
+			public var model:InputProofPanelPM;
+		]]>
+	</fx:Script>
+	
+	<fx:Metadata>
+		[ResourceBundle("sharedButton")]
+		[ResourceBundle("sharedSVD")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:Configure/>
+		<j:i18nHandler BundleNameCollection="{['sharedButton', 'sharedSVD']}" />
+	</fx:Declarations>
+	
+	<j:layout>
+		<j:VerticalLayout gap="10" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10"/>
+	</j:layout>
+	<j:Form width="100%">
+		<j:layout>			
+			<j:FormLayout gap="-10" paddingBottom="-10" paddingLeft="0" paddingRight="0" paddingTop="0" />
+		</j:layout>
+		<j:HGroup width="100%">
+			<j:VGroup>
+				<j:HGroup height="25">
+					<j:Label id="caseNo" width="180" paddingTop="5"/>
+					<j:TextInput width="250" editable="false" text="{model.posRequestDetailVO.request.caseNo}"/>
+				</j:HGroup>
+				<j:HGroup height="25">
+					<j:Label id="requesterLabel" width="180" paddingTop="5"/> 
+					<j:TextInput width="250" editable="false" text="{model.displayPosRequestDetailVO.requesterName}"/>
+				</j:HGroup>
+				<j:HGroup height="25">
+					<j:Label id="agent" width="180" paddingTop="5"/>
+					<j:TextInput width="250" editable="false"  text="{model.posRequestDetailVO.request.handlingAgent.handlingAgentName}"/>
+				</j:HGroup>
+				<j:HGroup height="25">
+					<j:Label id="reqsDate" width="180" paddingTop="5"/>
+					<j:DateField width="180" 
+								 formatString="{model.dateFormat}"
+								 parseFunction="{DateUtil.parseDate}" enabled="false" 
+								 selectedDate="{model.posRequestDetailVO.request.submissionDatetime}"/>
+				</j:HGroup>
+			</j:VGroup>
+			<j:VGroup paddingLeft="20">
+				<j:HGroup height="25">
+					<j:Label id="registrationNo" width="180" paddingTop="5"/> 
+					<j:TextInput width="250" editable="false" text="{model.posRequestDetailVO.request.registrationNo}"/>
+				</j:HGroup>
+				<j:HGroup height="25">
+					<j:Label id="recipientLabel" width="180" paddingTop="5"/> 
+					<j:TextInput width="250" editable="false" text="{model.displayPosRequestDetailVO.recipientName}"/>
+				</j:HGroup>
+				<j:HGroup height="25">
+					<j:Label id="servedBy" width="180" paddingTop="5" />
+					<j:TextInput width="250" editable="false"  text="{model.displayPosRequestDetailVO.servedByName}"/>
+				</j:HGroup>
+			</j:VGroup>
+		</j:HGroup>
+		
+		<j:HGroup width="100%" paddingTop="20">
+			<j:Panel id="succDocLabel" 
+					 width="100%" 
+					 borderVisible="false" 
+					 dropShadowVisible="false">
+				<j:layout>
+					<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>			 
+				</j:layout>
+				<j:AdvancedDataGrid width="100%" height="150"
+									sortableColumns="true" 
+									selectable="false" 
+									dataProvider="{model.document}"
+									top="10" 
+									wordWrap="true" 
+									variableRowHeight="true">  
+					<j:columns>
+						<j:AdvancedDataGridColumn id = "docNameColumn"
+												  dataField="documentName"
+												  width = "700" />
+						<j:AdvancedDataGridColumn id = "docFileByColumn"
+												  dataField="documentFileBy"
+												  sortable = "true"
+												  width = "200"
+												  textAlign = "center" />
+						<j:AdvancedDataGridColumn id = "docFileDateColumn"
+												  dataField = "documentFileDate"
+												  sortable = "true" 
+												  width="200"
+												  labelFunction="{DateUtil.labelFuncForDate}"
+												  textAlign = "center" />
+						<j:AdvancedDataGridColumn sortable = "true"
+												  textAlign = "center" >
+							<j:itemRenderer>
+								<fx:Component>
+									<j:MXAdvancedDataGridItemRenderer textAlign="center"
+																	  xmlns:fx="http://ns.adobe.com/mxml/2009"
+																	  xmlns:s="library://ns.adobe.com/flex/spark" 
+																	  xmlns:mx="library://ns.adobe.com/flex/mx"
+																	  xmlns:j="hk.judiciary.fmk.view.component.*">
+										<fx:Declarations>										
+										</fx:Declarations> 
+										<j:BorderContainer borderVisible="false" backgroundAlpha="0" width="100%" minHeight="0">
+											<j:layout>
+												<j:HorizontalLayout gap="5" paddingTop="0" paddingBottom="0" paddingLeft="15" paddingRight="5" horizontalAlign="center" /> 									
+											</j:layout>
+											<j:Button label="Download" enabled="{data.downloadAble}"
+													  click="{outerDocument.model.downloadDocFile(data.documentId)}"/>
+										</j:BorderContainer>						 	
+									</j:MXAdvancedDataGridItemRenderer> 
+								</fx:Component>			 		
+							</j:itemRenderer>
+						</j:AdvancedDataGridColumn>
+					</j:columns>
+				</j:AdvancedDataGrid>
+			</j:Panel>
+		</j:HGroup>
+		
+		<j:HGroup height="50"></j:HGroup>
+		
+		<j:BorderContainer width="100%" enabled="{model.editable}">
+			<j:HGroup width="100%" paddingLeft="10" paddingTop="10" paddingBottom="10">
+				<j:VGroup>
+					<j:HGroup height="25">
+						<j:CheckBox id="affCheckBox" selected="{model.affofServ}" change="{model.changAffOfServ()}" />
+					</j:HGroup>
+					<j:HGroup height="25" paddingLeft="15">
+						<j:Label id="dueDate" width="180" paddingTop="5"/>
+						<j:DateField id="due" width="250" enabled="{model.affofServ}"
+									 selectedDate="@{model.displayPosRequestDetailVO.posRequestDetailVO.posRequest.posDocumentDueDate}"
+									 formatString="{model.dateFormat}"
+									 parseFunction="{DateUtil.parseDate}"
+									 editable="true" restrict="[0-9] '\/'"/>
+					</j:HGroup>
+				</j:VGroup>
+				<j:VGroup>
+					<j:HGroup height="25"></j:HGroup>
+					<j:HGroup height="25" paddingLeft="20">
+						<j:Label id="type" paddingTop="5"/>
+						<j:BindableDropDownList width="250" id="bindableType"
+												dataProvider="{model.posDocumentTypeVOs}"
+												labelField="posDocumentTypeName"
+												valueField="posDocumentTypeId" 
+												change="{model.changDocType(bindableType.selectedItem)}"
+												selectedItemValue="{model.selectedDocType}"
+												enabled="{model.affofServ}" />
+					</j:HGroup>
+				</j:VGroup>
+			</j:HGroup>
+		</j:BorderContainer>
+		
+		<j:HGroup height="25"></j:HGroup>
+		
+		<j:BorderContainer width="100%" enabled="{model.editable}">
+			<j:HGroup width="100%" paddingLeft="10" paddingTop="10" paddingBottom="10">
+				<j:VGroup>
+					<j:HGroup height="25">
+						<j:CheckBox id="attCheckBox" selected="{!model.affofServ}" change="{model.changAffOfServ()}" />
+					</j:HGroup>
+					<j:HGroup height="25" paddingLeft="15">
+						<j:Label id="hrnDate" width="180" paddingTop="5"/>
+						<j:DateField  id="hrn" width="250" enabled="{!model.affofServ}" 
+									 selectedDate="@{model.displayPosRequestDetailVO.posRequestDetailVO.posRequest.posHearingDatetime}"
+									 formatString="{model.dateFormat}"
+									 parseFunction="{DateUtil.parseDate}"
+									 editable="true" restrict="[0-9] '\/'" />
+						
+						<j:BindableDropDownList id="hrnHour" width="50" dataProvider="{model.hourList}"
+												labelField="hour" enabled="{!model.affofServ}" 
+												selectedItemValue="@{model.selectedHour}"
+												valueField="hour"/>
+						<j:Label id="tempPoint" verticalAlign="bottom" paddingTop="5"/>
+						<j:BindableDropDownList id="hrnMin" width="50" dataProvider="{model.minList}"
+												labelField="minute" enabled="{!model.affofServ}" 
+												selectedItemValue="@{model.selectedMin}"
+												valueField="minute"/>
+					</j:HGroup>
+					<j:HGroup height="25" paddingLeft="15">
+						<j:Label id="court" width="180" paddingTop="5"/>
+						<j:BindableDropDownList width="370" id="courtDropDown" dataProvider="{model.comprisingCourtVOs}" 
+												labelField="comprisingCourtName"
+												valueField="comprisingCourtId"
+												enabled="{!model.affofServ}" 
+												selectedItemValue="{model.selectComprisingCourt}"
+												change="{model.changCourt(courtDropDown.selectedItem)}"/>
+					</j:HGroup>
+					<j:HGroup height="25" paddingLeft="15">
+						<j:Label id="reCourtRoomLabel" width="180" paddingTop="5"/>
+						<j:BindableDropDownList width="250" id="courtRoomDrop" enabled="{!model.affofServ}" 
+												dataProvider="{model.displayCourtNumberVOs}"
+												labelField="courtRoomChambersName"
+												valueField="courtRoomChambersId" 
+												selectedItemValue="{model.selectCourtRm}"
+												change="{model.changCourtRm(courtRoomDrop.selectedItem)}"/>
+					</j:HGroup>
+				</j:VGroup>
+			</j:HGroup>
+		</j:BorderContainer>
+	</j:Form> 
+	<j:HGroup horizontalAlign="right" width="100%" paddingRight="10" paddingTop="20" paddingBottom="10">
+		<j:Button id="submitBtn" visible="{model.editable}" layoutDirection="{model.editable}" click="{model.doSubmit()}"/>
+	</j:HGroup>
+</j:SkinnableContainer>

@@ -1,0 +1,13 @@
+search.label=Search(中)
+
+lblNoOfRecord.text=Total Number of Records:(中)
+
+adgcProjectId.headerText=Project Id(中)
+adgcprojectCode.headerText=Project Code(中)
+adgcProjectName.headerText=Project Name(中)
+adgcActive.headerText=Active(中)
+adgcCreateBy.headerText=Create By(中)
+adgcCreateDate.headerText=Create Date(中)
+adgcLastUpdateBy.headerText=Update By(中)
+adgcLastUpdateDate.headerText=Update Date(中)
+adgcVersion.headerText=Column Version Date(中)

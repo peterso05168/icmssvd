@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<j:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+					  xmlns:s="library://ns.adobe.com/flex/spark"
+					  xmlns:j="hk.judiciary.fmk.view.component.*"
+					  xmlns:app="hk.judiciary.icmssvd.view.svdReq.presentation.*"
+					  xmlns:com="hk.judiciary.icmssvd.view.common.presentation.*"
+					  width="100%" height="100%" creationComplete="{model.init(SvdReqConstant.COURT_LEVEL_TYPE_DISTRICT)}">
+	<fx:Script>
+		<![CDATA[
+			import hk.judiciary.icmssvd.view.svdReq.constant.SvdReqConstant;
+			[Inject]
+			[Bindable]
+			public var model:InputSvdReqMainPM;
+		]]>
+	</fx:Script>
+	
+	<fx:Metadata>
+		[ResourceBundle("sharedSVD")]
+	</fx:Metadata>
+	
+	<fx:Declarations>
+		<j:i18nHandler BundleNameCollection="{['sharedButton', 'sharedSVD']}" />
+	</fx:Declarations>
+	
+	<j:layout>
+		<j:VerticalLayout gap="10" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+	</j:layout>
+	
+	<!-- Error Box Section -->
+	<com:SvdReqBoErrorBox id="inputSvdReqBoErrorBoxDC" width="100%" paddingLeft="10" paddingRight="10" creationComplete="{model.setErrorBox(inputSvdReqBoErrorBoxDC)}"/>
+	
+	<j:Scroller width="100%" height="100%">
+		<j:VGroup width="100%" height="100%" paddingLeft="10" paddingRight="10">
+			<j:HGroup gap="6" styleName="formRow" height="30" verticalAlign="middle" width="100%" paddingLeft="10" visible="{model.newVisable}" includeInLayout="{model.newVisable}" >  							
+				<j:Label id="reCaseNo" styleName="formLabel" width="90" />
+				<j:TextInput id="CaseNoNew" 
+							 text="@{model.newCaseNo}" width="150" maxChars="15" 
+							 typographicCase="uppercase"
+							 change="{model.newAbleCheck(CaseNoNew.text)}" />
+				<j:Button id="newButton" enabled="{model.newAble}"  click="{model.doNew()}"/>
+			</j:HGroup>
+			<j:Panel id="svdInputPanel" width="100%" activate="false" borderVisible="false" dropShadowVisible="false">
+				<app:InputSvdReqPanel id="inputSvdReqPanelDC" width="100%" height="100%"/>
+			</j:Panel>
+			<j:Spacer height="10"/>
+		</j:VGroup>
+	</j:Scroller>
+</j:SkinnableContainer>

@@ -1,0 +1,49 @@
+package hk.judiciary.icmssvd.model.svdReq.biz.assembler;
+
+import hk.judiciary.fmk.common.util.CommonUtil;
+import hk.judiciary.icms.model.dao.entity.ServReqs;
+import hk.judiciary.icmssvd.model.common.biz.assembler.ParticipantRoleTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.PostOfficeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.biz.assembler.ServiceModeTypeDTOAssembler;
+import hk.judiciary.icmssvd.model.common.util.DbCommonUtil;
+import hk.judiciary.icmssvd.model.svdReq.biz.dto.ServiceRequestDTO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class ServiceRequestDTOAssembler {
+    /**
+     * parse entity to dto
+     * 
+     * @param servReqs
+     *            entity
+     * @return ServiceRequestDTO
+     */
+    public static ServiceRequestDTO toDto(ServReqs servReqs) {
+        ServiceRequestDTO dto = new ServiceRequestDTO();
+        if (servReqs != null && servReqs.getServReqsId() != null && servReqs.getServReqsId() != 0) {
+            dto.setServiceRequestId(servReqs.getServReqsId());
+            if (servReqs.getReqs() != null) {
+                dto.setRequestId(servReqs.getReqs().getReqsId());
+            }
+            dto.setRequireAffirmationInd(CommonUtil.toBoolean(servReqs.getAffidavitReqFlag()));
+            dto.setServiceBeforeDate(servReqs.getServBefDate());
+            dto.setParticipantRoleType(ParticipantRoleTypeDTOAssembler.toDto(servReqs
+                    .getRecipPartcpRoleType()));
+            dto.setEnglishRecipientSurname(DbCommonUtil.getDbValueOrEmpty(servReqs.getRecipSurname()));
+            dto.setEnglishRecipientGivenName(DbCommonUtil.getDbValueOrEmpty(servReqs.getRecipGivenName()));
+            dto.setChineseRecipientSurname(DbCommonUtil.getDbValueOrEmpty(servReqs.getRecipSurnameChin()));
+            dto.setChineseRecipientGivenName(DbCommonUtil.getDbValueOrEmpty(servReqs
+                    .getRecipGivenNameChin()));
+            dto.setDeliveryInstruction(DbCommonUtil.getDbValueOrEmpty(servReqs.getDlvryInstr()));
+            dto.setRegisteredMailBarcode(DbCommonUtil.getDbValueOrEmpty(servReqs.getRegMailBarcd()));
+            dto.setServiceModeType(ServiceModeTypeDTOAssembler.toDto(servReqs.getServMode()));
+            dto.setPostOffice(PostOfficeDTOAssembler.toDto(servReqs.getPostOffice()));
+            dto.setVersionAndNanos(servReqs.getVersion());
+        }
+        return dto;
+    }
+
+}

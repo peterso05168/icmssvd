@@ -1,0 +1,13 @@
+package hk.judiciary.icmssvd.model.svdReq.dao;
+
+import hk.judiciary.icms.model.dao.entity.ReqsRslt;
+import hk.judiciary.icmssvd.model.BaseDAO;
+
+/**
+ * 
+ * @version $Revision$ $Date$
+ * @author $Author$
+ */
+public class ReqsRsltDAO extends BaseDAO<ReqsRslt> {
+    public static final String REQS_RSLT_DAO = "reqsRsltDAO";
+}
